@@ -1,0 +1,1 @@
+.hero-orbit::before{background:rgba(8,10,13,.94)!important;border:1px solid rgba(245,244,240,.42);box-shadow:0 0 60px 15px rgba(20,42,67,.42),inset 0 0 24px rgba(245,244,240,.06)!important;width:30%!important}.orbit-core{z-index:2;color:var(--white);text-shadow:0 2px 14px rgba(0,0,0,.75)}.orbit-core small{color:var(--warm);text-shadow:none}

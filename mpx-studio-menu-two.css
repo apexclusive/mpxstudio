@@ -1,0 +1,1 @@
+@media(max-width:760px){.menu-toggle span{position:absolute;left:10px;right:10px}.menu-toggle span:first-child{top:17px}.menu-toggle span:last-child{top:25px}.menu-toggle[aria-expanded="true"] span:first-child{top:21px;transform:rotate(45deg)}.menu-toggle[aria-expanded="true"] span:last-child{top:21px;transform:rotate(-45deg)}}
