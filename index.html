@@ -55,6 +55,7 @@
   <link rel="stylesheet" href="mpx-studio-portfolio-mobile.css">
   <link rel="stylesheet" href="mpx-studio-final-polish.css">
   <link rel="stylesheet" href="mpx-studio-hero-clear.css">
+  <link rel="stylesheet" href="mpx-studio-audit-polish.css">
   <style>
     .service-link{display:inline-flex;align-items:center;gap:10px;margin-top:22px;border-bottom:1px solid rgba(8,10,13,.24);padding-bottom:7px;color:#101922;font:9px var(--label);letter-spacing:.1em;text-transform:uppercase}
     .service-link span{color:#a98f65;font-size:16px}
@@ -121,8 +122,8 @@
     </section>
 
     <section class="audit-section" id="website-scan" aria-labelledby="audit-title">
-      <div class="section-label">05 / Gratis eerste inzicht</div>
-      <div class="audit-layout"><div><h2 id="audit-title">Laat je website<br><i>doorlichten.</i></h2><p>Vul je URL in en ontvang direct een eerste technische en inhoudelijke indicatie. Geen verkooppraat, wel een heldere start voor betere online prestaties.</p></div><form class="audit-form" id="audit-form"><label for="audit-url">Jouw website-URL<input id="audit-url" name="url" type="url" placeholder="https://jouwwebsite.nl" required></label><button class="audit-submit" type="submit">Start gratis scan <span>↗</span></button><p class="audit-status" id="audit-status" role="status" aria-live="polite"></p></form></div>
+      <div class="section-label">05 / Eerste website-inzicht</div>
+      <div class="audit-layout"><div><span class="audit-kicker">Gratis quick scan</span><h2 id="audit-title">Zie waar je website<br><i>winst laat liggen.</i></h2><p>Vul je URL in en ontvang direct een eerste indicatie van techniek, inhoud en vertrouwen. Gebruik de uitkomst als startpunt voor de volledige Website Performance Scan van €99.</p></div><form class="audit-form" id="audit-form"><label for="audit-url">Jouw website-URL<input id="audit-url" name="url" type="url" placeholder="https://jouwwebsite.nl" required></label><button class="audit-submit" type="submit">Start eerste scan <span>↗</span></button><p class="audit-status" id="audit-status" role="status" aria-live="polite"></p></form></div>
       <div class="audit-result" id="audit-result" hidden><div class="audit-score"><strong id="audit-score">0</strong><span>/ 100<br>eerste indicatie</span></div><div><span class="audit-result-kicker">Jouw eerste inzicht</span><h3 id="audit-result-title">We hebben je website bekeken.</h3><ul id="audit-checks"></ul><a class="audit-result-cta" href="#contact" data-offer="Persoonlijke website-audit op basis van mijn eerste scan">Bespreek de verbeterpunten <span>↗</span></a></div></div>
     </section>
 
@@ -414,7 +415,7 @@
     observer.observe(footer);
     const footerExplore = footer.querySelector('.footer-main > div:nth-child(2)');
     if (footerExplore) footerExplore.insertAdjacentHTML('beforeend', '<a href="#investering">Investering</a><a href="#faq">Veelgestelde vragen</a>');
-    const sectionLabels = ['01 / Studio + live werk', '03 / Wat we maken', '04 / Direct starten', '05 / Gratis eerste inzicht', '06 / Onze aanpak', '07 / Waarom bedrijven kiezen', '08 / Achter MPX Studio', '09 / Project Fit Scan', '10 / Investering', '11 / Veelgestelde vragen', '12 / Jouw volgende stap'];
+    const sectionLabels = ['01 / Studio + live werk', '03 / Wat we maken', '04 / Direct starten', '05 / Eerste website-inzicht', '06 / Onze aanpak', '07 / Waarom bedrijven kiezen', '08 / Achter MPX Studio', '09 / Project Fit Scan', '10 / Investering', '11 / Veelgestelde vragen', '12 / Jouw volgende stap'];
     document.querySelectorAll('main > section .section-label').forEach((label, index) => { if (sectionLabels[index]) label.textContent = sectionLabels[index]; });
     const contactForm = document.querySelector('#contact-form');
     const formStatus = document.querySelector('#form-status');
