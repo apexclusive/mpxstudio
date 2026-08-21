@@ -114,7 +114,7 @@
       <div class="section-label">04 / Direct starten</div>
       <div class="growth-heading"><h2 id="growth-title">Maak je website<br><i>vandaag al sterker.</i></h2><p>Je hoeft niet meteen een volledig traject te starten. Kies een concrete eerste stap en ontvang snel duidelijkheid over wat er online beter kan.</p></div>
       <div class="growth-grid">
-        <article class="growth-card growth-card-featured"><span class="growth-card-number">01</span><div><span class="growth-kicker">AI website scan</span><h3>Wat presteert je website?</h3><p>Ontvang een scherpe analyse van uitstraling, structuur, vertrouwen, conversie en mobiele ervaring. Met concrete verbeterpunten waar je direct mee verder kunt.</p><strong>Vanaf € 99</strong></div><a class="growth-card-link" href="#contact" data-product="audit" data-offer="AI website scan vanaf € 99">Vraag de scan aan <span>↗</span></a></article>
+        <article class="growth-card growth-card-featured"><span class="growth-card-number">01</span><div><span class="growth-kicker">Website Performance Scan</span><h3>Wat presteert je website?</h3><p>Ontvang een scherpe analyse van uitstraling, structuur, vertrouwen, conversie en mobiele ervaring. Met concrete verbeterpunten waar je direct mee verder kunt.</p><strong>Eenmalig € 99</strong></div><a class="growth-card-link" href="#contact" data-product="audit" data-offer="Website Performance Scan voor € 99">Naar veilige betaling <span>↗</span></a></article>
         <article class="growth-card"><span class="growth-card-number">02</span><div><span class="growth-kicker">Modern concept</span><h3>Vraag een nieuwe richting aan.</h3><p>Een modern conceptvoorstel voor je homepage of belangrijkste pagina. Ideaal als je wilt zien hoe jouw bedrijf online sterker kan overkomen.</p><strong>Concept vanaf € 99</strong></div><a class="growth-card-link" href="#contact" data-offer="Modern websiteconcept vanaf € 99">Vraag een concept aan <span>↗</span></a></article>
         <article class="growth-card"><span class="growth-card-number">03</span><div><span class="growth-kicker">Slimmer contact</span><h3>Laat bezoekers sneller kiezen.</h3><p>WhatsApp, chat, automatische afspraakplanning, leadkwalificatie en opvolging. We ontwerpen een contactroute die past bij jouw bedrijf.</p><strong>Op maat samengesteld</strong></div><a class="growth-card-link" href="#contact" data-offer="WhatsApp, chat en slimme afspraakplanning">Bespreek automatisering <span>↗</span></a></article>
       </div>
@@ -422,6 +422,10 @@
     const auditForm = document.querySelector('#audit-form');
     const auditResult = document.querySelector('#audit-result');
     const auditStatus = document.querySelector('#audit-status');
+    if (new URLSearchParams(window.location.search).get('payment') === 'success') {
+      formStatus.textContent = 'Betaling ontvangen. Vul hieronder je gegevens in, dan starten we met jouw scan.';
+      document.querySelector('#contact').scrollIntoView({ behavior: 'auto', block: 'start' });
+    }
     auditForm.addEventListener('submit', async event => {
       event.preventDefault();
       const enteredUrl = auditForm.elements.url.value.trim();
@@ -457,7 +461,7 @@
         if (!response.ok || !data.url) throw new Error(data.error || 'Betaling is nog niet geconfigureerd.');
         window.location.href = data.url;
       } catch (error) {
-        formStatus.textContent = 'Online betaling wordt binnenkort geactiveerd. Je kunt de scan alvast aanvragen via het contactformulier.';
+        formStatus.textContent = 'Betaling is nog niet geactiveerd. Je kunt de scan alvast aanvragen via het contactformulier.';
         contactForm.querySelector('[name="project"]').value = `Interesse in: ${link.dataset.offer}\n\n`;
         document.querySelector('#contact').scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth', block: 'start' });
       }
