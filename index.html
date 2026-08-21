@@ -55,6 +55,11 @@
   <link rel="stylesheet" href="mpx-studio-portfolio-mobile.css">
   <link rel="stylesheet" href="mpx-studio-final-polish.css">
   <link rel="stylesheet" href="mpx-studio-hero-clear.css">
+  <style>
+    .service-link{display:inline-flex;align-items:center;gap:10px;margin-top:22px;border-bottom:1px solid rgba(8,10,13,.24);padding-bottom:7px;color:#101922;font:9px var(--label);letter-spacing:.1em;text-transform:uppercase}
+    .service-link span{color:#a98f65;font-size:16px}
+    .service-link:hover{border-color:#a98f65}
+  </style>
 </head>
 <body>
   <div class="scroll-progress" aria-hidden="true"><span></span></div>
@@ -95,43 +100,49 @@
       <div class="combined-intro"><div class="section-label">01 / Studio + live werk</div><h2>Een eerste indruk die <i>iets in beweging zet.</i></h2><p>MPX Studio vertaalt jouw expertise naar een digitale ervaring die helder voelt, onderscheidend oogt en bezoekers vanzelf naar de juiste volgende stap begeleidt.</p><a class="text-link dark" href="#aanpak">Ontdek onze werkwijze <span>↗</span></a></div>
       <div class="demo-layout">
         <div class="demo-copy"><div class="demo-heading"><span>02 / Live portfolio</span><p>Conceptdemo's gebaseerd op echte branches en doelen.</p></div><div class="demo-filters" role="tablist" aria-label="Filter projecten"><button class="demo-filter is-active" type="button" data-filter="featured">Uitgelicht · 3</button><button class="demo-filter" type="button" data-filter="all">Alle projecten</button><button class="demo-filter" type="button" data-filter="auto">Automotive</button><button class="demo-filter" type="button" data-filter="care">Zorg</button><button class="demo-filter" type="button" data-filter="wedding">Wedding</button><button class="demo-filter" type="button" data-filter="creative">Creatief</button></div><div class="demo-card-list" role="list" aria-label="Geselecteerde projecten"><button class="demo-card is-active" type="button" data-demo="usapi" data-category="featured all auto"><span class="demo-card-number">01</span><strong>USAPI</strong><small>Porsche specialist · Automotive</small><b>↗</b></button><button class="demo-card" type="button" data-demo="spauwen" data-category="featured all care"><span class="demo-card-number">02</span><strong>Tandarts Spauwen</strong><small>Familiepraktijk · Zorg</small><b>↗</b></button><button class="demo-card" type="button" data-demo="fotograaf" data-category="featured all creative"><span class="demo-card-number">03</span><strong>Fotograaf</strong><small>Zakelijke portretten · Creatief</small><b>↗</b></button><button class="demo-card" type="button" data-demo="wedding" data-category="all wedding"><span class="demo-card-number">04</span><strong>Wedding</strong><small>Editorial celebration · Wedding</small><b>↗</b></button><button class="demo-card" type="button" data-demo="wellness" data-category="all care"><span class="demo-card-number">05</span><strong>Wellness</strong><small>Rust, ritueel en ruimte · Zorg</small><b>↗</b></button></div></div>
-        <div class="demo-viewer"><div class="browser-bar"><span class="browser-dots"><i></i><i></i><i></i></span><span class="browser-url" id="demo-url">usapi.apexclusive.nl / live</span><a id="demo-open" href="https://usapi.apexclusive.nl/" target="_blank" rel="noreferrer">Open volledig ↗</a></div><div class="demo-frame-wrap"><iframe id="demo-frame" title="Live demo preview" src="https://usapi.apexclusive.nl/"></iframe><div class="demo-frame-status" id="demo-frame-status" role="status">Live demo wordt geladen...</div><div class="demo-scroll-note">Live scroll preview <span>↕</span></div></div><p class="demo-disclaimer">Conceptdemo's gebaseerd op echte branches, doelen en bezoekersgedrag.</p></div>
+        <div class="demo-viewer"><div class="browser-bar"><span class="browser-dots"><i></i><i></i><i></i></span><span class="browser-url" id="demo-url">usapi.apexclusive.nl / live</span><a id="demo-open" href="https://usapi.apexclusive.nl/" target="_blank" rel="noreferrer">Open volledig ↗</a></div><div class="demo-frame-wrap"><iframe id="demo-frame" title="Live demo preview" src="https://usapi.apexclusive.nl/" loading="lazy"></iframe><div class="demo-frame-status" id="demo-frame-status" role="status">Live demo wordt geladen...</div><div class="demo-scroll-note">Live scroll preview <span>↕</span></div></div><p class="demo-disclaimer">Conceptdemo's gebaseerd op echte branches, doelen en bezoekersgedrag.</p></div>
       </div>
     </section>
 
     <section class="services-section" id="diensten">
       <div class="section-heading"><div class="section-label">03 / Wat we maken</div><p>Digitale systemen die jouw kwaliteit zichtbaar maken en aandacht vertalen naar vertrouwen.</p></div>
-      <div class="services-grid"><article><span>01</span><h3>Webdesign</h3><p>Premium maatwerkwebsites die jouw bedrijf professioneel, duidelijk en betrouwbaar laten overkomen.</p></article><article><span>02</span><h3>Brand identity</h3><p>Een herkenbare digitale uitstraling die opvalt en vertrouwen opbouwt in elk contactmoment.</p></article><article><span>03</span><h3>Development</h3><p>Snelle, moderne technische oplossingen die soepel werken op desktop, tablet en mobiel.</p></article><article><span>04</span><h3>AI & automatisering</h3><p>Chatbots, slimme communicatie en workflows die het contactproces efficiënter en persoonlijker maken.</p></article></div>
+      <div class="services-grid"><article><span>01</span><h3>Webdesign</h3><p>Premium maatwerkwebsites die jouw bedrijf professioneel, duidelijk en betrouwbaar laten overkomen.</p><a class="service-link" href="#contact" data-offer="Premium maatwerkwebsite">Bespreek webdesign <span>↗</span></a></article><article><span>02</span><h3>Brand identity</h3><p>Een herkenbare digitale uitstraling die opvalt en vertrouwen opbouwt in elk contactmoment.</p><a class="service-link" href="#contact" data-offer="Brand identity en visuele richting">Bespreek branding <span>↗</span></a></article><article><span>03</span><h3>Development</h3><p>Snelle, moderne technische oplossingen die soepel werken op desktop, tablet en mobiel.</p><a class="service-link" href="#contact" data-offer="Development en technische doorontwikkeling">Bespreek development <span>↗</span></a></article><article><span>04</span><h3>AI & automatisering</h3><p>Chatbots, slimme communicatie en workflows die het contactproces efficiënter en persoonlijker maken.</p><a class="service-link" href="#contact" data-offer="AI en automatisering voor klantcontact">Bespreek automatisering <span>↗</span></a></article></div>
     </section>
 
     <section class="growth-section" id="direct-starten" aria-labelledby="growth-title">
       <div class="section-label">04 / Direct starten</div>
       <div class="growth-heading"><h2 id="growth-title">Maak je website<br><i>vandaag al sterker.</i></h2><p>Je hoeft niet meteen een volledig traject te starten. Kies een concrete eerste stap en ontvang snel duidelijkheid over wat er online beter kan.</p></div>
       <div class="growth-grid">
-        <article class="growth-card growth-card-featured"><span class="growth-card-number">01</span><div><span class="growth-kicker">AI website scan</span><h3>Wat presteert je website?</h3><p>Ontvang een scherpe analyse van uitstraling, structuur, vertrouwen, conversie en mobiele ervaring. Met concrete verbeterpunten waar je direct mee verder kunt.</p><strong>Vanaf € 99</strong></div><a class="growth-card-link" href="#contact" data-offer="AI website scan vanaf € 99">Vraag de scan aan <span>↗</span></a></article>
+        <article class="growth-card growth-card-featured"><span class="growth-card-number">01</span><div><span class="growth-kicker">AI website scan</span><h3>Wat presteert je website?</h3><p>Ontvang een scherpe analyse van uitstraling, structuur, vertrouwen, conversie en mobiele ervaring. Met concrete verbeterpunten waar je direct mee verder kunt.</p><strong>Vanaf € 99</strong></div><a class="growth-card-link" href="#contact" data-product="audit" data-offer="AI website scan vanaf € 99">Vraag de scan aan <span>↗</span></a></article>
         <article class="growth-card"><span class="growth-card-number">02</span><div><span class="growth-kicker">Modern concept</span><h3>Vraag een nieuwe richting aan.</h3><p>Een modern conceptvoorstel voor je homepage of belangrijkste pagina. Ideaal als je wilt zien hoe jouw bedrijf online sterker kan overkomen.</p><strong>Concept vanaf € 99</strong></div><a class="growth-card-link" href="#contact" data-offer="Modern websiteconcept vanaf € 99">Vraag een concept aan <span>↗</span></a></article>
         <article class="growth-card"><span class="growth-card-number">03</span><div><span class="growth-kicker">Slimmer contact</span><h3>Laat bezoekers sneller kiezen.</h3><p>WhatsApp, chat, automatische afspraakplanning, leadkwalificatie en opvolging. We ontwerpen een contactroute die past bij jouw bedrijf.</p><strong>Op maat samengesteld</strong></div><a class="growth-card-link" href="#contact" data-offer="WhatsApp, chat en slimme afspraakplanning">Bespreek automatisering <span>↗</span></a></article>
       </div>
       <div class="growth-footer"><span>Geen verkooppraat. Eerst inzicht, dan een passende route.</span><a href="#fit-scan">Doe de gratis Project Fit Scan <span>↗</span></a></div>
     </section>
 
+    <section class="audit-section" id="website-scan" aria-labelledby="audit-title">
+      <div class="section-label">05 / Gratis eerste inzicht</div>
+      <div class="audit-layout"><div><h2 id="audit-title">Laat je website<br><i>doorlichten.</i></h2><p>Vul je URL in en ontvang direct een eerste technische en inhoudelijke indicatie. Geen verkooppraat, wel een heldere start voor betere online prestaties.</p></div><form class="audit-form" id="audit-form"><label for="audit-url">Jouw website-URL<input id="audit-url" name="url" type="url" placeholder="https://jouwwebsite.nl" required></label><button class="audit-submit" type="submit">Start gratis scan <span>↗</span></button><p class="audit-status" id="audit-status" role="status" aria-live="polite"></p></form></div>
+      <div class="audit-result" id="audit-result" hidden><div class="audit-score"><strong id="audit-score">0</strong><span>/ 100<br>eerste indicatie</span></div><div><span class="audit-result-kicker">Jouw eerste inzicht</span><h3 id="audit-result-title">We hebben je website bekeken.</h3><ul id="audit-checks"></ul><a class="audit-result-cta" href="#contact" data-offer="Persoonlijke website-audit op basis van mijn eerste scan">Bespreek de verbeterpunten <span>↗</span></a></div></div>
+    </section>
+
     <section class="approach-section" id="aanpak">
-      <div class="section-label">05 / Onze aanpak</div><h2>Helderheid vóór<br><i>versiering.</i></h2>
+      <div class="section-label">06 / Onze aanpak</div><h2>Helderheid vóór<br><i>versiering.</i></h2>
       <div class="approach-list"><article><span>01</span><h3>Richting</h3><p>We vinden de kern van het verhaal en maken keuzes die ergens naartoe bewegen.</p></article><article><span>02</span><h3>Vorm</h3><p>We geven het idee een eigen gezicht: herkenbaar, onderscheidend en met gevoel voor detail.</p></article><article><span>03</span><h3>Beweging</h3><p>We bouwen het zorgvuldig uit tot een digitale ervaring die moeiteloos werkt.</p></article></div>
     </section>
 
     <section class="experience-section" id="ervaring">
-      <div class="section-heading"><div class="section-label">06 / Waarom bedrijven kiezen</div><p>Het verschil tussen een standaard website en een premium bedrijfspresentatie.</p></div>
+      <div class="section-heading"><div class="section-label">07 / Waarom bedrijven kiezen</div><p>Het verschil tussen een standaard website en een premium bedrijfspresentatie.</p></div>
       <div class="experience-layout"><div class="experience-copy"><h2>Geen standaardtemplates.<br><i>Wel een eigen positie.</i></h2><p>Je website moet niet alleen mooi zijn. Hij moet in enkele seconden duidelijk maken waarom jouw bedrijf de juiste keuze is.</p><ul><li><span>01</span> Een merkverhaal dat blijft hangen</li><li><span>02</span> Een route die bezoekers begeleidt</li><li><span>03</span> Maatwerk zonder onnodige ruis</li><li><span>04</span> Moderne techniek die vertrouwen ondersteunt</li></ul></div><div class="chat-demo-card"><div class="chat-demo-top"><span>MPX concierge</span><i>● online</i></div><div class="chat-demo-messages"><div class="chat-demo-message bot">Waar wil je dat je website sterker in wordt?</div><div class="chat-demo-message user">Meer vertrouwen en betere aanvragen.</div><div class="chat-demo-message bot">Dan ontwerpen we de route van eerste indruk naar contact.</div></div><div class="chat-demo-input"><span>Start een gesprek...</span><b>↗</b></div><div class="chat-demo-note">Strategie, design en techniek in één beweging.</div></div></div>
     </section>
 
     <section class="founder-section" id="over-mpx" aria-labelledby="founder-title">
       <div class="founder-photo-wrap"><img src="https://res.cloudinary.com/sfd8ohjz/image/upload/v1787345940/Scherm_afbeelding_2026-08-21_om_22.51.19_dvw7ua.jpg" alt="Martijn Puts, founder van MPX Studio" loading="lazy"></div>
-      <div class="founder-copy"><div class="section-label">07 / Achter MPX Studio</div><h2 id="founder-title">Persoonlijk in<br><i>de details.</i></h2><p>Als founder combineer ik digitale ambitie met de rust, discipline en precisie van een KLM Dreamliner-piloot. Diezelfde standaard breng ik naar elk digitaal project: helder denken, zorgvuldig bouwen en pas vertrekken als de route klopt.</p><div class="founder-details"><span>2002–2006 · Informatica · St. Ursula College 2, Maaseik</span><span>2006–2007 · Technische Bedrijfskunde · TU Eindhoven</span><span>2007–2009 · Vliegopleiding</span><span>2009–2011 · Assistent-manager · Dynabyte Roermond</span><span>2011–heden · KLM Dreamliner-piloot</span><span>Boeing 787-9 / 787-10 · 777-200 / 777-300 · Embraer 175 / 190 / E2</span><span>2026–heden · Oprichter · <a href="https://apexclusive.nl/" target="_blank" rel="noreferrer">APEXclusive.nl</a> · Automotive Vehicle Advisory</span></div><div class="founder-signature"><strong>Martijn Puts</strong><span>Founder &amp; Digital Director</span></div><a class="founder-cta" href="#contact">Start een gesprek <span>↗</span></a></div>
+      <div class="founder-copy"><div class="section-label">08 / Achter MPX Studio</div><h2 id="founder-title">Persoonlijk in<br><i>de details.</i></h2><p>Als founder combineer ik digitale ambitie met de rust, discipline en precisie van een KLM Dreamliner-piloot. Diezelfde standaard breng ik naar elk digitaal project: helder denken, zorgvuldig bouwen en pas vertrekken als de route klopt.</p><div class="founder-details"><span>2002–2006 · Informatica · St. Ursula College 2, Maaseik</span><span>2006–2007 · Technische Bedrijfskunde · TU Eindhoven</span><span>2007–2009 · Vliegopleiding</span><span>2009–2011 · Assistent-manager · Dynabyte Roermond</span><span>2011–heden · KLM Dreamliner-piloot</span><span>Boeing 787-9 / 787-10 · 777-200 / 777-300 · Embraer 175 / 190 / E2</span><span>2026–heden · Oprichter · <a href="https://apexclusive.nl/" target="_blank" rel="noreferrer">APEXclusive.nl</a> · Automotive Vehicle Advisory</span></div><div class="founder-signature"><strong>Martijn Puts</strong><span>Founder &amp; Digital Director</span></div><a class="founder-cta" href="#contact">Start een gesprek <span>↗</span></a></div>
     </section>
 
     <section class="fit-section" id="fit-scan" aria-labelledby="fit-title">
-      <div class="section-label">08 / Project Fit Scan</div>
+      <div class="section-label">09 / Project Fit Scan</div>
       <div class="fit-heading"><div><h2 id="fit-title">Ontdek wat jouw<br><i>volgende stap</i> nodig heeft.</h2></div><p>Beantwoord drie korte vragen. Je krijgt direct een heldere route voor jouw digitale project, zonder verkooppraat.</p></div>
       <div class="fit-tool" data-fit-tool>
         <div class="fit-progress"><span>01</span><div><i></i></div><small>30 sec</small></div>
@@ -143,14 +154,14 @@
     </section>
 
     <section class="investment-section" id="investering" aria-labelledby="investment-title">
-      <div class="section-label">09 / Investering</div>
+      <div class="section-label">10 / Investering</div>
       <div class="investment-heading"><h2 id="investment-title">Geen pakket.<br><i>Een passende route.</i></h2><p>Een premium website is geen vast product. De investering ontstaat uit de ambitie, complexiteit en snelheid die jouw project nodig heeft.</p></div>
       <div class="investment-grid"><article><span>01</span><h3>Essential</h3><strong class="investment-price">vanaf € 2.500</strong><p>Een scherpe, premium basis voor bedrijven die online sterker en professioneler zichtbaar willen worden.</p></article><article><span>02</span><h3>Signature</h3><strong class="investment-price">vanaf € 5.000</strong><p>Een volledig maatwerktraject met strategie, eigen design, sterke contentstructuur en conversiegerichte route.</p></article><article><span>03</span><h3>Bespoke</h3><strong class="investment-price">vanaf € 8.500</strong><p>Een onderscheidende digitale ervaring met branding, complexe techniek, AI of doorontwikkeling op maat.</p></article></div>
       <div class="investment-footer"><p>Na een eerste gesprek ontvang je een helder voorstel op maat, afgestemd op scope en prioriteiten.</p><a class="investment-cta" href="#contact">Vraag een voorstel aan <span>↗</span></a></div>
     </section>
 
     <section class="faq-section" id="faq" aria-labelledby="faq-title">
-      <div class="section-label">10 / Veelgestelde vragen</div>
+      <div class="section-label">11 / Veelgestelde vragen</div>
       <div class="faq-heading"><h2 id="faq-title">Helder voordat<br><i>we beginnen.</i></h2><p>De belangrijkste vragen over een maatwerktraject bij MPX Studio.</p></div>
       <div class="faq-list">
         <details><summary>Hoe lang duurt een website-traject?</summary><p>De doorlooptijd hangt af van omvang, content en functionaliteit. Na het eerste gesprek ontvang je een heldere route met fases, beslismomenten en planning.</p></details>
@@ -161,7 +172,7 @@
       </div>
     </section>
 
-    <section class="contact-section" id="contact"><div class="contact-top"><div class="section-label">11 / Jouw volgende stap</div><p>Een premium website begint met een helder gesprek.</p></div><h2>Start een<br><i>vrijblijvende kennismaking.</i></h2><form class="contact-form" id="contact-form" action="mailto:info@mpxstudio.nl" method="post" enctype="text/plain"><label>Naam<input type="text" name="naam" autocomplete="name" required></label><label>Bedrijf<input type="text" name="bedrijf" autocomplete="organization"></label><label>E-mailadres<input type="email" name="email" autocomplete="email" required></label><label>Vertel kort over je project<textarea name="project" rows="4" required></textarea></label><label class="form-trap" aria-hidden="true">Website<input type="text" name="website" tabindex="-1" autocomplete="off"></label><button class="form-submit" type="submit">Start een vrijblijvend gesprek <span>↗</span></button><p class="form-status" id="form-status" role="status" aria-live="polite"></p></form><a class="contact-link" href="mailto:info@mpxstudio.nl">info@mpxstudio.nl <span>↗</span></a><a class="contact-link" href="https://wa.me/31624735939?text=Hallo%20MPX%20Studio%2C%20ik%20wil%20graag%20kennismaken." target="_blank" rel="noreferrer">WhatsApp direct <span>↗</span></a><div class="contact-bottom"><span>MPX Studio · Premium webdesign</span><span>Websites die vertrouwen opbouwen.</span></div></section>
+    <section class="contact-section" id="contact"><div class="contact-top"><div class="section-label">12 / Jouw volgende stap</div><p>Een premium website begint met een helder gesprek.</p></div><h2>Start een<br><i>vrijblijvende kennismaking.</i></h2><form class="contact-form" id="contact-form" action="mailto:info@mpxstudio.nl" method="post" enctype="text/plain"><label>Naam<input type="text" name="naam" autocomplete="name" required></label><label>Bedrijf<input type="text" name="bedrijf" autocomplete="organization"></label><label>E-mailadres<input type="email" name="email" autocomplete="email" required></label><label>Vertel kort over je project<textarea name="project" rows="4" required></textarea></label><label class="form-trap" aria-hidden="true">Website<input type="text" name="website" tabindex="-1" autocomplete="off"></label><button class="form-submit" type="submit">Start een vrijblijvend gesprek <span>↗</span></button><p class="form-status" id="form-status" role="status" aria-live="polite"></p></form><a class="contact-link" href="mailto:info@mpxstudio.nl">info@mpxstudio.nl <span>↗</span></a><a class="contact-link" href="https://wa.me/31624735939?text=Hallo%20MPX%20Studio%2C%20ik%20wil%20graag%20kennismaken." target="_blank" rel="noreferrer">WhatsApp direct <span>↗</span></a><div class="contact-bottom"><span>MPX Studio · Premium webdesign</span><span>Websites die vertrouwen opbouwen.</span></div></section>
   </main>
   <a class="whatsapp-float" href="https://wa.me/31624735939?text=Hallo%20MPX%20Studio%2C%20ik%20wil%20graag%20kennismaken." target="_blank" rel="noreferrer" aria-label="Start een gesprek via WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.1 3.9A10.1 10.1 0 0 0 3.2 15.8L2 22l6.3-1.7A10.1 10.1 0 1 0 20.1 3.9Zm-8 16.2a8.4 8.4 0 0 1-4.3-1.2l-.3-.2-3.7 1 1-3.6-.2-.4a8.4 8.4 0 1 1 7.5 4.4Zm4.6-6.3c-.3-.2-1.8-.9-2-.9-.3-.1-.5-.2-.7.2l-.7.9c-.2.3-.4.3-.7.1-1.8-.9-3-1.7-4.1-3.8-.3-.5.3-.5.8-1.6.1-.3 0-.5-.1-.7l-.6-1.5c-.2-.4-.4-.4-.7-.4h-.6c-.2 0-.6.1-.9.4-.3.3-1.1 1.1-1.1 2.7s1.1 3.1 1.3 3.3c.2.2 2.1 3.3 5.1 4.5 1.9.8 2.7.8 3.6.7.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.2-.3-.3-.6-.4Z"/></svg><span>WhatsApp</span></a>
   <div class="chat-widget"><button class="chat-widget-toggle" type="button" aria-expanded="false" aria-controls="chat-window"><span class="chat-pulse"></span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.5a7.5 7.5 0 0 1-8 7.5 8.4 8.4 0 0 1-3.2-.6L4 20l1.6-3.6A7.3 7.3 0 0 1 4 11.5 7.5 7.5 0 0 1 12 4a7.5 7.5 0 0 1 8 7.5Z"/></svg><span class="chat-widget-label">Chat met MPX</span></button><div class="chat-window" id="chat-window" aria-live="polite"><div class="chat-window-head"><div><strong>MPX Concierge</strong><small>Ontdek in 30 seconden welke route bij jouw bedrijf past.</small></div><button class="chat-close" type="button" aria-label="Sluit chat">×</button></div><div class="chat-window-body" id="chat-messages"><div class="chat-bubble bot">Waar wil je als eerste resultaat mee behalen?</div><button class="chat-quick" type="button" data-quick="Ik wil weten of MPX bij mijn bedrijf past">Past MPX bij mijn bedrijf?</button><button class="chat-quick" type="button" data-quick="Wat kost een premium website voor mijn bedrijf?">Wat kost een premium website?</button><button class="chat-quick" type="button" data-quick="Ik wil meer kwalitatieve aanvragen">Meer kwalitatieve aanvragen</button><a class="chat-whatsapp-link" id="chat-whatsapp-link" href="https://wa.me/31624735939" target="_blank" rel="noreferrer" hidden>Direct verder via WhatsApp <span>↗</span></a><a class="chat-contact-link" id="chat-contact-link" href="#contact" hidden>Plan een kennismaking <span>↗</span></a></div><form class="chat-window-input" id="chat-form"><input id="chat-input" type="text" placeholder="Vertel over je project..." aria-label="Vertel over je project" autocomplete="off"><button type="submit" aria-label="Verstuur bericht">↗</button></form></div></div>
@@ -403,11 +414,50 @@
     observer.observe(footer);
     const footerExplore = footer.querySelector('.footer-main > div:nth-child(2)');
     if (footerExplore) footerExplore.insertAdjacentHTML('beforeend', '<a href="#investering">Investering</a><a href="#faq">Veelgestelde vragen</a>');
+    const sectionLabels = ['01 / Studio + live werk', '03 / Wat we maken', '04 / Direct starten', '05 / Gratis eerste inzicht', '06 / Onze aanpak', '07 / Waarom bedrijven kiezen', '08 / Achter MPX Studio', '09 / Project Fit Scan', '10 / Investering', '11 / Veelgestelde vragen', '12 / Jouw volgende stap'];
+    document.querySelectorAll('main > section .section-label').forEach((label, index) => { if (sectionLabels[index]) label.textContent = sectionLabels[index]; });
     const contactForm = document.querySelector('#contact-form');
     const formStatus = document.querySelector('#form-status');
+    const auditForm = document.querySelector('#audit-form');
+    const auditResult = document.querySelector('#audit-result');
+    const auditStatus = document.querySelector('#audit-status');
+    auditForm.addEventListener('submit', async event => {
+      event.preventDefault();
+      const url = auditForm.elements.url.value.trim();
+      auditStatus.textContent = 'Website wordt geanalyseerd...';
+      auditForm.querySelector('button').disabled = true;
+      try {
+        const response = await fetch('/api/audit', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ url }) });
+        const data = await response.json();
+        if (!response.ok) throw new Error(data.error || 'Scan mislukt');
+        document.querySelector('#audit-score').textContent = data.score;
+        document.querySelector('#audit-result-title').textContent = data.score >= 80 ? 'Een sterke basis met ruimte voor verfijning.' : 'Er liggen duidelijke kansen voor verbetering.';
+        document.querySelector('#audit-checks').innerHTML = data.checks.map(check => `<li class="${check.pass ? 'is-pass' : 'is-fail'}"><strong>${check.pass ? '✓' : '!'}</strong><span><b>${check.label}</b>${check.detail}</span></li>`).join('');
+        auditResult.hidden = false;
+        auditStatus.textContent = 'Eerste indicatie klaar.';
+      } catch (error) {
+        auditStatus.textContent = error.message || 'De scan kon niet worden uitgevoerd.';
+      } finally {
+        auditForm.querySelector('button').disabled = false;
+      }
+    });
     document.querySelectorAll('[data-offer]').forEach(link => link.addEventListener('click', () => {
       const projectField = contactForm.querySelector('[name="project"]');
       projectField.value = `Interesse in: ${link.dataset.offer}\n\n`;
+    }));
+    document.querySelectorAll('[data-product]').forEach(link => link.addEventListener('click', async event => {
+      event.preventDefault();
+      formStatus.textContent = 'Betaalroute wordt voorbereid...';
+      try {
+        const response = await fetch('/api/checkout', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ product: link.dataset.product }) });
+        const data = await response.json();
+        if (!response.ok || !data.url) throw new Error(data.error || 'Betaling is nog niet geconfigureerd.');
+        window.location.href = data.url;
+      } catch (error) {
+        formStatus.textContent = 'Online betaling wordt binnenkort geactiveerd. Je kunt de scan alvast aanvragen via het contactformulier.';
+        contactForm.querySelector('[name="project"]').value = `Interesse in: ${link.dataset.offer}\n\n`;
+        document.querySelector('#contact').scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth', block: 'start' });
+      }
     }));
     contactForm.addEventListener('submit', async event => {
       if (contactForm.elements.website.value) {

@@ -185,6 +185,155 @@ async function handleApiChat(req, res, body) {
   }
 }
 
+function auditHtml(html, url) {
+  const title = (html.match(/<title[^>]*>([\s\S]*?)<\/title>/i)?.[1] || '').replace(/<[^>]+>/g, '').trim();
+  const description = html.match(/<meta[^>]+name=["']description["'][^>]+content=["']([^"']*)["']/i)?.[1] || '';
+  const h1Count = (html.match(/<h1\b/gi) || []).length;
+  const images = html.match(/<img\b[^>]*>/gi) || [];
+  const missingAlt = images.filter(tag => !/\balt\s*=\s*["'][^"']*["']/i.test(tag)).length;
+  const visibleText = html.replace(/<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>|<[^>]+>/gi, ' ').replace(/\s+/g, ' ').trim();
+  const hasCallToAction = /(?:contact|contact opnemen|offerte|aanvragen|plan|boek|start|whatsapp|mailto:)/i.test(html);
+  const hasCanonical = /<link[^>]+rel=["']canonical["'][^>]*>/i.test(html);
+  const hasSocialPreview = /<meta[^>]+property=["']og:(?:title|description|image)["']/i.test(html);
+  const language = html.match(/<html[^>]+lang=["']([^"']+)["']/i)?.[1] || '';
+  const checks = [
+    { label: 'Veilige HTTPS-verbinding', pass: url.protocol === 'https:', detail: url.protocol === 'https:' ? 'Je website gebruikt HTTPS.' : 'Gebruik HTTPS voor vertrouwen en veiligheid.' },
+    { label: 'Duidelijke paginatitel', pass: title.length >= 20 && title.length <= 65, detail: title ? `Titel gevonden: “${title.slice(0, 80)}”` : 'Voeg een unieke title-tag toe.' },
+    { label: 'Meta description', pass: description.length >= 80 && description.length <= 170, detail: description ? 'Een meta description is aanwezig.' : 'Voeg een overtuigende meta description toe.' },
+    { label: 'Heldere hoofdkop', pass: h1Count === 1, detail: `${h1Count} H1-tag${h1Count === 1 ? '' : 's'} gevonden.` },
+    { label: 'Mobiele basis', pass: /<meta[^>]+name=["']viewport["']/i.test(html), detail: /<meta[^>]+name=["']viewport["']/i.test(html) ? 'Viewport-instelling is aanwezig.' : 'Voeg een mobiele viewport toe.' },
+    { label: 'Toegankelijke afbeeldingen', pass: !missingAlt, detail: missingAlt ? `${missingAlt} afbeelding${missingAlt === 1 ? '' : 'en'} zonder alt-tekst.` : 'Afbeeldingen hebben alt-teksten.' },
+    { label: 'Duidelijke vervolgstap', pass: hasCallToAction, detail: hasCallToAction ? 'Er is een zichtbare route naar contact of aanvraag.' : 'Voeg een duidelijke actie toe, zoals contact opnemen of een offerte aanvragen.' },
+    { label: 'Deelbaar op social media', pass: hasSocialPreview, detail: hasSocialPreview ? 'Open Graph-informatie is aanwezig.' : 'Voeg een social preview toe voor delen via WhatsApp en social media.' },
+    { label: 'Juiste taal ingesteld', pass: language.length >= 2, detail: language ? `Taal ingesteld als “${language}”.` : 'Stel de taal in op het html-element.' },
+    { label: 'Vindbare hoofdroute', pass: hasCanonical && visibleText.length >= 250, detail: hasCanonical && visibleText.length >= 250 ? 'Canonical en voldoende inhoud zijn aanwezig.' : 'Controleer canonical URL en inhoudelijke diepte van de pagina.' }
+  ];
+  return { url: url.href, score: Math.round((checks.filter(check => check.pass).length / checks.length) * 100), checks };
+}
+
+async function handleApiAudit(req, res, body) {
+  let target;
+  try {
+    target = new URL(safeText(body?.url).slice(0, 500));
+    if (!['http:', 'https:'].includes(target.protocol) || ['localhost', '127.0.0.1'].includes(target.hostname)) throw new Error('Ongeldige URL');
+    const response = await fetch(target, { redirect: 'follow', signal: AbortSignal.timeout(8000), headers: { 'User-Agent': 'MPX-Studio-Website-Review/1.0' } });
+    if (!response.ok) throw new Error('Website niet bereikbaar');
+    res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8' });
+    res.end(JSON.stringify(auditHtml((await response.text()).slice(0, 1000000), target)));
+  } catch (error) {
+    res.writeHead(400, { 'Content-Type': 'application/json; charset=utf-8' });
+    res.end(JSON.stringify({ error: 'De website kon nu niet worden opgehaald. Controleer de URL of vraag een handmatige review aan.' }));
+  }
+}
+
+function cleanContactValue(input, maxLength) {
+  return String(input || '').trim().slice(0, maxLength);
+}
+
+async function handleApiContact(req, res, body) {
+  try {
+    const payload = typeof body === 'string' ? JSON.parse(body || '{}') : (body || {});
+    const website = cleanContactValue(payload.website, 120);
+    if (website) {
+      res.writeHead(204, { 'Access-Control-Allow-Origin': req.headers.origin === 'http://localhost:4173' ? 'http://localhost:4173' : 'https://mpxstudio.nl' });
+      res.end();
+      return;
+    }
+
+    const proposal = {
+      name: cleanContactValue(payload.name, 120),
+      company: cleanContactValue(payload.company, 160),
+      email: cleanContactValue(payload.email, 240),
+      project: cleanContactValue(payload.project, 4000)
+    };
+
+    if (!proposal.name || !proposal.email || !proposal.project) {
+      res.writeHead(400, { 'Content-Type': 'application/json; charset=utf-8' });
+      res.end(JSON.stringify({ error: 'Vul naam, e-mailadres en projectomschrijving in.' }));
+      return;
+    }
+
+    if (!/^\S+@\S+\.\S+$/.test(proposal.email)) {
+      res.writeHead(400, { 'Content-Type': 'application/json; charset=utf-8' });
+      res.end(JSON.stringify({ error: 'Vul een geldig e-mailadres in.' }));
+      return;
+    }
+
+    if (!process.env.RESEND_API_KEY) {
+      res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8' });
+      res.end(JSON.stringify({ ok: true, localFallback: true }));
+      return;
+    }
+
+    const emailResponse = await fetch('https://api.resend.com/emails', {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        from: process.env.CONTACT_FROM || 'MPX Studio <onboarding@resend.dev>',
+        to: [process.env.CONTACT_TO || 'info@mpxstudio.nl'],
+        reply_to: proposal.email,
+        subject: `Nieuwe projectaanvraag${proposal.company ? ` · ${proposal.company}` : ''}`,
+        text: `Naam: ${proposal.name}\nBedrijf: ${proposal.company || '-'}\nE-mail: ${proposal.email}\n\nProject:\n${proposal.project}`
+      })
+    });
+
+    if (!emailResponse.ok) {
+      res.writeHead(502, { 'Content-Type': 'application/json; charset=utf-8' });
+      res.end(JSON.stringify({ error: 'Verzenden is tijdelijk niet gelukt.' }));
+      return;
+    }
+
+    res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8' });
+    res.end(JSON.stringify({ ok: true }));
+  } catch (error) {
+    res.writeHead(400, { 'Content-Type': 'application/json; charset=utf-8' });
+    res.end(JSON.stringify({ error: 'Ongeldige JSON in body' }));
+  }
+}
+
+async function handleApiCheckout(req, res, body) {
+  const products = {
+    audit: { name: 'MPX Website Performance Scan', description: 'Een concrete analyse van uitstraling, structuur, vertrouwen, conversie en mobiele ervaring.', amount: 9900 },
+    concept: { name: 'MPX Website Concept', description: 'Een scherpe nieuwe richting voor je homepage of belangrijkste pagina.', amount: 9900 }
+  };
+  const product = products[body?.product];
+  if (!product) {
+    res.writeHead(400, { 'Content-Type': 'application/json; charset=utf-8' });
+    res.end(JSON.stringify({ error: 'Onbekend product.' }));
+    return;
+  }
+  if (!process.env.STRIPE_SECRET_KEY) {
+    res.writeHead(503, { 'Content-Type': 'application/json; charset=utf-8' });
+    res.end(JSON.stringify({ error: 'Betaling is nog niet geconfigureerd.' }));
+    return;
+  }
+  const origin = req.headers.origin === 'http://localhost:4173' ? req.headers.origin : 'https://mpxstudio.nl';
+  const params = new URLSearchParams({
+    mode: 'payment',
+    success_url: `${origin}/?payment=success&product=${encodeURIComponent(body.product)}`,
+    cancel_url: `${origin}/#direct-starten`,
+    'line_items[0][quantity]': '1',
+    'line_items[0][price_data][currency]': 'eur',
+    'line_items[0][price_data][unit_amount]': String(product.amount),
+    'line_items[0][price_data][product_data][name]': product.name,
+    'line_items[0][price_data][product_data][description]': product.description,
+    billing_address_collection: 'auto'
+  });
+  try {
+    const response = await fetch('https://api.stripe.com/v1/checkout/sessions', { method: 'POST', headers: { Authorization: `Bearer ${process.env.STRIPE_SECRET_KEY}`, 'Content-Type': 'application/x-www-form-urlencoded' }, body: params });
+    if (!response.ok) throw new Error('Stripe checkout error');
+    const session = await response.json();
+    res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8' });
+    res.end(JSON.stringify({ url: session.url }));
+  } catch {
+    res.writeHead(502, { 'Content-Type': 'application/json; charset=utf-8' });
+    res.end(JSON.stringify({ error: 'Betaling kon niet worden gestart.' }));
+  }
+}
+
 async function readFileIfExists(filePath) {
   try {
     return await fs.readFile(filePath);
@@ -223,6 +372,54 @@ const server = http.createServer(async (req, res) => {
         res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
         res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
         await handleApiChat(req, res, parsed);
+      } catch {
+        res.writeHead(400, { 'Content-Type': 'application/json; charset=utf-8' });
+        res.end(JSON.stringify({ error: 'Ongeldige JSON in body' }));
+      }
+    });
+    return;
+  }
+
+  if (req.method === 'POST' && url.pathname === '/api/audit') {
+    let body = '';
+    req.on('data', (chunk) => { body += chunk; if (body.length > 10000) req.destroy(); });
+    req.on('end', async () => {
+      try {
+        res.setHeader('Access-Control-Allow-Origin', allowedOrigin);
+        const parsed = body ? JSON.parse(body) : {};
+        await handleApiAudit(req, res, parsed);
+      } catch {
+        res.writeHead(400, { 'Content-Type': 'application/json; charset=utf-8' });
+        res.end(JSON.stringify({ error: 'Ongeldige JSON in body' }));
+      }
+    });
+    return;
+  }
+
+  if (req.method === 'POST' && url.pathname === '/api/contact') {
+    let body = '';
+    req.on('data', (chunk) => { body += chunk; if (body.length > 20000) req.destroy(); });
+    req.on('end', async () => {
+      try {
+        res.setHeader('Access-Control-Allow-Origin', allowedOrigin);
+        const parsed = body ? JSON.parse(body) : {};
+        await handleApiContact(req, res, parsed);
+      } catch {
+        res.writeHead(400, { 'Content-Type': 'application/json; charset=utf-8' });
+        res.end(JSON.stringify({ error: 'Ongeldige JSON in body' }));
+      }
+    });
+    return;
+  }
+
+  if (req.method === 'POST' && url.pathname === '/api/checkout') {
+    let body = '';
+    req.on('data', (chunk) => { body += chunk; if (body.length > 10000) req.destroy(); });
+    req.on('end', async () => {
+      try {
+        res.setHeader('Access-Control-Allow-Origin', allowedOrigin);
+        const parsed = body ? JSON.parse(body) : {};
+        await handleApiCheckout(req, res, parsed);
       } catch {
         res.writeHead(400, { 'Content-Type': 'application/json; charset=utf-8' });
         res.end(JSON.stringify({ error: 'Ongeldige JSON in body' }));
