@@ -39,6 +39,22 @@
 .audit-result li b { display: block; color: #f5f4f0; font: 600 10px var(--label); letter-spacing: .04em; text-transform: uppercase; }
 .audit-result-cta { display: inline-flex; gap: 12px; align-items: center; border-bottom: 1px solid rgba(215, 193, 154, .55); padding-bottom: 8px; color: #fff; font: 10px var(--label); letter-spacing: .1em; text-transform: uppercase; }
 .audit-result-cta span { color: #d7c19a; font-size: 17px; }
+.growth-card-link span,
+.service-link span,
+.payment-option span,
+.audit-result-cta span { position: relative; display: inline-block; width: 18px; height: 18px; flex: 0 0 18px; font-size: 0; color: transparent; }
+.growth-card-link span::before,
+.service-link span::before,
+.payment-option span::before,
+.audit-result-cta span::before { content: ''; position: absolute; top: 8px; left: 1px; width: 13px; height: 1px; background: currentColor; transform: rotate(-45deg); transform-origin: right center; }
+.growth-card-link span::after,
+.service-link span::after,
+.payment-option span::after,
+.audit-result-cta span::after { content: ''; position: absolute; top: 2px; right: 1px; width: 8px; height: 8px; border-top: 1px solid currentColor; border-right: 1px solid currentColor; }
+.growth-card-link span { color: #9b8052; }
+.service-link span, .payment-option span { color: #a98f65; }
+.payment-option-paypal span { color: #d7c19a; }
+.audit-result-cta span { color: #d7c19a; }
 @media (max-width: 760px) {
   .audit-layout, .audit-result { grid-template-columns: 1fr; }
   .audit-layout { margin-top: 42px; gap: 34px; }
