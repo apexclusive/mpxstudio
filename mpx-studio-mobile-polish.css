@@ -54,17 +54,19 @@
 .demo-open { color: #d7c19a; }
 
 .intro-moon {
-  width: clamp(116px, 15vw, 178px) !important;
-  height: clamp(116px, 15vw, 178px) !important;
+  width: clamp(140px, 18vw, 178px) !important;
+  height: clamp(140px, 18vw, 178px) !important;
   margin: 10px 0 8px !important;
   background-image: linear-gradient(145deg,rgba(4,6,10,.02),rgba(4,6,10,.16)), url('https://images.unsplash.com/photo-1532693322450-2cb5c511067d?auto=format&fit=crop&w=900&q=90'), radial-gradient(circle at 32% 28%, rgba(247,245,235,.92) 0 2%, transparent 3%), radial-gradient(circle at 64% 38%, rgba(201,185,155,.38) 0 8%, transparent 9%), linear-gradient(145deg,#f4f2ea,#aaa9a5 58%,#5c6267) !important;
   background-size: cover, cover, auto, auto, auto !important;
   background-position: center, center, center, center, center !important;
   animation: mpx-moon-spin 5.4s linear infinite !important;
   opacity: 1 !important;
-  transform: scale(1) !important;
+  transform: scale(1);
+  transform-style: preserve-3d;
+  perspective: 700px;
 }
-.intro-moon::before { inset: -17px !important; border: 1px solid rgba(245,244,240,.28) !important; border-right-color: transparent !important; border-bottom-color: transparent !important; animation: mpx-moon-orbit 3.6s linear infinite !important; }
+.intro-moon::before { inset: -6px !important; border: 0 !important; background: conic-gradient(from -90deg, #d7c19a 0deg, #f5f4f0 var(--mpx-ring-progress), transparent var(--mpx-ring-progress), transparent 360deg) !important; -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 1px), #000 calc(100% - .5px)) !important; mask: radial-gradient(farthest-side, transparent calc(100% - 1px), #000 calc(100% - .5px)) !important; animation: mpx-ring-progress 5.6s linear forwards !important; }
 .intro-moon::after { inset: -17px !important; animation: mpx-moon-glow 3.6s linear infinite !important; }
 .studio-intro { animation: mpx-intro-exit 5.6s linear forwards !important; }
 .intro-line { display: none !important; }
@@ -73,7 +75,7 @@
 .intro-moon::after { display: none !important; }
 @keyframes mpx-ring-progress { from { --mpx-ring-progress: 0deg; } to { --mpx-ring-progress: 360deg; } }
 @keyframes mpx-intro-exit { 0%, 88% { opacity: 1; visibility: visible; } 100% { opacity: 0; visibility: hidden; } }
-@keyframes mpx-moon-spin { from { transform: scale(1) rotate(0deg) !important; } to { transform: scale(1) rotate(360deg) !important; } }
+@keyframes mpx-moon-spin { from { transform: scale(1) rotateY(0deg); } to { transform: scale(1) rotateY(360deg); } }
 @keyframes mpx-moon-orbit { to { transform: rotate(270deg); } }
 @keyframes mpx-moon-glow { 0%,100% { opacity: .35; transform: rotate(0deg); } 50% { opacity: .95; transform: rotate(180deg); } }
 @media (prefers-reduced-motion: reduce) {
