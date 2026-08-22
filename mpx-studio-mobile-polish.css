@@ -54,8 +54,8 @@
 .demo-open { color: #d7c19a; }
 
 .intro-moon {
-  width: clamp(140px, 18vw, 178px) !important;
-  height: clamp(140px, 18vw, 178px) !important;
+  width: clamp(116px, 15vw, 178px) !important;
+  height: clamp(116px, 15vw, 178px) !important;
   margin: 10px 0 8px !important;
   background-image: linear-gradient(145deg,rgba(4,6,10,.02),rgba(4,6,10,.16)), url('https://images.unsplash.com/photo-1532693322450-2cb5c511067d?auto=format&fit=crop&w=900&q=90'), radial-gradient(circle at 32% 28%, rgba(247,245,235,.92) 0 2%, transparent 3%), radial-gradient(circle at 64% 38%, rgba(201,185,155,.38) 0 8%, transparent 9%), linear-gradient(145deg,#f4f2ea,#aaa9a5 58%,#5c6267) !important;
   background-size: cover, cover, auto, auto, auto !important;
@@ -130,7 +130,7 @@
 .payment-secondary span::after { width: 7px !important; height: 7px !important; }
 
 .intro-moon::before {
-  inset: -6px !important;
+  inset: -1px !important;
   background: conic-gradient(from -90deg, #b9d9e8 0deg, #ffffff var(--mpx-ring-progress), transparent var(--mpx-ring-progress), transparent 360deg) !important;
   -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 1px), #000 calc(100% - .5px)) !important;
   mask: radial-gradient(farthest-side, transparent calc(100% - 1px), #000 calc(100% - .5px)) !important;
@@ -150,7 +150,7 @@
   animation: none !important;
 }
 .intro-moon::before {
-  inset: -6px !important;
+  inset: -1px !important;
   transform: none !important;
   background: conic-gradient(from -90deg, #b9d9e8 0deg, #ffffff var(--mpx-ring-progress), transparent var(--mpx-ring-progress), transparent 360deg) !important;
   animation: mpx-ring-progress 5.6s linear forwards !important;
