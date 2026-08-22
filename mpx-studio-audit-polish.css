@@ -42,18 +42,22 @@
 .growth-card-link span,
 .service-link span,
 .payment-option span,
+.payment-secondary span,
 .audit-result-cta span { position: relative; display: inline-block; width: 18px; height: 18px; flex: 0 0 18px; font-size: 0; color: transparent; }
 .growth-card-link span::before,
 .service-link span::before,
 .payment-option span::before,
+.payment-secondary span::before,
 .audit-result-cta span::before { content: ''; position: absolute; top: 8px; left: 1px; width: 13px; height: 1px; background: currentColor; transform: rotate(-45deg); transform-origin: right center; }
 .growth-card-link span::after,
 .service-link span::after,
 .payment-option span::after,
+.payment-secondary span::after,
 .audit-result-cta span::after { content: ''; position: absolute; top: 2px; right: 1px; width: 8px; height: 8px; border-top: 1px solid currentColor; border-right: 1px solid currentColor; }
 .growth-card-link span { color: #9b8052; }
 .service-link span, .payment-option span { color: #a98f65; }
 .payment-option-paypal span { color: #d7c19a; }
+.payment-secondary span { color: #a98f65; }
 .audit-result-cta span { color: #d7c19a; }
 @media (max-width: 760px) {
   .audit-layout, .audit-result { grid-template-columns: 1fr; }
@@ -89,3 +93,16 @@
   .bank-payment dl div { display: grid; gap: 5px; }
   .bank-payment dd { text-align: left; }
 }
+
+.growth-card-link span,
+.service-link span,
+.payment-option span,
+.payment-secondary span,
+.audit-result-cta span { font-size: 0 !important; }
+.growth-card-link span::before,
+.service-link span::before,
+.payment-option span::before,
+.payment-secondary span::before,
+.audit-result-cta span::before { background: #a98f65; }
+.payment-option-paypal span::before,
+.audit-result-cta span::before { background: #d7c19a; }
