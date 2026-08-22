@@ -67,8 +67,11 @@
 .intro-moon::before { inset: -17px !important; border: 1px solid rgba(245,244,240,.28) !important; border-right-color: transparent !important; border-bottom-color: transparent !important; animation: mpx-moon-orbit 3.6s linear infinite !important; }
 .intro-moon::after { inset: -17px !important; animation: mpx-moon-glow 3.6s linear infinite !important; }
 .studio-intro { animation: mpx-intro-exit 5.6s linear forwards !important; }
-.intro-line { width: min(220px, 42vw) !important; height: 1px !important; background: rgba(201,185,155,.32) !important; transform: scaleX(0); animation: mpx-loading-line 5.6s linear forwards !important; }
-@keyframes mpx-loading-line { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+.intro-line { display: none !important; }
+@property --mpx-ring-progress { syntax: '<angle>'; inherits: false; initial-value: 0deg; }
+.intro-moon::before { border: 0 !important; background: conic-gradient(from -90deg, #d7c19a 0deg, #f5f4f0 var(--mpx-ring-progress), transparent var(--mpx-ring-progress), transparent 360deg) !important; -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 1px), #000 calc(100% - .5px)) !important; mask: radial-gradient(farthest-side, transparent calc(100% - 1px), #000 calc(100% - .5px)) !important; animation: mpx-ring-progress 5.6s linear forwards !important; }
+.intro-moon::after { display: none !important; }
+@keyframes mpx-ring-progress { from { --mpx-ring-progress: 0deg; } to { --mpx-ring-progress: 360deg; } }
 @keyframes mpx-intro-exit { 0%, 88% { opacity: 1; visibility: visible; } 100% { opacity: 0; visibility: hidden; } }
 @keyframes mpx-moon-spin { from { transform: scale(1) rotate(0deg) !important; } to { transform: scale(1) rotate(360deg) !important; } }
 @keyframes mpx-moon-orbit { to { transform: rotate(270deg); } }
