@@ -114,11 +114,12 @@
       <div class="section-label">04 / Direct starten</div>
       <div class="growth-heading"><h2 id="growth-title">Maak je website<br><i>vandaag al sterker.</i></h2><p>Je hoeft niet meteen een volledig traject te starten. Kies een concrete eerste stap en ontvang snel duidelijkheid over wat er online beter kan.</p></div>
       <div class="growth-grid">
-        <article class="growth-card growth-card-featured"><span class="growth-card-number">01</span><div><span class="growth-kicker">Website Performance Scan</span><h3>Wat presteert je website?</h3><p>Ontvang een scherpe analyse van uitstraling, structuur, vertrouwen, conversie en mobiele ervaring. Met concrete verbeterpunten waar je direct mee verder kunt.</p><strong>Eenmalig € 99</strong></div><a class="growth-card-link" href="#contact" data-product="audit" data-offer="Website Performance Scan voor € 99">Naar veilige betaling <span>↗</span></a></article>
+        <article class="growth-card growth-card-featured"><span class="growth-card-number">01</span><div><span class="growth-kicker">Website Performance Scan</span><h3>Wat presteert je website?</h3><p>Ontvang een scherpe analyse van uitstraling, structuur, vertrouwen, conversie en mobiele ervaring. Met concrete verbeterpunten waar je direct mee verder kunt.</p><strong>Eenmalig € 99</strong></div><div class="payment-actions"><a class="growth-card-link" href="https://tikkie.me/pay/gdg6u2tptc948t674irl" target="_blank" rel="noreferrer" data-offer="Website Performance Scan voor € 99">Betaal via Tikkie <span>↗</span></a><a class="payment-secondary" href="#bankbetaling">Liever overboeken? <span>↓</span></a></div></article>
         <article class="growth-card"><span class="growth-card-number">02</span><div><span class="growth-kicker">Modern concept</span><h3>Vraag een nieuwe richting aan.</h3><p>Een modern conceptvoorstel voor je homepage of belangrijkste pagina. Ideaal als je wilt zien hoe jouw bedrijf online sterker kan overkomen.</p><strong>Concept vanaf € 99</strong></div><a class="growth-card-link" href="#contact" data-offer="Modern websiteconcept vanaf € 99">Vraag een concept aan <span>↗</span></a></article>
         <article class="growth-card"><span class="growth-card-number">03</span><div><span class="growth-kicker">Slimmer contact</span><h3>Laat bezoekers sneller kiezen.</h3><p>WhatsApp, chat, automatische afspraakplanning, leadkwalificatie en opvolging. We ontwerpen een contactroute die past bij jouw bedrijf.</p><strong>Op maat samengesteld</strong></div><a class="growth-card-link" href="#contact" data-offer="WhatsApp, chat en slimme afspraakplanning">Bespreek automatisering <span>↗</span></a></article>
       </div>
       <div class="growth-footer"><span>Geen verkooppraat. Eerst inzicht, dan een passende route.</span><a href="#fit-scan">Doe de gratis Project Fit Scan <span>↗</span></a></div>
+      <div class="bank-payment" id="bankbetaling"><div><span class="growth-kicker">Handmatige betaling</span><h3>Betaal via bankoverschrijving</h3><p>Maak €99 over met de omschrijving <strong>MPX Website Performance Scan</strong>. Stuur daarna je website en e-mailadres via het contactformulier. Na ontvangst starten we met de scan.</p></div><dl><div><dt>Rekeninghouder</dt><dd>M. Puts</dd></div><div><dt>IBAN</dt><dd><button type="button" class="copy-iban" data-iban="NL63ABNA0575335041">NL63 ABNA 0575 3350 41 <span>kopieer</span></button></dd></div><div><dt>Bedrag</dt><dd>€99,00</dd></div></dl></div>
     </section>
 
     <section class="audit-section" id="website-scan" aria-labelledby="audit-title">
@@ -452,6 +453,13 @@
       const projectField = contactForm.querySelector('[name="project"]');
       projectField.value = `Interesse in: ${link.dataset.offer}\n\n`;
     }));
+    document.querySelector('.copy-iban')?.addEventListener('click', async event => {
+      const button = event.currentTarget;
+      await navigator.clipboard?.writeText(button.dataset.iban);
+      const original = button.innerHTML;
+      button.innerHTML = `${button.dataset.iban.replace(/^(.{4})(.{4})(.{4})(.{4})(.{4})$/, '$1 $2 $3 $4 $5')} <span>gekopieerd</span>`;
+      window.setTimeout(() => { button.innerHTML = original; }, 1800);
+    });
     document.querySelectorAll('[data-product]').forEach(link => link.addEventListener('click', async event => {
       event.preventDefault();
       formStatus.textContent = 'Betaalroute wordt voorbereid...';
