@@ -26,6 +26,7 @@
 }
 
 .fit-progress[role="progressbar"] { min-width: 0; }
+.fit-question[hidden] { display: none; }
 .fit-result[hidden] { display: none; }
 .fit-options button,
 .chat-quick,

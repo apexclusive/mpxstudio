@@ -160,10 +160,11 @@
       <div class="fit-heading"><div><h2 id="fit-title">Ontdek wat jouw<br><i>volgende stap</i> nodig heeft.</h2></div><p>Beantwoord drie korte vragen. Je krijgt direct een heldere route voor jouw digitale project, zonder verkooppraat.</p></div>
       <div class="fit-tool" data-fit-tool>
         <div class="fit-progress" role="progressbar" aria-label="Voortgang Project Fit Scan" aria-valuemin="1" aria-valuemax="3" aria-valuenow="1"><span>01</span><div><i></i></div><small>30 sec</small></div>
-        <fieldset class="fit-question is-active" data-step="0"><legend>Wat wil je verbeteren?</legend><div class="fit-options"><button type="button" data-value="positionering">Sterker overkomen</button><button type="button" data-value="conversie">Meer kwalitatieve leads</button><button type="button" data-value="vernieuwing">Een volledig nieuwe website</button></div></fieldset>
-        <fieldset class="fit-question" data-step="1"><legend>Waar staat je bedrijf nu?</legend><div class="fit-options"><button type="button" data-value="groei">We groeien en willen opschalen</button><button type="button" data-value="premium">We zijn premium, maar online nog niet</button><button type="button" data-value="start">We starten iets nieuws</button></div></fieldset>
-        <fieldset class="fit-question" data-step="2"><legend>Wat moet de ervaring uitstralen?</legend><div class="fit-options"><button type="button" data-value="vertrouwen">Rust en vertrouwen</button><button type="button" data-value="karakter">Karakter en onderscheid</button><button type="button" data-value="impact">Impact en ambitie</button></div></fieldset>
-        <div class="fit-result" aria-live="polite" hidden><span class="fit-result-kicker">Jouw route</span><h3>Een premium digitale herpositionering.</h3><p>Je hebt vooral behoefte aan een heldere merkvertaling en een website die vertrouwen sneller omzet in contact.</p><a class="fit-result-link" href="#contact" data-offer="Project Fit Scan: premium digitale herpositionering">Bespreek deze route <span>↗</span></a></div>
+        <fieldset class="fit-question is-active" data-step="0" aria-hidden="false"><legend>Wat wil je verbeteren?</legend><div class="fit-options"><button type="button" data-value="positionering">Sterker overkomen</button><button type="button" data-value="conversie">Meer kwalitatieve leads</button><button type="button" data-value="vernieuwing">Een volledig nieuwe website</button></div></fieldset>
+        <fieldset class="fit-question" data-step="1" aria-hidden="true" hidden><legend>Waar staat je bedrijf nu?</legend><div class="fit-options"><button type="button" data-value="groei">We groeien en willen opschalen</button><button type="button" data-value="premium">We zijn premium, maar online nog niet</button><button type="button" data-value="start">We starten iets nieuws</button></div></fieldset>
+        <fieldset class="fit-question" data-step="2" aria-hidden="true" hidden><legend>Wat moet de ervaring uitstralen?</legend><div class="fit-options"><button type="button" data-value="vertrouwen">Rust en vertrouwen</button><button type="button" data-value="karakter">Karakter en onderscheid</button><button type="button" data-value="impact">Impact en ambitie</button></div></fieldset>
+        <p class="fit-announcement sr-only" id="fit-announcement" aria-live="polite"></p>
+        <div class="fit-result" aria-live="polite" aria-labelledby="fit-result-title" tabindex="-1" hidden><span class="fit-result-kicker">Jouw route</span><h3 id="fit-result-title">Een premium digitale herpositionering.</h3><p>Je hebt vooral behoefte aan een heldere merkvertaling en een website die vertrouwen sneller omzet in contact.</p><a class="fit-result-link" href="#contact" data-offer="Project Fit Scan: premium digitale herpositionering">Bespreek deze route <span>↗</span></a></div>
       </div>
     </section>
 
@@ -310,7 +311,12 @@
     const fitResultText = fitResult.querySelector('p');
     const fitProgressBar = document.querySelector('.fit-progress');
     const fitAnswers = [];
-    fitQuestions.forEach((question, index) => question.setAttribute('aria-hidden', String(index !== 0)));
+    const fitAnnouncement = document.querySelector('#fit-announcement');
+    fitQuestions.forEach((question, index) => {
+      const active = index === 0;
+      question.hidden = !active;
+      question.setAttribute('aria-hidden', String(!active));
+    });
     const fitRoutes = {
       positionering: ['Een premium digitale herpositionering.', 'Je hebt vooral behoefte aan een heldere merkvertaling en een website die vertrouwen sneller omzet in contact.'],
       conversie: ['Een conversiegerichte digitale ervaring.', 'De grootste kans ligt in een scherpere route van eerste indruk naar concrete aanvraag, met minder ruis en meer vertrouwen.'],
@@ -323,12 +329,16 @@
       question.classList.remove('is-active');
       const next = fitQuestions[step + 1];
       if (next) {
+        next.hidden = false;
         next.classList.add('is-active');
         next.setAttribute('aria-hidden', 'false');
         question.setAttribute('aria-hidden', 'true');
+        question.hidden = true;
         fitStep.textContent = String(step + 2).padStart(2, '0');
         fitProgress.style.width = `${((step + 2) / fitQuestions.length) * 100}%`;
         fitProgressBar.setAttribute('aria-valuenow', String(step + 2));
+        fitAnnouncement.textContent = `Vraag ${step + 2} van ${fitQuestions.length}. ${next.querySelector('legend').textContent}`;
+        next.querySelector('button')?.focus();
       } else {
         const route = fitRoutes[fitAnswers[0]] || fitRoutes.positionering;
         fitResultTitle.textContent = route[0];
@@ -338,6 +348,8 @@
         fitProgressBar.setAttribute('aria-valuenow', String(fitQuestions.length));
         fitResult.hidden = false;
         fitResult.classList.add('is-visible');
+        fitAnnouncement.textContent = 'De Project Fit Scan is klaar. Je persoonlijke route staat hieronder.';
+        fitResult.focus();
       }
     }));
     const chatToggle = document.querySelector('.chat-widget-toggle');
