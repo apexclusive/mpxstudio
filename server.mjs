@@ -364,6 +364,7 @@ const server = http.createServer(async (req, res) => {
 
   const requestOrigin = req.headers.origin;
   const allowedOrigin = requestOrigin === 'https://mpxstudio.nl' || requestOrigin === 'http://localhost:4173' ? requestOrigin : 'https://mpxstudio.nl';
+  res.setHeader('Vary', 'Origin');
   if (req.method === 'OPTIONS') {
     res.writeHead(204, {
       'Access-Control-Allow-Origin': allowedOrigin,
@@ -458,7 +459,7 @@ const server = http.createServer(async (req, res) => {
   const filePath = path.join(__dirname, requestPath);
   const safeFilePath = path.normalize(filePath);
   const rootPath = path.normalize(__dirname);
-  if (!safeFilePath.startsWith(rootPath)) {
+  if (safeFilePath !== rootPath && !safeFilePath.startsWith(`${rootPath}${path.sep}`)) {
     res.writeHead(403);
     res.end('Forbidden');
     return;
@@ -473,7 +474,8 @@ const server = http.createServer(async (req, res) => {
 
   const extension = path.extname(safeFilePath).toLowerCase();
   const contentType = MIME_TYPES[extension] || 'application/octet-stream';
-  res.writeHead(200, { 'Content-Type': contentType, 'Cache-Control': 'no-store' });
+  const cacheControl = extension === '.html' ? 'no-cache' : 'public, max-age=3600, stale-while-revalidate=86400';
+  res.writeHead(200, { 'Content-Type': contentType, 'Cache-Control': cacheControl });
   res.end(fileBuffer);
 });
 

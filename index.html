@@ -71,10 +71,13 @@
     .service-link{display:inline-flex;align-items:center;gap:10px;margin-top:22px;border-bottom:1px solid rgba(8,10,13,.24);padding-bottom:7px;color:#101922;font:9px var(--label);letter-spacing:.1em;text-transform:uppercase}
     .service-link span{color:#a98f65;font-size:16px}
     .service-link:hover{border-color:#a98f65}
+    .no-script-notice{padding:.85rem 1.25rem;background:#f5f4f0;color:#101922;text-align:center;font:500 .8rem/1.5 var(--label);letter-spacing:.03em}
+    .no-script-notice a{color:inherit;text-decoration:underline;text-underline-offset:3px}
   </style>
 </head>
 <body>
   <a class="skip-link" href="#main-content">Ga naar hoofdinhoud</a>
+  <noscript><div class="no-script-notice">Voor de interactieve demo’s, chat en quick scan is JavaScript nodig. Je kunt MPX Studio wel rechtstreeks bereiken via <a href="mailto:info@mpxstudio.nl">info@mpxstudio.nl</a>.</div></noscript>
   <script>try { if (sessionStorage.getItem('mpx-intro-seen') === '1') document.documentElement.classList.add('skip-studio-intro'); sessionStorage.setItem('mpx-intro-seen', '1'); } catch (error) {}</script>
   <div class="studio-intro" aria-hidden="true">
     <div class="intro-loader" aria-hidden="true">
@@ -114,7 +117,7 @@
       <div class="combined-intro"><div class="section-label">01 / Studio + live werk</div><h2>Een eerste indruk die <i>iets in beweging zet.</i></h2><p>MPX Studio vertaalt jouw expertise naar een digitale ervaring die helder voelt, onderscheidend oogt en bezoekers vanzelf naar de juiste volgende stap begeleidt.</p><a class="text-link dark" href="#aanpak">Ontdek onze werkwijze <span>↗</span></a></div>
       <div class="demo-layout">
         <div class="demo-copy"><div class="demo-heading"><span>02 / Live portfolio</span><p>Conceptdemo's gebaseerd op echte branches en doelen.</p></div><div class="demo-filters" role="tablist" aria-label="Filter projecten"><button class="demo-filter is-active" type="button" data-filter="featured">Uitgelicht · 3</button><button class="demo-filter" type="button" data-filter="all">Alle projecten</button><button class="demo-filter" type="button" data-filter="auto">Automotive</button><button class="demo-filter" type="button" data-filter="care">Zorg</button><button class="demo-filter" type="button" data-filter="wedding">Wedding</button><button class="demo-filter" type="button" data-filter="creative">Creatief</button></div><div class="demo-card-list" role="list" aria-label="Geselecteerde projecten"><button class="demo-card is-active" type="button" data-demo="usapi" data-category="featured all auto"><span class="demo-card-number">01</span><strong>USAPI</strong><small>Porsche specialist · Automotive</small><b>↗</b></button><button class="demo-card" type="button" data-demo="spauwen" data-category="featured all care"><span class="demo-card-number">02</span><strong>Tandarts Spauwen</strong><small>Familiepraktijk · Zorg</small><b>↗</b></button><button class="demo-card" type="button" data-demo="fotograaf" data-category="featured all creative"><span class="demo-card-number">03</span><strong>Fotograaf</strong><small>Zakelijke portretten · Creatief</small><b>↗</b></button><button class="demo-card" type="button" data-demo="wedding" data-category="all wedding"><span class="demo-card-number">04</span><strong>Wedding</strong><small>Editorial celebration · Wedding</small><b>↗</b></button><button class="demo-card" type="button" data-demo="wellness" data-category="all care"><span class="demo-card-number">05</span><strong>Wellness</strong><small>Rust, ritueel en ruimte · Zorg</small><b>↗</b></button></div></div>
-        <div class="demo-viewer"><div class="browser-bar"><span class="browser-dots"><i></i><i></i><i></i></span><span class="browser-url" id="demo-url">usapi.apexclusive.nl / live</span><a id="demo-open" href="https://usapi.apexclusive.nl/" target="_blank" rel="noreferrer">Open volledig ↗</a></div><div class="demo-frame-wrap"><iframe id="demo-frame" title="Live demo preview" data-src="https://usapi.apexclusive.nl/" loading="lazy" tabindex="0"></iframe><noscript><p class="demo-nojs">Live preview vereist JavaScript. <a href="https://usapi.apexclusive.nl/" target="_blank" rel="noreferrer">Open de demo volledig ↗</a></p></noscript><div class="demo-frame-status" id="demo-frame-status" role="status">Live demo wordt geladen zodra deze in beeld komt...</div><div class="demo-scroll-note">Live scroll preview <span>↕</span></div></div><p class="demo-disclaimer">Conceptdemo's gebaseerd op echte branches, doelen en bezoekersgedrag.</p></div>
+        <div class="demo-viewer"><div class="browser-bar"><span class="browser-dots"><i></i><i></i><i></i></span><span class="browser-url" id="demo-url">usapi.apexclusive.nl / live</span><a id="demo-open" href="https://usapi.apexclusive.nl/" target="_blank" rel="noopener noreferrer">Open volledig ↗</a></div><div class="demo-frame-wrap"><iframe id="demo-frame" title="Live demo preview" data-src="https://usapi.apexclusive.nl/" loading="lazy" referrerpolicy="no-referrer" tabindex="0"></iframe><noscript><p class="demo-nojs">Live preview vereist JavaScript. <a href="https://usapi.apexclusive.nl/" target="_blank" rel="noopener noreferrer">Open de demo volledig ↗</a></p></noscript><div class="demo-frame-status" id="demo-frame-status" role="status">Live demo wordt geladen zodra deze in beeld komt...</div><div class="demo-scroll-note">Live scroll preview <span>↕</span></div></div><p class="demo-disclaimer">Conceptdemo's gebaseerd op echte branches, doelen en bezoekersgedrag.</p></div>
       </div>
     </section>
     <section class="services-section" id="diensten">
@@ -276,8 +279,13 @@
     demoFrame.addEventListener('error', () => { demoFrameStatus.textContent = 'Preview tijdelijk niet beschikbaar · Open volledig'; demoFrameStatus.classList.remove('is-ready'); });
     function loadDemo(demoKey){
       const demo = demos[demoKey];
-      document.querySelectorAll('.demo-card').forEach(item => item.classList.toggle('is-active', item.dataset.demo === demoKey));
+      document.querySelectorAll('.demo-card').forEach(item => {
+        const active = item.dataset.demo === demoKey;
+        item.classList.toggle('is-active', active);
+        item.setAttribute('aria-pressed', String(active));
+      });
       demoUrl.textContent = demo.label;
+      demoFrame.title = `${demo.title} · live demo preview`;
       demoFrameStatus.textContent = demo.url ? 'Live demo wordt geladen...' : 'Repository preview';
       demoFrameStatus.classList.remove('is-ready');
       if (demo.url) { demoFrame.removeAttribute('srcdoc'); demoFrame.dataset.src = demo.url; if (demoFrameActivated) demoFrame.src = demo.url; demoOpen.href = demo.url; demoOpen.classList.remove('is-disabled'); }
@@ -505,8 +513,6 @@
     observer.observe(footer);
     const footerExplore = footer.querySelector('.footer-main > div:nth-child(2)');
     if (footerExplore) footerExplore.insertAdjacentHTML('beforeend', '<a href="#investering">Investering</a><a href="#faq">Veelgestelde vragen</a>');
-    const sectionLabels = ['01 / Studio + live werk', '03 / Wat we maken', '05 / Direct starten', '04 / Eerste website-inzicht', '06 / Onze aanpak', '07 / Waarom bedrijven kiezen', '08 / Achter MPX Studio', '09 / Project Fit Scan', '10 / Investering', '11 / Veelgestelde vragen', '12 / Jouw volgende stap'];
-    document.querySelectorAll('main > section .section-label').forEach((label, index) => { if (sectionLabels[index]) label.textContent = sectionLabels[index]; });
     const contactForm = document.querySelector('#contact-form');
     const formStatus = document.querySelector('#form-status');
     const auditForm = document.querySelector('#audit-form');
@@ -586,12 +592,19 @@
       formStatus.textContent = 'Aanvraag wordt verzonden...';
       try {
         const response = await fetch('/api/contact', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ name: formData.get('naam'), company: formData.get('bedrijf'), email: formData.get('email'), project: formData.get('project'), website: formData.get('website') }) });
-        if (!response.ok) throw new Error('fallback');
+        if (!response.ok) {
+          const data = await response.json().catch(() => ({}));
+          throw new Error(data.error || 'Verzenden is tijdelijk niet gelukt.');
+        }
         formStatus.textContent = 'Bedankt. We nemen zo snel mogelijk persoonlijk contact op.';
         contactForm.reset();
       } catch (error) {
-        formStatus.textContent = 'Je e-mailprogramma wordt geopend...';
-        window.location.href = `mailto:info@mpxstudio.nl?subject=${encodeURIComponent('Nieuwe projectaanvraag via MPX Studio')}&body=${encodeURIComponent(body)}`;
+        if (error.name === 'TypeError' || error.message === 'Failed to fetch') {
+          formStatus.textContent = 'Online verzenden lukt nu niet. Je e-mailprogramma wordt geopend...';
+          window.location.href = `mailto:info@mpxstudio.nl?subject=${encodeURIComponent('Nieuwe projectaanvraag via MPX Studio')}&body=${encodeURIComponent(body)}`;
+        } else {
+          formStatus.textContent = error.message || 'Verzenden is tijdelijk niet gelukt. Probeer het opnieuw.';
+        }
       } finally {
         submitButton.disabled = false;
       }
