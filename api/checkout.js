@@ -13,7 +13,7 @@ const products = {
 
 function originFor(req) {
   const origin = req.headers.origin;
-  return origin === 'http://localhost:4173' || origin === 'https://mpxstudio.nl' ? origin : 'https://mpxstudio.nl';
+  return origin === 'http://localhost:4173' || origin === 'https://mpxstudio.nl' || origin === 'https://www.mpxstudio.nl' ? origin : 'https://www.mpxstudio.nl';
 }
 
 export default async function handler(req, res) {

@@ -57,9 +57,10 @@
   width: clamp(150px, 19vw, 198px) !important;
   height: clamp(150px, 19vw, 198px) !important;
   margin: 10px 0 8px !important;
-  background-image: linear-gradient(145deg,rgba(4,6,10,.02),rgba(4,6,10,.16)), url('https://images.unsplash.com/photo-1532693322450-2cb5c511067d?auto=format&fit=crop&w=900&q=90'), radial-gradient(circle at 32% 28%, rgba(247,245,235,.92) 0 2%, transparent 3%), radial-gradient(circle at 64% 38%, rgba(201,185,155,.38) 0 8%, transparent 9%), linear-gradient(145deg,#f4f2ea,#aaa9a5 58%,#5c6267) !important;
-  background-size: cover, cover, auto, auto, auto !important;
-  background-position: center, center, center, center, center !important;
+  background-image: radial-gradient(circle at 29% 25%, rgba(255,255,255,.96) 0 4%, transparent 4.5%), radial-gradient(circle at 64% 35%, rgba(76,83,87,.32) 0 8%, transparent 8.8%), radial-gradient(circle at 40% 67%, rgba(78,84,87,.26) 0 6%, transparent 6.8%), radial-gradient(circle at 72% 72%, rgba(255,255,255,.2) 0 5%, transparent 5.8%), radial-gradient(circle at 31% 24%, #f3f1e8 0%, #b9bcba 47%, #656d72 78%, #3e474d 100%) !important;
+  background-size: 100% 100% !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
   animation: mpx-moon-roll 5.4s linear infinite !important;
   opacity: 1 !important;
   transform: scale(1);
@@ -70,7 +71,7 @@
 .studio-intro { perspective: 800px; }
 .intro-moon::before { inset: -6px !important; border: 0 !important; background: conic-gradient(from -90deg, #b9d9e8 0deg, #ffffff var(--mpx-ring-progress), transparent var(--mpx-ring-progress), transparent 360deg) !important; -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 1px), #000 calc(100% - .5px)) !important; mask: radial-gradient(farthest-side, transparent calc(100% - 1px), #000 calc(100% - .5px)) !important; transform: rotateY(calc(var(--mpx-moon-angle) * -1)) !important; animation: mpx-ring-progress 5.6s linear forwards !important; }
 .intro-moon::after { inset: -17px !important; animation: mpx-moon-glow 3.6s linear infinite !important; }
-.studio-intro { animation: mpx-intro-exit 5.6s linear forwards !important; }
+.studio-intro { animation: mpx-intro-exit 2.7s linear forwards !important; }
 .intro-line { display: none !important; }
 @property --mpx-ring-progress { syntax: '<angle>'; inherits: false; initial-value: 0deg; }
 @property --mpx-moon-angle { syntax: '<angle>'; inherits: true; initial-value: 0deg; }
@@ -131,8 +132,18 @@
 .payment-option span::after,
 .payment-secondary span::after { width: 7px !important; height: 7px !important; }
 
+.intro-moon {
+  background-image: radial-gradient(circle at 29% 25%, rgba(255,255,255,.96) 0 4%, transparent 4.5%), radial-gradient(circle at 64% 35%, rgba(76,83,87,.32) 0 8%, transparent 8.8%), radial-gradient(circle at 40% 67%, rgba(78,84,87,.26) 0 6%, transparent 6.8%), radial-gradient(circle at 72% 72%, rgba(255,255,255,.2) 0 5%, transparent 5.8%), radial-gradient(circle at 31% 24%, #f3f1e8 0%, #b9bcba 47%, #656d72 78%, #3e474d 100%) !important;
+  background-size: 100% 100% !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  box-shadow: inset -22px -14px 30px rgba(0,0,0,.48), inset 9px 7px 18px rgba(255,255,255,.18) !important;
+}
+
+.intro-moon::before { inset: -1px !important; }
+
 .intro-moon::before {
-  inset: 0 !important;
+  inset: -1px !important;
   background: conic-gradient(from -90deg, #b9d9e8 0deg, #ffffff var(--mpx-ring-progress), transparent var(--mpx-ring-progress), transparent 360deg) !important;
   -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 1px), #000 calc(100% - .5px)) !important;
   mask: radial-gradient(farthest-side, transparent calc(100% - 1px), #000 calc(100% - .5px)) !important;
@@ -198,7 +209,7 @@
 .chat-contact-link span::before,
 .growth-footer a span::before,
 .nav-contact b::before,
-.demo-card b::before { top: 2px !important; left: 2px !important; width: 9px !important; height: 9px !important; border: 1px solid currentColor !important; background: transparent !important; transform: rotate(45deg) !important; }
+.demo-card b::before { top: 4px !important; left: 4px !important; width: 6px !important; height: 6px !important; border: 0 !important; border-radius: 50%; background: currentColor !important; transform: none !important; }
 .text-link span::after,
 .growth-card-link span::after,
 .service-link span::after,
@@ -211,4 +222,4 @@
 .chat-contact-link span::after,
 .growth-footer a span::after,
 .nav-contact b::after,
-.demo-card b::after { top: 7px !important; right: 6px !important; width: 3px !important; height: 3px !important; border: 0 !important; border-radius: 50%; background: currentColor; }
+.demo-card b::after { display: none !important; }

@@ -2,6 +2,7 @@ import http from 'node:http';
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { callBedrock } from './lib/bedrock-provider.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -25,6 +26,14 @@ const MIME_TYPES = {
 
 function safeText(input) {
   return String(input || '').trim();
+}
+
+function isPrivateHostname(hostname) {
+  const normalized = hostname.toLowerCase().replace(/\.$/, '');
+  if (['localhost', 'localhost.localdomain', '127.0.0.1', '0.0.0.0', '::1'].includes(normalized)) return true;
+  if (/^(10|127)\./.test(normalized) || /^192\.168\./.test(normalized) || /^169\.254\./.test(normalized)) return true;
+  const private172 = normalized.match(/^172\.(\d+)\./);
+  return Boolean(private172 && Number(private172[1]) >= 16 && Number(private172[1]) <= 31);
 }
 
 function normalizeMessages(input) {
@@ -156,7 +165,7 @@ async function callOpenAi(messages, brand) {
 async function handleApiChat(req, res, body) {
   try {
     const messages = normalizeMessages(body?.messages);
-    if (!messages.length) {
+    if (!messages.length || messages.at(-1)?.role !== 'user') {
       res.writeHead(400, { 'Content-Type': 'application/json; charset=utf-8' });
       res.end(JSON.stringify({ error: 'Geen geldige berichten' }));
       return;
@@ -166,10 +175,18 @@ async function handleApiChat(req, res, body) {
     let reply = null;
 
     try {
-      reply = await callOpenAi(messages, brand);
+      reply = await callBedrock(messages, brand === 'apex' ? 'apex' : 'mpx');
     } catch (error) {
-      console.error('OpenAI error:', error.message);
-      reply = null;
+      console.error('Bedrock error:', error.message);
+    }
+
+    if (!reply) {
+      try {
+        reply = await callOpenAi(messages, brand);
+      } catch (error) {
+        console.error('OpenAI error:', error.message);
+        reply = null;
+      }
     }
 
     if (!reply) {
@@ -215,7 +232,7 @@ async function handleApiAudit(req, res, body) {
   let target;
   try {
     target = new URL(safeText(body?.url).slice(0, 500));
-    if (!['http:', 'https:'].includes(target.protocol) || ['localhost', '127.0.0.1'].includes(target.hostname)) throw new Error('Ongeldige URL');
+    if (!['http:', 'https:'].includes(target.protocol) || target.username || target.password || isPrivateHostname(target.hostname)) throw new Error('Ongeldige URL');
     const response = await fetch(target, { redirect: 'follow', signal: AbortSignal.timeout(8000), headers: { 'User-Agent': 'MPX-Studio-Website-Review/1.0' } });
     if (!response.ok) throw new Error('Website niet bereikbaar');
     res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8' });
@@ -356,6 +373,11 @@ const server = http.createServer(async (req, res) => {
     res.end();
     return;
   }
+
+  res.setHeader('X-Content-Type-Options', 'nosniff');
+  res.setHeader('X-Frame-Options', 'SAMEORIGIN');
+  res.setHeader('Referrer-Policy', 'strict-origin-when-cross-origin');
+  res.setHeader('Permissions-Policy', 'camera=(), microphone=(), geolocation=()');
 
   if (req.method === 'POST' && url.pathname === '/api/chat') {
     let body = '';
