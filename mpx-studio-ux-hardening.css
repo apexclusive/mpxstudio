@@ -40,6 +40,27 @@
   overscroll-behavior: contain;
 }
 
+/* Keep below-the-fold sections out of the initial rendering path without changing layout. */
+main > section:not(.hero) {
+  content-visibility: auto;
+  contain-intrinsic-size: 800px;
+}
+
+.demo-nojs {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  color: #c9b99b;
+  text-align: center;
+}
+
+.demo-nojs a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 @media (max-width: 760px) {
   .site-nav {
     max-height: calc(100dvh - 72px);
