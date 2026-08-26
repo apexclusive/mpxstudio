@@ -61,6 +61,7 @@
   <link rel="stylesheet" href="mpx-studio-hero-clear.css">
   <link rel="stylesheet" href="mpx-studio-audit-polish.css">
   <link rel="stylesheet" href="mpx-studio-mobile-polish.css">
+  <link rel="stylesheet" href="mpx-studio-ux-hardening.css">
   <style>
     .skip-link{position:fixed;left:1rem;top:1rem;z-index:10001;transform:translateY(-180%);padding:.75rem 1rem;background:#f5f4f0;color:#101922;font:600 .75rem/1 var(--label);letter-spacing:.04em;transition:transform .2s ease}
     .skip-link:focus{transform:none}
@@ -155,11 +156,11 @@
       <div class="section-label">09 / Project Fit Scan</div>
       <div class="fit-heading"><div><h2 id="fit-title">Ontdek wat jouw<br><i>volgende stap</i> nodig heeft.</h2></div><p>Beantwoord drie korte vragen. Je krijgt direct een heldere route voor jouw digitale project, zonder verkooppraat.</p></div>
       <div class="fit-tool" data-fit-tool>
-        <div class="fit-progress"><span>01</span><div><i></i></div><small>30 sec</small></div>
+        <div class="fit-progress" role="progressbar" aria-label="Voortgang Project Fit Scan" aria-valuemin="1" aria-valuemax="3" aria-valuenow="1"><span>01</span><div><i></i></div><small>30 sec</small></div>
         <fieldset class="fit-question is-active" data-step="0"><legend>Wat wil je verbeteren?</legend><div class="fit-options"><button type="button" data-value="positionering">Sterker overkomen</button><button type="button" data-value="conversie">Meer kwalitatieve leads</button><button type="button" data-value="vernieuwing">Een volledig nieuwe website</button></div></fieldset>
         <fieldset class="fit-question" data-step="1"><legend>Waar staat je bedrijf nu?</legend><div class="fit-options"><button type="button" data-value="groei">We groeien en willen opschalen</button><button type="button" data-value="premium">We zijn premium, maar online nog niet</button><button type="button" data-value="start">We starten iets nieuws</button></div></fieldset>
         <fieldset class="fit-question" data-step="2"><legend>Wat moet de ervaring uitstralen?</legend><div class="fit-options"><button type="button" data-value="vertrouwen">Rust en vertrouwen</button><button type="button" data-value="karakter">Karakter en onderscheid</button><button type="button" data-value="impact">Impact en ambitie</button></div></fieldset>
-        <div class="fit-result" aria-live="polite"><span class="fit-result-kicker">Jouw route</span><h3>Een premium digitale herpositionering.</h3><p>Je hebt vooral behoefte aan een heldere merkvertaling en een website die vertrouwen sneller omzet in contact.</p><a class="fit-result-link" href="#contact" data-offer="Project Fit Scan: premium digitale herpositionering">Bespreek deze route <span>↗</span></a></div>
+        <div class="fit-result" aria-live="polite" hidden><span class="fit-result-kicker">Jouw route</span><h3>Een premium digitale herpositionering.</h3><p>Je hebt vooral behoefte aan een heldere merkvertaling en een website die vertrouwen sneller omzet in contact.</p><a class="fit-result-link" href="#contact" data-offer="Project Fit Scan: premium digitale herpositionering">Bespreek deze route <span>↗</span></a></div>
       </div>
     </section>
 
@@ -182,22 +183,45 @@
       </div>
     </section>
 
-    <section class="contact-section" id="contact"><div class="contact-top"><div class="section-label">12 / Jouw volgende stap</div><p>Een premium website begint met een helder gesprek.</p></div><h2>Start een<br><i>vrijblijvende kennismaking.</i></h2><form class="contact-form" id="contact-form" action="#" method="post"><label>Naam<input type="text" name="naam" autocomplete="name" required></label><label>Bedrijf<input type="text" name="bedrijf" autocomplete="organization"></label><label>E-mailadres<input type="email" name="email" autocomplete="email" required></label><label>Vertel kort over je project<textarea name="project" rows="4" required></textarea></label><label class="form-trap" aria-hidden="true">Website<input type="text" name="website" tabindex="-1" autocomplete="off" aria-label="Website"></label><button class="form-submit" type="submit">Start een vrijblijvend gesprek <span>↗</span></button><p class="form-status" id="form-status" role="status" aria-live="polite"></p></form></section>
+    <section class="contact-section" id="contact"><div class="contact-top"><div class="section-label">12 / Jouw volgende stap</div><p>Een premium website begint met een helder gesprek.</p></div><h2>Start een<br><i>vrijblijvende kennismaking.</i></h2><form class="contact-form" id="contact-form" action="mailto:info@mpxstudio.nl" method="post" enctype="text/plain"><label for="contact-name">Naam<input id="contact-name" type="text" name="naam" autocomplete="name" required></label><label for="contact-company">Bedrijf<input id="contact-company" type="text" name="bedrijf" autocomplete="organization"></label><label for="contact-email">E-mailadres<input id="contact-email" type="email" name="email" autocomplete="email" required></label><label for="contact-project">Vertel kort over je project<textarea id="contact-project" name="project" rows="4" required aria-describedby="contact-help"></textarea><small id="contact-help">Deel doel, timing of een link als je die al hebt.</small></label><label class="form-trap" aria-hidden="true">Website<input type="text" name="website" tabindex="-1" autocomplete="off" aria-label="Website"></label><button class="form-submit" type="submit">Start een vrijblijvend gesprek <span>↗</span></button><p class="form-status" id="form-status" role="status" aria-live="polite"></p></form></section>
   </main>
   <a class="whatsapp-float" href="https://wa.me/31624735939?text=Hallo%20MPX%20Studio%2C%20ik%20wil%20graag%20kennismaken." target="_blank" rel="noreferrer" aria-label="Start een gesprek via WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.1 3.9A10.1 10.1 0 0 0 3.2 15.8L2 22l6.3-1.7A10.1 10.1 0 1 0 20.1 3.9Zm-8 16.2a8.4 8.4 0 0 1-4.3-1.2l-.3-.2-3.7 1 1-3.6-.2-.4a8.4 8.4 0 1 1 7.5 4.4Zm4.6-6.3c-.3-.2-1.8-.9-2-.9-.3-.1-.5-.2-.7.2l-.7.9c-.2.3-.4.3-.7.1-1.8-.9-3-1.7-4.1-3.8-.3-.5.3-.5.8-1.6.1-.3 0-.5-.1-.7l-.6-1.5c-.2-.4-.4-.4-.7-.4h-.6c-.2 0-.6.1-.9.4-.3.3-1.1 1.1-1.1 2.7s1.1 3.1 1.3 3.3c.2.2 2.1 3.3 5.1 4.5 1.9.8 2.7.8 3.6.7.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.2-.3-.3-.6-.4Z"/></svg><span>WhatsApp</span></a>
-  <div class="chat-widget"><button class="chat-widget-toggle" type="button" aria-expanded="false" aria-controls="chat-window"><span class="chat-pulse"></span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.5a7.5 7.5 0 0 1-8 7.5 8.4 8.4 0 0 1-3.2-.6L4 20l1.6-3.6A7.3 7.3 0 0 1 4 11.5 7.5 7.5 0 0 1 12 4a7.5 7.5 0 0 1 8 7.5Z"/></svg><span class="chat-widget-label">Chat met MPX</span></button><div class="chat-window" id="chat-window" role="dialog" aria-modal="true" aria-labelledby="chat-title" aria-live="polite" hidden><div class="chat-window-head"><div><strong id="chat-title">MPX Concierge</strong><small>Ontdek in 30 seconden welke route bij jouw bedrijf past.</small></div><button class="chat-close" type="button" aria-label="Sluit chat">×</button></div><div class="chat-window-body" id="chat-messages"><div class="chat-bubble bot">Waar wil je als eerste resultaat mee behalen?</div><button class="chat-quick" type="button" data-quick="Ik wil weten of MPX bij mijn bedrijf past">Past MPX bij mijn bedrijf?</button><button class="chat-quick" type="button" data-quick="Wat kost een premium website voor mijn bedrijf?">Wat kost een premium website?</button><button class="chat-quick" type="button" data-quick="Ik wil meer kwalitatieve aanvragen">Meer kwalitatieve aanvragen</button><a class="chat-whatsapp-link" id="chat-whatsapp-link" href="https://wa.me/31624735939" target="_blank" rel="noreferrer" hidden>Direct verder via WhatsApp <span>↗</span></a><a class="chat-contact-link" id="chat-contact-link" href="#contact" hidden>Plan een kennismaking <span>↗</span></a></div><form class="chat-window-input" id="chat-form"><input id="chat-input" type="text" placeholder="Vertel over je project..." aria-label="Vertel over je project" autocomplete="off"><button type="submit" aria-label="Verstuur bericht">↗</button></form></div></div>
+  <div class="chat-widget"><button class="chat-widget-toggle" type="button" aria-expanded="false" aria-controls="chat-window"><span class="chat-pulse"></span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.5a7.5 7.5 0 0 1-8 7.5 8.4 8.4 0 0 1-3.2-.6L4 20l1.6-3.6A7.3 7.3 0 0 1 4 11.5 7.5 7.5 0 0 1 12 4a7.5 7.5 0 0 1 8 7.5Z"/></svg><span class="chat-widget-label">Chat met MPX</span></button><div class="chat-window" id="chat-window" role="dialog" aria-modal="true" aria-labelledby="chat-title" hidden><div class="chat-window-head"><div><strong id="chat-title">MPX Concierge</strong><small>Ontdek in 30 seconden welke route bij jouw bedrijf past.</small></div><button class="chat-close" type="button" aria-label="Sluit chat">×</button></div><div class="chat-window-body" id="chat-messages" role="log" aria-live="polite" aria-relevant="additions"><div class="chat-bubble bot">Waar wil je als eerste resultaat mee behalen?</div><button class="chat-quick" type="button" data-quick="Ik wil weten of MPX bij mijn bedrijf past">Past MPX bij mijn bedrijf?</button><button class="chat-quick" type="button" data-quick="Wat kost een premium website voor mijn bedrijf?">Wat kost een premium website?</button><button class="chat-quick" type="button" data-quick="Ik wil meer kwalitatieve aanvragen">Meer kwalitatieve aanvragen</button><a class="chat-whatsapp-link" id="chat-whatsapp-link" href="https://wa.me/31624735939" target="_blank" rel="noreferrer" hidden>Direct verder via WhatsApp <span>↗</span></a><a class="chat-contact-link" id="chat-contact-link" href="#contact" hidden>Plan een kennismaking <span>↗</span></a></div><form class="chat-window-input" id="chat-form"><label class="sr-only" for="chat-input">Vertel over je project</label><input id="chat-input" name="message" type="text" placeholder="Vertel over je project..." autocomplete="off" required><button type="submit" aria-label="Verstuur bericht">↗</button></form></div></div>
   <footer class="site-footer"><div class="footer-main"><div class="footer-brand"><a class="wordmark" href="#top"><span>MPX</span><i></i><em>Studio</em></a><p>Maastricht · Nederland</p></div><div><h4>Verkennen</h4><a href="#demos">Demo’s</a><a href="#diensten">Diensten</a><a href="#aanpak">Aanpak</a><a href="#over-mpx">Founder</a><a href="#fit-scan">Project Fit Scan</a><a href="webdesign-maastricht.html">Webdesign Maastricht</a></div><div><h4>Contact</h4><a href="mailto:info@mpxstudio.nl">info@mpxstudio.nl</a><a href="https://wa.me/31624735939" target="_blank" rel="noreferrer">WhatsApp</a><a href="https://www.linkedin.com/in/martijn-puts-31719b423/" target="_blank" rel="noreferrer">LinkedIn · Martijn Puts</a><a href="https://www.instagram.com/mpxstudio.nl/" target="_blank" rel="noreferrer">Instagram · MPX Studio</a><a href="#contact">Start een gesprek</a></div></div><div class="footer-bottom"><span>© 2026 MPX Studio</span><a href="privacy.html">Privacy</a><span>Designed with intent · Built for trust</span></div></footer>
   <script>
     const toggle = document.querySelector('.menu-toggle');
     const nav = document.querySelector('.site-nav');
     const header = document.querySelector('.site-header');
-    function setMenu(open){ toggle.setAttribute('aria-expanded', String(open)); nav.classList.toggle('is-open', open); document.body.classList.toggle('menu-open', open); if (open) nav.querySelector('a[href="#demos"]')?.focus(); else toggle.focus(); }
+    const menuQuery = window.matchMedia('(max-width: 760px)');
+    let menuReturnFocus = toggle;
+    function setMenu(open){
+      toggle.setAttribute('aria-expanded', String(open));
+      toggle.setAttribute('aria-label', open ? 'Sluit menu' : 'Open menu');
+      nav.classList.toggle('is-open', open);
+      document.body.classList.toggle('menu-open', open);
+      nav.toggleAttribute('inert', menuQuery.matches && !open);
+      if (open) { menuReturnFocus = document.activeElement; nav.querySelector('a[href="#demos"]')?.focus(); }
+      else { (menuReturnFocus instanceof HTMLElement ? menuReturnFocus : toggle).focus(); }
+    }
+    nav.toggleAttribute('inert', menuQuery.matches);
+    menuQuery.addEventListener('change', event => {
+      nav.toggleAttribute('inert', event.matches && toggle.getAttribute('aria-expanded') !== 'true');
+      if (!event.matches && toggle.getAttribute('aria-expanded') === 'true') setMenu(false);
+    });
     toggle.addEventListener('click', () => setMenu(toggle.getAttribute('aria-expanded') !== 'true'));
     nav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => setMenu(false)));
     document.addEventListener('keydown', event => {
-      if (event.key !== 'Escape') return;
-      if (toggle.getAttribute('aria-expanded') === 'true') setMenu(false);
-      if (chatToggle?.getAttribute('aria-expanded') === 'true') setChat(false);
+      if (event.key === 'Escape') {
+        if (toggle.getAttribute('aria-expanded') === 'true') setMenu(false);
+        if (chatToggle?.getAttribute('aria-expanded') === 'true') setChat(false);
+        return;
+      }
+      if (event.key !== 'Tab' || !menuQuery.matches || toggle.getAttribute('aria-expanded') !== 'true') return;
+      const focusable = [...nav.querySelectorAll('a[href], button:not([disabled])')];
+      if (!focusable.length) return;
+      const first = focusable[0], last = focusable[focusable.length - 1];
+      if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+      else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
     });
     let lastScroll = window.scrollY;
     let anchorNavigation = false;
@@ -268,7 +292,9 @@
     const fitResult = document.querySelector('.fit-result');
     const fitResultTitle = fitResult.querySelector('h3');
     const fitResultText = fitResult.querySelector('p');
+    const fitProgressBar = document.querySelector('.fit-progress');
     const fitAnswers = [];
+    fitQuestions.forEach((question, index) => question.setAttribute('aria-hidden', String(index !== 0)));
     const fitRoutes = {
       positionering: ['Een premium digitale herpositionering.', 'Je hebt vooral behoefte aan een heldere merkvertaling en een website die vertrouwen sneller omzet in contact.'],
       conversie: ['Een conversiegerichte digitale ervaring.', 'De grootste kans ligt in een scherpere route van eerste indruk naar concrete aanvraag, met minder ruis en meer vertrouwen.'],
@@ -282,14 +308,19 @@
       const next = fitQuestions[step + 1];
       if (next) {
         next.classList.add('is-active');
+        next.setAttribute('aria-hidden', 'false');
+        question.setAttribute('aria-hidden', 'true');
         fitStep.textContent = String(step + 2).padStart(2, '0');
         fitProgress.style.width = `${((step + 2) / fitQuestions.length) * 100}%`;
+        fitProgressBar.setAttribute('aria-valuenow', String(step + 2));
       } else {
         const route = fitRoutes[fitAnswers[0]] || fitRoutes.positionering;
         fitResultTitle.textContent = route[0];
         fitResultText.textContent = route[1];
         fitProgress.style.width = '100%';
         fitStep.textContent = 'klaar';
+        fitProgressBar.setAttribute('aria-valuenow', String(fitQuestions.length));
+        fitResult.hidden = false;
         fitResult.classList.add('is-visible');
       }
     }));
@@ -327,7 +358,24 @@
       if (!isThinking && indicator) indicator.remove();
       chatMessages.scrollTop = chatMessages.scrollHeight;
     }
-    function setChat(open){ chatToggle.setAttribute('aria-expanded', String(open)); chatWindow.classList.toggle('is-open', open); chatWindow.hidden = !open; if (open) setTimeout(() => chatInput.focus(), 120); else chatToggle.focus(); }
+    let chatReturnFocus = chatToggle;
+    function setChat(open){
+      chatToggle.setAttribute('aria-expanded', String(open));
+      chatToggle.setAttribute('aria-label', open ? 'Sluit chat' : 'Open chat');
+      chatWindow.classList.toggle('is-open', open);
+      chatWindow.hidden = !open;
+      document.body.classList.toggle('chat-open', open);
+      if (open) { chatReturnFocus = document.activeElement; setTimeout(() => chatInput.focus(), 120); }
+      else { (chatReturnFocus instanceof HTMLElement ? chatReturnFocus : chatToggle).focus(); }
+    }
+    document.addEventListener('keydown', event => {
+      if (event.key !== 'Tab' || chatWindow.hidden) return;
+      const focusable = [...chatWindow.querySelectorAll('button:not([disabled]), input:not([disabled]), a[href]')];
+      if (!focusable.length) return;
+      const first = focusable[0], last = focusable[focusable.length - 1];
+      if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+      else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+    });
     function updateWhatsAppLink(){
       const summary = chatHistory.slice(-4).map(item => `${item.role === 'user' ? 'Bezoeker' : 'MPX'}: ${item.content}`).join('\n');
       chatWhatsappLink.href = `https://wa.me/31624735939?text=${encodeURIComponent(`Hallo MPX Studio, ik wil graag verder praten. Dit was mijn gesprek:\n\n${summary}`)}`;

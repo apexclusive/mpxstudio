@@ -1,0 +1,80 @@
+/* Interaction hardening: preserve the visual system while making keyboard and small-screen paths reliable. */
+:where(button, a, input, textarea, summary):focus-visible {
+  outline: 2px solid #d7c19a;
+  outline-offset: 4px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.contact-form small {
+  display: block;
+  margin-top: 3px;
+  color: #69747b;
+  font: 11px/1.5 var(--sans);
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.fit-progress[role="progressbar"] { min-width: 0; }
+.fit-result[hidden] { display: none; }
+.fit-options button,
+.chat-quick,
+.chat-window-input button,
+.menu-toggle { min-height: 44px; }
+
+.chat-window {
+  max-height: min(680px, calc(100dvh - 104px));
+}
+
+.chat-window-body {
+  overscroll-behavior: contain;
+}
+
+@media (max-width: 760px) {
+  .site-nav {
+    max-height: calc(100dvh - 72px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+
+  .chat-widget {
+    right: max(12px, env(safe-area-inset-right));
+    bottom: max(12px, env(safe-area-inset-bottom));
+  }
+
+  .chat-window {
+    right: 0;
+    width: min(390px, calc(100vw - 24px));
+    max-height: calc(100dvh - 92px);
+  }
+
+  .chat-window-input {
+    padding-bottom: max(12px, env(safe-area-inset-bottom));
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}
