@@ -100,3 +100,41 @@ main > section:not(.hero) {
     transition-duration: .01ms !important;
   }
 }
+
+
+/* ─────────────────────────────────────────────────────────────
+   Twee overlap-defecten in de hero, gemeten op 1280x900
+   ───────────────────────────────────────────────────────────── */
+
+/* 1. De vaste WhatsApp-knop (links onder) liep over de locatietekst in de
+      hero-footer heen en dekte de "M" van Maastricht af (8px overlap).
+      De tekst wijkt nu uit zodat beide volledig leesbaar blijven. */
+/* De knop is 50px breed en staat op left:22px, dus zijn rechterrand ligt op 72px.
+   De tekst moet op elke breedte op minstens 92px beginnen. Omdat .hero-footer zelf
+   een variabele left heeft, wordt de padding daarop berekend in plaats van vast. */
+.hero-footer {
+  padding-left: max(0px, calc(92px - clamp(24px, 5vw, 72px)));
+}
+
+/* Onder 760px staat de knop op left:14px, dus rechterrand op 64px. */
+@media (max-width: 760px) {
+  .hero-footer {
+    padding-left: max(0px, calc(84px - 24px));
+  }
+}
+
+/* 2. De scroll-percentage indicator stond rechts onderin de header en kwam
+      daardoor onder de "Bespreek je project"-knop uit, wat als losse tekst
+      overkwam. Hij staat nu links, onder het wordmark, waar geen enkel
+      element mee kan botsen. */
+.scroll-status {
+  right: auto;
+  left: clamp(24px, 5vw, 72px);
+}
+
+@media (max-width: 760px) {
+  .scroll-status {
+    right: auto;
+    left: 24px;
+  }
+}
