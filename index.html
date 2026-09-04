@@ -1880,6 +1880,49 @@ Bekijk online: https://www.mpxstudio.nl/#roi-calculator`;
       updateConfigurator();
     }));
 
+
+    function parseConfiguratorParams() {
+      try {
+        const hash = window.location.hash || "";
+        const search = window.location.search || "";
+        const fullUrlStr = hash.includes("?") ? hash.split("?")[1] : (search.startsWith("?") ? search.slice(1) : search);
+        if (!fullUrlStr) return;
+        const params = new URLSearchParams(fullUrlStr);
+        const cfg = params.get("cfg");
+        if (cfg) {
+          const parts = cfg.split(",");
+          parts.forEach(part => {
+            const [k, v] = part.split(":");
+            if (k === "t" && configTypePills[Number(v)]) {
+              configTypePills.forEach(p => p.classList.remove("is-selected"));
+              configTypePills[Number(v)].classList.add("is-selected");
+            } else if (k === "s" && configScopePills[Number(v)]) {
+              configScopePills.forEach(p => p.classList.remove("is-selected"));
+              configScopePills[Number(v)].classList.add("is-selected");
+            } else if (k === "r" && configRetainerPills[Number(v)]) {
+              configRetainerPills.forEach(p => p.classList.remove("is-selected"));
+              configRetainerPills[Number(v)].classList.add("is-selected");
+            } else if (k === "a") {
+              const indices = v.split("-").map(Number);
+              configAddonsPills.forEach((p, idx) => {
+                if (indices.includes(idx)) p.classList.add("is-selected");
+                else p.classList.remove("is-selected");
+              });
+            }
+          });
+        }
+      } catch (e) {
+        console.warn("Config param parse error:", e);
+      }
+    }
+
+    parseConfiguratorParams();
+    window.addEventListener("hashchange", () => {
+      parseConfiguratorParams();
+      updateConfigurator();
+    });
+
+
     updateConfigurator();
 
     const configPrintBtn = document.getElementById('config-print-btn');
@@ -2440,8 +2483,18 @@ Bekijk online: https://www.mpxstudio.nl/#roi-calculator`;
     const configShareFeedback = document.getElementById('config-share-feedback');
     if (configShareTeamBtn) {
       configShareTeamBtn.addEventListener('click', async () => {
+
+        let tIdx = 0, sIdx = 0, rIdx = 0;
+        configTypePills.forEach((p, i) => { if (p.classList.contains('is-selected')) tIdx = i; });
+        configScopePills.forEach((p, i) => { if (p.classList.contains('is-selected')) sIdx = i; });
+        configRetainerPills.forEach((p, i) => { if (p.classList.contains('is-selected')) rIdx = i; });
+        const aIndices = [];
+        configAddonsPills.forEach((p, i) => { if (p.classList.contains('is-selected')) aIndices.push(i); });
+        
+        const deepUrl = `${window.location.origin}/#project-configurator?cfg=t:${tIdx},s:${sIdx},a:${aIndices.join("-")},r:${rIdx}`;
         const fullSummary = configSubmitBtn?.getAttribute('data-offer') || 'MPX Studio Maatwerk Begroting';
-        const teamText = `Hoi! Ik heb zojuist een projectbegroting samengesteld bij MPX Studio:\n\n${fullSummary}\n\nBekijk MPX Studio hier: https://www.mpxstudio.nl/`;
+        const teamText = `Hoi! Ik heb zojuist een projectbegroting samengesteld bij MPX Studio:\n\n${fullSummary}\n\nBekijk en bewerk deze interactieve begroting direct via:\n${deepUrl}`;
+
 
         try {
           await navigator.clipboard.writeText(teamText);
