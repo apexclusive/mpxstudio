@@ -4692,3 +4692,515 @@ header.sub-header .brand em {
     gap: 14px;
   }
 }
+
+
+
+/* ── 22. Partner Calculator & Earnings Visualizer ── */
+.partner-calc-wrapper {
+  background: linear-gradient(135deg, rgba(13, 23, 37, 0.95), rgba(7, 12, 20, 0.98));
+  border: 1px solid rgba(215, 193, 154, 0.35);
+  border-radius: 8px;
+  padding: 32px 28px;
+  margin: 40px 0;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+}
+
+.calc-header {
+  margin-bottom: 24px;
+}
+
+.calc-header h3 {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+  color: #fffdf7;
+  margin: 0 0 8px;
+}
+
+.calc-header p {
+  color: #94a3b8;
+  font-size: 14px;
+  margin: 0;
+}
+
+.calc-slider-row {
+  margin-bottom: 28px;
+}
+
+.calc-label-val {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  color: #cbd5e1;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.calc-val-pill {
+  background: rgba(215, 193, 154, 0.15);
+  color: var(--gold, #d7c19a);
+  padding: 3px 12px;
+  border-radius: 999px;
+  font-family: "JetBrains Mono", Consolas, monospace;
+  font-size: 14px;
+  font-weight: 700;
+  border: 1px solid rgba(215, 193, 154, 0.3);
+}
+
+.calc-range-slider {
+  width: 100%;
+  height: 8px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+  cursor: pointer;
+}
+
+.calc-range-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--gold, #d7c19a);
+  border: 2px solid #05070b;
+  box-shadow: 0 0 10px rgba(215, 193, 154, 0.8);
+  cursor: pointer;
+  transition: transform 0.15s ease;
+}
+
+.calc-range-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.18);
+}
+
+.calc-range-slider::-moz-range-thumb {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--gold, #d7c19a);
+  border: 2px solid #05070b;
+  box-shadow: 0 0 10px rgba(215, 193, 154, 0.8);
+  cursor: pointer;
+}
+
+.partner-calc-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 24px 0;
+}
+
+.partner-payout-box {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(215, 193, 154, 0.18);
+  border-radius: 6px;
+  padding: 20px;
+  text-align: center;
+}
+
+.partner-payout-box.featured {
+  background: rgba(215, 193, 154, 0.08);
+  border-color: var(--gold, #d7c19a);
+}
+
+.partner-payout-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #94a3b8;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.partner-payout-amount {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 700;
+  color: var(--gold, #d7c19a);
+  display: block;
+  line-height: 1.1;
+  margin-bottom: 4px;
+}
+
+.partner-payout-sub {
+  font-size: 12px;
+  color: #cbd5e1;
+}
+
+.calc-cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.calc-cta-row .cta-btn {
+  flex: 1;
+  min-width: 220px;
+}
+
+/* ── 23. AI Automation Calculator & Sandbox Demo ── */
+.ai-calc-wrapper {
+  background: linear-gradient(135deg, rgba(13, 23, 37, 0.95), rgba(7, 12, 20, 0.98));
+  border: 1px solid rgba(215, 193, 154, 0.35);
+  border-radius: 8px;
+  padding: 32px 28px;
+  margin: 40px 0;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+}
+
+.ai-calc-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin: 24px 0;
+}
+
+.ai-stat-box {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(215, 193, 154, 0.2);
+  border-radius: 6px;
+  padding: 18px 14px;
+  text-align: center;
+}
+
+.ai-stat-box.highlight {
+  background: rgba(16, 185, 129, 0.08);
+  border-color: rgba(16, 185, 129, 0.35);
+}
+
+.ai-stat-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #94a3b8;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.ai-stat-val {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(1.5rem, 2.5vw, 2.1rem);
+  font-weight: 700;
+  color: var(--gold, #d7c19a);
+  display: block;
+  line-height: 1.1;
+  margin-bottom: 4px;
+}
+
+.ai-stat-box.highlight .ai-stat-val {
+  color: #34d399;
+}
+
+.ai-stat-sub {
+  font-size: 11.5px;
+  color: #cbd5e1;
+}
+
+/* AI Interactive Sandbox */
+.ai-sandbox-card {
+  background: #090f17;
+  border: 1px solid rgba(215, 193, 154, 0.25);
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 36px 0;
+}
+
+.ai-sandbox-head {
+  background: #0d1725;
+  padding: 14px 20px;
+  border-bottom: 1px solid rgba(215, 193, 154, 0.15);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ai-sandbox-head strong {
+  color: #fff;
+  font-size: 13.5px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ai-latency-badge {
+  font-family: "JetBrains Mono", Consolas, monospace;
+  font-size: 11px;
+  color: #34d399;
+  background: rgba(16, 185, 129, 0.12);
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.ai-sandbox-tabs {
+  display: flex;
+  background: rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 8px 12px;
+  gap: 8px;
+  overflow-x: auto;
+}
+
+.ai-scenario-btn {
+  background: transparent;
+  border: 1px solid rgba(215, 193, 154, 0.2);
+  color: #cbd5e1;
+  padding: 6px 14px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.ai-scenario-btn:hover,
+.ai-scenario-btn.active {
+  background: rgba(215, 193, 154, 0.15);
+  color: var(--gold, #d7c19a);
+  border-color: var(--gold, #d7c19a);
+}
+
+.ai-sandbox-body {
+  padding: 20px;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  background: #070c14;
+}
+
+.ai-chat-item {
+  display: flex;
+  gap: 12px;
+  max-width: 88%;
+}
+
+.ai-chat-item.user {
+  margin-left: auto;
+  flex-direction: row-reverse;
+}
+
+.ai-chat-item-bubble {
+  padding: 12px 16px;
+  border-radius: 6px;
+  font-size: 13.5px;
+  line-height: 1.55;
+}
+
+.ai-chat-item.bot .ai-chat-item-bubble {
+  background: #0d1725;
+  border: 1px solid rgba(215, 193, 154, 0.2);
+  color: #f1f5f9;
+}
+
+.ai-chat-item.user .ai-chat-item-bubble {
+  background: var(--gold, #d7c19a);
+  color: #05070b;
+  font-weight: 600;
+}
+
+/* ── 24. Performance Scan Interactive Tools & Sample Report Explorer ── */
+.scan-interactive-bar {
+  background: linear-gradient(135deg, #132235, #0a111a);
+  border: 1px solid var(--gold, #d7c19a);
+  border-radius: 8px;
+  padding: 28px;
+  margin: 36px 0;
+}
+
+.scan-bar-form {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.scan-bar-form input {
+  flex: 1;
+  padding: 14px 18px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(215, 193, 154, 0.3);
+  border-radius: 4px;
+  color: #fff;
+  font-size: 14px;
+  outline: none;
+}
+
+.scan-bar-form input:focus {
+  border-color: var(--gold, #d7c19a);
+  box-shadow: 0 0 0 2px rgba(215, 193, 154, 0.2);
+}
+
+.scan-bar-form button {
+  padding: 14px 24px;
+  background: var(--gold, #d7c19a);
+  color: #05070b;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.scan-bar-form button:hover {
+  background: #fff;
+}
+
+.scan-quick-results {
+  margin-top: 20px;
+  padding: 18px;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(215, 193, 154, 0.2);
+  border-radius: 6px;
+}
+
+.scan-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.scan-metric-card {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 12px;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.scan-metric-title {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #94a3b8;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.scan-metric-status {
+  font-size: 13px;
+  font-weight: 600;
+  color: #cbd5e1;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.scan-metric-status.pass { color: #34d399; }
+.scan-metric-status.warn { color: #fbbf24; }
+.scan-metric-status.fail { color: #f87171; }
+
+/* Interactive Sample Report Explorer */
+.sample-report-section {
+  margin: 48px 0;
+}
+
+.sample-report-nav {
+  display: flex;
+  gap: 8px;
+  border-bottom: 1px solid rgba(215, 193, 154, 0.2);
+  padding-bottom: 12px;
+  margin-bottom: 24px;
+  overflow-x: auto;
+}
+
+.sample-tab-btn {
+  background: transparent;
+  border: 1px solid rgba(215, 193, 154, 0.2);
+  color: #94a3b8;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.sample-tab-btn.active,
+.sample-tab-btn:hover {
+  background: rgba(215, 193, 154, 0.15);
+  color: var(--gold, #d7c19a);
+  border-color: var(--gold, #d7c19a);
+}
+
+.sample-panel {
+  background: #0d1725;
+  border: 1px solid rgba(215, 193, 154, 0.25);
+  border-radius: 8px;
+  padding: 28px;
+}
+
+.finding-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.finding-severity {
+  font-family: "JetBrains Mono", Consolas, monospace;
+  font-size: 11px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+}
+
+.severity-high {
+  background: rgba(239, 68, 68, 0.15);
+  color: #f87171;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.severity-medium {
+  background: rgba(245, 158, 11, 0.15);
+  color: #fbbf24;
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.finding-comparison {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 18px;
+}
+
+.comparison-box {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 16px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.comparison-box strong {
+  display: block;
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+
+.comparison-box.before strong { color: #f87171; }
+.comparison-box.after strong { color: #34d399; }
+.comparison-box p { font-size: 13px; color: #cbd5e1; margin: 0; line-height: 1.5; }
+
+@media (max-width: 760px) {
+  .partner-calc-grid,
+  .ai-calc-stats-grid,
+  .finding-comparison {
+    grid-template-columns: 1fr;
+  }
+  .scan-bar-form {
+    flex-direction: column;
+  }
+}
