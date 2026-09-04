@@ -241,7 +241,7 @@
     <section class="audit-section" id="website-scan" aria-labelledby="audit-title">
       <div class="section-label">05 / Eerste website-inzicht</div>
       <div class="audit-layout"><div><span class="audit-kicker">Gratis quick scan</span><h2 id="audit-title">Zie waar je website<br><i>winst laat liggen.</i></h2><p>Vul je URL in en ontvang direct een eerste indicatie van techniek, inhoud en vertrouwen. Gebruik de uitkomst als startpunt voor de volledige Website Performance Scan van €99.</p></div><form class="audit-form" id="audit-form"><label for="audit-url">Jouw website-URL<input id="audit-url" name="url" type="url" inputmode="url" autocomplete="url" placeholder="jouwwebsite.nl" required></label><button class="audit-submit" type="submit">Start eerste scan <span>↗</span></button><p class="audit-status" id="audit-status" role="status" aria-live="polite"></p></form></div>
-      <div class="audit-result" id="audit-result" hidden><div class="audit-score"><strong id="audit-score">0</strong><span>/ 100<br>eerste indicatie</span></div><div><span class="audit-result-kicker">Jouw eerste inzicht</span><h3 id="audit-result-title">We hebben je website bekeken.</h3><ul id="audit-checks"></ul><a class="audit-result-cta" href="#contact" data-offer="Persoonlijke website-audit op basis van mijn eerste scan">Bespreek de verbeterpunten <span>↗</span></a></div></div>
+      <div class="audit-result" id="audit-result" hidden><div class="audit-score"><strong id="audit-score">0</strong><span>/ 100<br>eerste indicatie</span></div><div><span class="audit-result-kicker">Jouw eerste inzicht</span><h3 id="audit-result-title">We hebben je website bekeken.</h3><ul id="audit-checks"></ul><div class="audit-actions-row" style="display:flex;flex-wrap:wrap;gap:12px;margin-top:20px"><a class="audit-result-cta" href="website-scan.html" style="background:#00a3e0;color:#fff">Bestel €99 Video Deep-Dive ↗</a><a class="audit-result-cta" href="#contact" data-offer="Persoonlijke website-audit op basis van mijn eerste scan">Bespreek met Martijn ↗</a></div></div></div>
     </section>
 
     <section class="roi-section" id="roi-calculator" aria-labelledby="roi-title">
@@ -304,6 +304,10 @@
                 <small>Extra Jaaromzet met MPX</small>
                 <strong id="metric-extra-rev">+ € 90.000 / jr</strong>
               </div>
+            </div>
+            <div class="roi-loss-box" id="roi-loss-box">
+              <span class="roi-loss-label"><span>⚠️</span> Geschat maandelijks omzetverlies door huidige frictie:</span>
+              <span class="roi-loss-amount" id="roi-loss-amount">- € 7.500 / mnd</span>
             </div>
             <p class="roi-verdict" id="roi-verdict">Bij een stijging naar 1.5% conversie genereer je circa <strong>+60 extra klanten</strong> per jaar, goed voor <strong>€ 90.000 extra omzet</strong>. Een MPX maatwerktraject van € 5.000 verdient zichzelf binnen <strong>1 maand</strong> terug.</p>
             <div class="roi-actions">
@@ -523,14 +527,21 @@
       <div class="investment-heading"><h2 id="investment-title">Geen verrassingen.<br><i>Heldere investering.</i></h2><p>Kies voor een eenmalig maatwerktraject of een doorlopend groeipartnerschap met proactieve optimalisaties en AI.</p></div>
 
       <div class="investment-tabs" role="tablist" aria-label="Tarieven en Modellen">
-        <button class="investment-tab-btn is-active" id="tab-btn-projects" type="button" data-pricing-tab="projects" role="tab" aria-selected="true">Maatwerk Projecten (Eenmalig)</button>
+        <button class="investment-tab-btn is-active" id="tab-btn-projects" type="button" data-pricing-tab="projects" role="tab" aria-selected="true">Maatwerk Projecten (Vaste Prijzen)</button>
         <button class="investment-tab-btn" id="tab-btn-retainers" type="button" data-pricing-tab="retainers" role="tab" aria-selected="false">Groei &amp; Retainers (Maandelijks)</button>
       </div>
 
+      <div class="installment-toggle-wrap" id="installment-toggle-wrap">
+        <div class="installment-toggle" role="group" aria-label="Betalingsopties">
+          <button type="button" class="installment-btn is-active" id="btn-pay-full" data-mode="full">Eenmalige Investering</button>
+          <button type="button" class="installment-btn" id="btn-pay-split" data-mode="split">3 Maandtermijnen (0% Rente)</button>
+        </div>
+      </div>
+
       <div class="investment-grid" id="pricing-projects-grid">
-        <article><span>01</span><h3>Essential</h3><strong class="investment-price">vanaf € 2.500</strong><p>Een scherpe, premium basis voor bedrijven die online sterker en professioneler zichtbaar willen worden.</p><a class="service-link" href="#contact" data-offer="Essential Maatwerk Website (vanaf €2.500)">Kies Essential <span>↗</span></a></article>
-        <article><span>02</span><h3>Signature</h3><strong class="investment-price">vanaf € 5.000</strong><p>Een volledig maatwerktraject met strategie, uniek design, sterke contentstructuur en conversiegerichte route.</p><a class="service-link" href="#contact" data-offer="Signature Maatwerk Traject (vanaf €5.000)">Kies Signature <span>↗</span></a></article>
-        <article><span>03</span><h3>Bespoke</h3><strong class="investment-price">vanaf € 8.500</strong><p>Een toonaangevende digitale ervaring met branding, complexe interacties, AI workflows en doorontwikkeling.</p><a class="service-link" href="#contact" data-offer="Bespoke Flagship Traject (vanaf €8.500)">Kies Bespoke <span>↗</span></a></article>
+        <article><span>01</span><h3>Essential</h3><strong class="investment-price" id="price-essential">vanaf € 2.500</strong><span class="investment-installment-note" id="note-essential" hidden>of 3x € 835 / mnd</span><p>Een scherpe, premium basis voor bedrijven die online sterker en professioneler zichtbaar willen worden.</p><a class="service-link" href="#contact" data-offer="Essential Maatwerk Website (vanaf €2.500)">Kies Essential <span>↗</span></a></article>
+        <article><span>02</span><h3>Signature</h3><strong class="investment-price" id="price-signature">vanaf € 5.000</strong><span class="investment-installment-note" id="note-signature" hidden>of 3x € 1.670 / mnd</span><p>Een volledig maatwerktraject met strategie, uniek design, sterke contentstructuur en conversiegerichte route.</p><a class="service-link" href="#contact" data-offer="Signature Maatwerk Traject (vanaf €5.000)">Kies Signature <span>↗</span></a></article>
+        <article><span>03</span><h3>Bespoke</h3><strong class="investment-price" id="price-bespoke">vanaf € 8.500</strong><span class="investment-installment-note" id="note-bespoke" hidden>of 3x € 2.835 / mnd</span><p>Een toonaangevende digitale ervaring met branding, complexe interacties, AI workflows en doorontwikkeling.</p><a class="service-link" href="#contact" data-offer="Bespoke Flagship Traject (vanaf €8.500)">Kies Bespoke <span>↗</span></a></article>
       </div>
 
       <div class="retainer-grid" id="pricing-retainers-grid" hidden>
@@ -1429,6 +1440,12 @@
       metricCurrentRev.textContent = `€ ${currentRevenue.toLocaleString('nl-NL')}`;
       metricExtraRev.textContent = `+ € ${extraRevenue.toLocaleString('nl-NL')} / jr`;
 
+      const monthlyLoss = Math.round(extraRevenue / 12);
+      const roiLossEl = document.getElementById('roi-loss-amount');
+      if (roiLossEl) {
+        roiLossEl.textContent = `- € ${monthlyLoss.toLocaleString('nl-NL')} / mnd`;
+      }
+
       const paybackMonths = Math.max(1, Math.min(12, Math.round(5000 / (Math.max(1, extraRevenue) / 12))));
 
       roiVerdict.innerHTML = `Bij een conversiestijging naar <strong>${newCvr.toFixed(1)}%</strong> realiseer je circa <strong>+${extraClients.toLocaleString('nl-NL')} extra klanten</strong> per jaar, goed voor <strong>€ ${extraRevenue.toLocaleString('nl-NL')} extra jaaromzet</strong>. Een MPX maatwerktraject van € 5.000 verdient zichzelf gemiddeld binnen <strong>${paybackMonths} ${paybackMonths === 1 ? 'maand' : 'maanden'}</strong> terug.`;
@@ -1541,6 +1558,8 @@ Bekijk online: https://www.mpxstudio.nl/#roi-calculator`;
         tabBtnRetainers.setAttribute('aria-selected', 'false');
         gridProjects.hidden = false;
         gridRetainers.hidden = true;
+        const instWrap = document.getElementById('installment-toggle-wrap');
+        if (instWrap) instWrap.hidden = false;
       });
 
       tabBtnRetainers.addEventListener('click', () => {
@@ -1550,7 +1569,32 @@ Bekijk online: https://www.mpxstudio.nl/#roi-calculator`;
         tabBtnProjects.setAttribute('aria-selected', 'false');
         gridProjects.hidden = true;
         gridRetainers.hidden = false;
+        const instWrap = document.getElementById('installment-toggle-wrap');
+        if (instWrap) instWrap.hidden = true;
       });
+
+      // Installment Mode Toggle
+      const btnPayFull = document.getElementById('btn-pay-full');
+      const btnPaySplit = document.getElementById('btn-pay-split');
+      const notes = [
+        document.getElementById('note-essential'),
+        document.getElementById('note-signature'),
+        document.getElementById('note-bespoke')
+      ];
+
+      if (btnPayFull && btnPaySplit) {
+        btnPayFull.addEventListener('click', () => {
+          btnPayFull.classList.add('is-active');
+          btnPaySplit.classList.remove('is-active');
+          notes.forEach(n => { if (n) n.hidden = true; });
+        });
+
+        btnPaySplit.addEventListener('click', () => {
+          btnPaySplit.classList.add('is-active');
+          btnPayFull.classList.remove('is-active');
+          notes.forEach(n => { if (n) n.hidden = false; });
+        });
+      }
     }
 
     document.querySelectorAll('[data-offer]').forEach(link => link.addEventListener('click', () => {
