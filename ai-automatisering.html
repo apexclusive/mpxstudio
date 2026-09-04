@@ -4,39 +4,68 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>AI Automatisering, Concierge & Chatbots voor Bedrijven | MPX Studio</title>
-  <meta name="description" content="Maak van je website een 24/7 leadmachine. MPX Studio bouwt op maat gemaakte AI chatbots, leadkwalificatie en automatische WhatsApp en CRM koppelingen.">
+  <meta name="description" content="Maak van je website een 24/7 leadmachine. MPX Studio bouwt op maat gemaakte AI chatbots, leadkwalificatie en automatische WhatsApp en CRM koppelingen met sub-seconde responstijd.">
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
   <link rel="canonical" href="https://www.mpxstudio.nl/ai-automatisering.html">
   <meta property="og:title" content="AI Automatisering & Slimme Chatbots | MPX Studio">
   <meta property="og:description" content="24/7 lead intake, slimme conversie en naadloze klantprocessen met custom AI agents.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://www.mpxstudio.nl/ai-automatisering.html">
+  <meta property="og:image" content="https://res.cloudinary.com/sfd8ohjz/image/upload/w_1600,q_auto:best,f_auto/v1787345940/Scherm_afbeelding_2026-08-21_om_22.51.19_dvw7ua.jpg">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="mpx-studio-bundle.css?v=2.0.1">
   <style>
-    :root{--gold:#d7c19a;--ink:#05070b;--card:#0d1725;--text:#f5f4f0;--muted:#a2abb4}
+    :root{--gold:#d7c19a;--ink:#05070b;--card:#0d1725;--text:#f5f4f0;--muted:#a2abb4;--border:rgba(215,193,154,0.22)}
     body{background:var(--ink);color:var(--text);font-family:Manrope,sans-serif;line-height:1.8;margin:0}
-    main{max-width:980px;margin:0 auto;padding:clamp(2.5rem,6vw,5rem) clamp(1.2rem,5vw,4rem) 6rem}
+    main{max-width:1040px;margin:0 auto;padding:clamp(2.5rem,6vw,5rem) clamp(1.2rem,5vw,4rem) 6rem}
     .breadcrumbs{font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:2rem}
     .breadcrumbs a{color:var(--gold);text-decoration:none}
     .ey{color:var(--gold);font:700 .75rem Manrope,sans-serif;letter-spacing:.2em;text-transform:uppercase;display:block;margin-bottom:1rem}
-    h1,h2,h3{font-family:'Playfair Display',serif;font-weight:500;line-height:1.15}
-    h1{font-size:clamp(2.8rem,6vw,5.2rem);margin:0 0 1.5rem}
+    h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;line-height:1.15}
+    h1{font-size:clamp(2.6rem,6vw,5rem);margin:0 0 1.5rem}
     h1 i{color:var(--gold);font-style:italic}
     .intro{font-size:1.18rem;color:#cbd5e1;max-width:68ch;margin-bottom:3.5rem;line-height:1.7}
-    .highlights-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;margin:3rem 0}
-    .card{background:var(--card);border:1px solid rgba(215,193,154,.2);padding:2rem;border-radius:6px}
-    .card strong{font-size:1.1rem;color:#fff;display:block;margin-bottom:.6rem;font-family:'Playfair Display',serif}
-    .card p{color:var(--muted);font-size:.92rem;margin:0}
-    .content section{border-top:1px solid rgba(215,193,154,.18);padding:3rem 0}
-    .content h2{font-size:clamp(1.8rem,3.5vw,2.8rem);margin:0 0 1rem;color:#fff}
-    .content p,.content li{color:#b8c2cc;font-size:1rem}
-    .cta-box{background:linear-gradient(135deg,#102238,#05070b);border:1px solid var(--gold);padding:3rem 2.5rem;border-radius:6px;margin:4rem 0;text-align:center}
-    .cta-box h3{font-size:2.2rem;margin:0 0 1rem}
-    .cta-btn{display:inline-flex;align-items:center;gap:10px;background:var(--gold);color:#080a0d;padding:1rem 2rem;border-radius:3px;text-decoration:none;font:700 .8rem Manrope,sans-serif;letter-spacing:.14em;text-transform:uppercase;margin-top:1.5rem;transition:all .2s ease}
-    .cta-btn:hover{background:#fff}
-    .whatsapp-btn{display:inline-flex;align-items:center;gap:8px;background:#25d366;color:#05140a;padding:.9rem 1.8rem;border-radius:3px;text-decoration:none;font:700 .8rem Manrope,sans-serif;letter-spacing:.1em;text-transform:uppercase;margin:1.5rem 0 0 1rem}
-    @media(max-width:600px){.whatsapp-btn{margin-left:0;display:block;margin-top:1rem}}
+    
+    .highlights-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin:3rem 0}
+    .card{background:var(--card);border:1px solid var(--border);padding:2.2rem;border-radius:8px;transition:border-color .2s ease}
+    .card:hover{border-color:var(--gold)}
+    .card strong{font-size:1.18rem;color:#fff;display:block;margin-bottom:.6rem;font-family:'Playfair Display',serif}
+    .card p{color:var(--muted);font-size:.94rem;margin:0;line-height:1.6}
+
+    /* Simulator Interactive Box */
+    .sim-box{background:linear-gradient(135deg,#0c1726,#060a11);border:1px solid var(--gold);padding:3rem 2.5rem;border-radius:8px;margin:4rem 0;box-shadow:0 16px 48px rgba(0,0,0,0.5)}
+    .sim-tabs{display:flex;gap:10px;flex-wrap:wrap;margin:1.5rem 0 2rem}
+    .sim-tab-btn{background:rgba(255,255,255,0.05);border:1px solid var(--border);color:var(--muted);padding:10px 18px;border-radius:4px;font-family:inherit;font-size:.85rem;font-weight:600;cursor:pointer;transition:all .2s ease}
+    .sim-tab-btn:hover,.sim-tab-btn.is-active{background:var(--gold);color:#080a0d;border-color:var(--gold)}
+    .sim-content{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.08);padding:2rem;border-radius:6px}
+    .sim-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;flex-wrap:wrap;gap:1rem}
+    .sim-header strong{font-size:1.25rem;color:#fff;font-family:'Playfair Display',serif}
+    .sim-badge{background:rgba(37,211,102,0.15);color:#25d366;border:1px solid rgba(37,211,102,0.3);padding:4px 10px;border-radius:3px;font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+    
+    .sim-steps-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem;margin-top:1.5rem}
+    .sim-step-item{background:rgba(0,0,0,0.3);border:1px solid var(--border);padding:1.2rem;border-radius:4px}
+    .sim-step-item small{color:var(--gold);font-weight:700;text-transform:uppercase;font-size:.72rem;letter-spacing:.1em;display:block;margin-bottom:4px}
+    .sim-step-item p{color:#cbd5e1;font-size:.9rem;margin:0;line-height:1.5}
+
+    /* Comparison Matrix */
+    .compare-section{margin:4.5rem 0;border-top:1px solid var(--border);padding-top:3.5rem}
+    .compare-table-wrap{overflow-x:auto;margin-top:2rem}
+    .compare-table{width:100%;border-collapse:collapse;text-align:left;font-size:.95rem}
+    .compare-table th,.compare-table td{padding:1.1rem 1.4rem;border-bottom:1px solid rgba(255,255,255,0.08)}
+    .compare-table th{background:rgba(215,193,154,0.06);color:var(--gold);font-family:'Playfair Display',serif;font-size:1.1rem}
+    .compare-table td.highlight{background:rgba(215,193,154,0.08);color:#fff;font-weight:600;border-left:1px solid var(--border);border-right:1px solid var(--border)}
+
+    .cta-box{background:linear-gradient(135deg,#102238,#05070b);border:1px solid var(--gold);padding:3.5rem 2.5rem;border-radius:8px;margin:4rem 0;text-align:center}
+    .cta-box h3{font-size:clamp(1.8rem,3.5vw,2.4rem);margin:0 0 1rem;color:#fff}
+    .cta-btn{display:inline-flex;align-items:center;gap:10px;background:var(--gold);color:#080a0d;padding:1.1rem 2.2rem;border-radius:4px;text-decoration:none;font:700 .85rem Manrope,sans-serif;letter-spacing:.14em;text-transform:uppercase;margin-top:1.5rem;transition:all .2s ease}
+    .cta-btn:hover{background:#fff;transform:translateY(-2px)}
+    .whatsapp-btn{display:inline-flex;align-items:center;gap:8px;background:#25d366;color:#05140a;padding:1.1rem 2rem;border-radius:4px;text-decoration:none;font:700 .85rem Manrope,sans-serif;letter-spacing:.1em;text-transform:uppercase;margin:1.5rem 0 0 1rem}
+    @media(max-width:640px){.whatsapp-btn{margin-left:0;display:block;margin-top:1rem}}
+
+    .content section{border-top:1px solid var(--border);padding:3rem 0}
+    .content h2{font-size:clamp(1.8rem,3.5vw,2.6rem);margin:0 0 1.2rem;color:#fff}
+    .content p,.content li{color:#b8c2cc;font-size:1rem;line-height:1.75}
+    .content ul{padding-left:1.2rem;display:grid;gap:.8rem}
   </style>
   <script type="application/ld+json">
 {
@@ -104,6 +133,7 @@
       <a href="index.html#roi-calculator">ROI Calculator</a>
       <a href="index.html#project-configurator">Offerte Builder</a>
       <a href="index.html#investering">Tarieven</a>
+      <a href="website-scan.html">Performance Scan</a>
     </nav>
     <div class="sub-header-actions">
       <a class="sub-header-cta" href="index.html#contact">Bespreek AI Oplossingen ↗</a>
@@ -115,87 +145,126 @@
       <a href="index.html">Home</a> / <span>AI &amp; Automatisering</span>
     </div>
 
-    <span class="ey">🟢 Live Capaciteit: 2 projectplekken Q3/Q4 2026 · AI &amp; Smart Lead Agents</span>
+    <span class="ey">🟢 Live Beschikbaar · 24/7 Intake &amp; Kwalificatie · Sub-Seconde Responstijd</span>
     <h1>AI Automatisering &amp; <i>Slimme Concierges.</i></h1>
-    <p class="intro">Bezoekers verwachten direct antwoord, ook buiten kantooruren. Met de AI Concierge van MPX Studio verandert jouw website in een actieve verkoopmedewerker die 24/7 leads kwalificeert, vragen beantwoordt en afspraken inplant.</p>
+    <p class="intro">Bezoekers verwachten direct antwoord, ook buiten kantooruren. Met de AI Concierge van MPX Studio verandert jouw website in een actieve, intelligente verkoopadviseur die 24/7 leads kwalificeert, vragen beantwoordt en afspraken rechtstreeks in je agenda boekt.</p>
 
     <div class="highlights-grid">
       <div class="card">
-        <strong>24/7 Lead Kwalificatie</strong>
-        <p>Stelt de juiste vragen aan bezoekers (budget, urgentie, wensen) en stuurt warme leads direct door.</p>
+        <strong>24/7 Directe Leadkwalificatie</strong>
+        <p>Stelt gerichte vragen aan bezoekers (budget, urgentie, specifieke behoeften) en filtert direct serieuze high-ticket aanvragen.</p>
       </div>
       <div class="card">
         <strong>Geen Vage Chatbots</strong>
-        <p>Getraind op jouw specifieke bedrijfskennis, tarieven, diensten en tone-of-voice zonder hallucinaties.</p>
+        <p>Strikt getraind op jouw documentatie, werkwijze, tarieven en bedrijfskennis zonder hallucinaties of onjuiste toezeggingen.</p>
       </div>
       <div class="card">
-        <strong>Naadloze CRM &amp; WhatsApp Sync</strong>
-        <p>Koppeling met WhatsApp Business, e-mail en CRM-systemen zodat je team direct kan opvolgen.</p>
+        <strong>WhatsApp &amp; CRM Handover</strong>
+        <p>Directe doorsturing naar WhatsApp van directie of salesteam met een complete, geformatteerde intakereportage.</p>
       </div>
     </div>
 
-    <!-- Sector ROI Card -->
-    <div class="sector-roi-card">
-      <div class="sector-roi-header">
-        <strong>AI Lead Recovery Benchmark</strong>
-        <span>Geschatte ROI Impact</span>
+    <!-- Interactive AI Use-Case Simulator -->
+    <div class="sim-box">
+      <span class="ey" style="margin-bottom:.5rem">Live Flow Simulator</span>
+      <h3 style="color:#fff;margin:0 0 .5rem">Bekijk hoe de AI Concierge werkt in jouw sector</h3>
+      <p style="color:var(--muted);margin:0 0 1.5rem">Selecteer een branche om het geautomatiseerde triageproces te bekijken.</p>
+
+      <div class="sim-tabs" id="sim-tabs">
+        <button class="sim-tab-btn is-active" type="button" data-sector="zakelijk">⚖️ Juridisch &amp; Financieel</button>
+        <button class="sim-tab-btn" type="button" data-sector="zorg">🏥 Zorg &amp; Klinieken</button>
+        <button class="sim-tab-btn" type="button" data-sector="auto">🏎️ Automotive &amp; Exclusief</button>
+        <button class="sim-tab-btn" type="button" data-sector="bouw">🏛️ Vastgoed &amp; Architectuur</button>
       </div>
-      <p style="color:#cbd5e1;font-size:14px;margin:0 0 16px">Verwachte extra omzet door het converteren van avond- en weekendbezoekers:</p>
-      <div class="sector-roi-grid">
-        <div class="sector-roi-metric">
-          <small>Nacht/Weekend Leads</small>
-          <strong>+35%</strong>
+
+      <div class="sim-content" id="sim-content">
+        <div class="sim-header">
+          <strong id="sim-title">Juridisch &amp; Financieel Advies Flow</strong>
+          <span class="sim-badge" id="sim-badge">✓ 100% AVG &amp; Discreet</span>
         </div>
-        <div class="sector-roi-metric">
-          <small>Responstijd</small>
-          <strong>&lt; 2 sec</strong>
-        </div>
-        <div class="sector-roi-metric highlight">
-          <small>Conversie Uplift</small>
-          <strong>+ 180% meer leads</strong>
+        <p id="sim-desc" style="color:#cbd5e1;font-size:.95rem;margin:0 0 1.2rem">
+          Bezoekers met een complex dossier of juridische vraag worden discreet door de kwalificatieflow geleid.
+        </p>
+        <div class="sim-steps-grid" id="sim-steps">
+          <div class="sim-step-item">
+            <small>Stap 1: Triage</small>
+            <p>Identificeert rechtsgebied (bijv. M&amp;A, arbeidsrecht, contractbreuk) en urgentie.</p>
+          </div>
+          <div class="sim-step-item">
+            <small>Stap 2: Kwalificatie</small>
+            <p>Controleert tegenpartij op belangenverstrengeling en toetst dossieromvang.</p>
+          </div>
+          <div class="sim-step-item">
+            <small>Stap 3: Directe Actie</small>
+            <p>Plant discrete intakecall in Google Meet &amp; pingt WhatsApp van de behandelend advocaat.</p>
+          </div>
         </div>
       </div>
-      <div class="sector-roi-footer">
-        <span style="font-size:12px;color:#94a3b8">Berekend op basis van B2B intake data en zero-latency antwoorden</span>
-        <a class="sub-header-cta" href="index.html#roi-calculator">Bereken Jouw ROI ↗</a>
+    </div>
+
+    <!-- Comparison Matrix: Formulier vs AI Concierge -->
+    <div class="compare-section">
+      <span class="ey">Data &amp; Conversie</span>
+      <h2>Traditioneel Contactformulier vs. MPX AI Concierge</h2>
+      <p style="color:#a2abb4;max-width:64ch">Uit B2B data blijkt dat 68% van nacht- en weekendbezoekers nooit een statisch formulier invult. AI overbrugt die frictie direct.</p>
+
+      <div class="compare-table-wrap">
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th>Criterium</th>
+              <th>Statisch Formulier</th>
+              <th class="highlight">MPX AI Concierge</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Responstijd</strong></td>
+              <td>12 tot 24 uur wachten</td>
+              <td class="highlight"><strong>&lt; 2 seconden direct antwoord</strong></td>
+            </tr>
+            <tr>
+              <td><strong>Nacht &amp; Weekendconversie</strong></td>
+              <td>Bezoeker haakt af en zoekt concurrent</td>
+              <td class="highlight"><strong>Directe intake en intake-vastlegging</strong></td>
+            </tr>
+            <tr>
+              <td><strong>Lead Kwalificatie</strong></td>
+              <td>Veel ruis en ongekwalificeerde leads</td>
+              <td class="highlight"><strong>Automatische toetsing op budget en scope</strong></td>
+            </tr>
+            <tr>
+              <td><strong>Opvolgsnelheid Salesteam</strong></td>
+              <td>Trage e-mail notificatie in mailbox</td>
+              <td class="highlight"><strong>Directe push naar WhatsApp &amp; CRM</strong></td>
+            </tr>
+            <tr>
+              <td><strong>Conversie Uplift</strong></td>
+              <td>1.2% – 1.8% baseline</td>
+              <td class="highlight"><strong>3.4% – 5.1% met interactieve dialoog</strong></td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
 
     <div class="content">
       <section>
-        <h2>Waarom reguliere contactformulieren leads verliezen</h2>
-        <p>Meer dan 68% van de websitebezoekers verlaat een website zonder actie als ze moeten wachten op antwoord. Een AI Concierge vangt bezoekers direct op het juiste beslismoment op, beantwoordt twijfels en begeleidt ze soepel naar een kennismaking of offerte.</p>
-      </section>
-
-      <section>
         <h2>Hoe MPX Studio AI integreert</h2>
         <ul>
-          <li><strong>Custom Knowledge Base:</strong> Volledige integratie van jouw brochures, FAQ's en werkwijze.</li>
+          <li><strong>Custom Knowledge Base:</strong> Volledige integratie van jouw brochures, tarieven, FAQ's en werkwijze via strikte RAG (Retrieval Augmented Generation).</li>
           <li><strong>Lead Qualification Engine:</strong> Filtert direct tussen serieuze high-ticket kopers en nieuwsgierigen.</li>
           <li><strong>Live WhatsApp Handover:</strong> Schakelt direct over naar WhatsApp zodra een bezoeker persoonlijk contact wenst.</li>
-          <li><strong>Bedrock &amp; GPT-4o Architectuur:</strong> State-of-the-art enterprise taalmodellen met ultra-snelle responstijden.</li>
+          <li><strong>Zero Latency Architectuur:</strong> State-of-the-art enterprise taalmodellen met sub-seconde responstijden en 100% AVG compliance.</li>
         </ul>
       </section>
     </div>
 
-    <!-- Sector FAQ Accordion -->
-    <div class="sector-faq-group">
-      <h3>Veelgestelde vragen over AI automatisering</h3>
-      <details class="sector-faq-item">
-        <summary>Gaat een AI chatbot niet hallucineren of onjuiste prijzen noemen?</summary>
-        <p>Nee. We gebruiken strikte Retrieval Augmented Generation (RAG) met 'ground truth' safeguards. De AI beantwoordt alleen vragen op basis van jouw goedgekeurde documentatie en verwijst bij twijfel direct door naar een teamlid.</p>
-      </details>
-      <details class="sector-faq-item">
-        <summary>Kunnen leads direct in WhatsApp binnenkomen?</summary>
-        <p>Ja. Zodra een lead gekwalificeerd is, ontvangt je salesteam of directie direct een geformatteerde WhatsApp-notificatie met alle antwoorden en contactgegevens.</p>
-      </details>
-    </div>
-
     <div class="cta-box">
       <h3>Wil je weten wat AI voor jouw bedrijf kan automatiseren?</h3>
-      <p style="color:#b8c2cc;max-width:54ch;margin:0 auto">Test onze MPX Concierge live rechtsonder op de pagina of plan een demo in met Martijn Puts.</p>
+      <p style="color:#b8c2cc;max-width:54ch;margin:0 auto">Plan een vrijblijvende demonstratie in met Martijn Puts of test de assistent live.</p>
       <div>
-        <a class="cta-btn" href="index.html#contact">Vraag een AI intakegesprek aan ↗</a>
+        <a class="cta-btn" href="index.html#strategie-gesprek">Plan 15-min AI Demo ↗</a>
         <a class="whatsapp-btn" href="https://wa.me/31624735939?text=Hallo%20Martijn%2C%20ik%20wil%20graag%20zien%20hoe%20de%20AI%20Concierge%20werkt%20voor%20mijn%20bedrijf." target="_blank" rel="noreferrer">WhatsApp Martijn Direct ↗</a>
       </div>
     </div>
@@ -249,6 +318,79 @@
     </div>
     <div class="footer-bottom"><span>© 2026 MPX Studio</span><a href="privacy.html">Privacy</a><span>Designed with intent · Built for trust</span></div>
   </footer>
+
+  <script>
+    const simData = {
+      zakelijk: {
+        title: 'Juridisch & Financieel Advies Flow',
+        badge: '✓ 100% AVG & Discreet',
+        desc: 'Bezoekers met een complex dossier of juridische vraag worden discreet door de kwalificatieflow geleid.',
+        steps: [
+          { step: 'Stap 1: Triage', text: 'Identificeert rechtsgebied (bijv. M&A, arbeidsrecht, contractbreuk) en urgentie.' },
+          { step: 'Stap 2: Kwalificatie', text: 'Controleert tegenpartij op belangenverstrengeling en toetst dossieromvang.' },
+          { step: 'Stap 3: Directe Actie', text: 'Plant discrete intakecall in Google Meet & pingt WhatsApp van de behandelend advocaat.' }
+        ]
+      },
+      zorg: {
+        title: 'Zorgpraktijk & Kliniek Triage Flow',
+        badge: '✓ 80% Minder Baliedruk',
+        desc: 'Patiënten en cliënten worden direct geholpen met inschrijvingen, tarieven en spoedvragen.',
+        steps: [
+          { step: 'Stap 1: Urgentie Check', text: 'Filtert acute spoedgevallen direct door naar de dienstdoende praktijklijn.' },
+          { step: 'Stap 2: Intake Verzamelen', text: 'Vraagt relevante medische voorgeschiedenis en verzekeringsgegevens op.' },
+          { step: 'Stap 3: Bevestiging', text: 'Plaatst de afspraak direct in het praktijksysteem en stuurt SMS-bevestiging.' }
+        ]
+      },
+      auto: {
+        title: 'Luxury Automotive & Showroom Flow',
+        badge: '✓ Directe WhatsApp Lead',
+        desc: 'High-end kopers ontvangen direct specificaties, financieringsopties en inruilindicaties.',
+        steps: [
+          { step: 'Stap 1: Voertuig Match', text: 'Vraagt naar gewenst merk, model, bouwjaar en leasetype (zakelijk/prive).' },
+          { step: 'Stap 2: Inruilwaardering', text: 'Verzamelt kenteken, kilometerstand en opties voor een snelle taxatie.' },
+          { step: 'Stap 3: VIP Overdracht', text: 'Verbindt koper direct met de verkoopadviseur via WhatsApp met voorstel.' }
+        ]
+      },
+      bouw: {
+        title: 'Vastgoed & Architectuur Kwalificatie Flow',
+        badge: '✓ High-Net-Worth Filter',
+        desc: 'Kwalificeert kavelgrootte, bouwvolume, stijlvoorkeur en investeringsbudget vooraf.',
+        steps: [
+          { step: 'Stap 1: Project Scope', text: 'Toetst nieuwbouw, renovatie of transformatie en gewenste vierkante meters.' },
+          { step: 'Stap 2: Budget Kwalificatie', text: 'Valideert budgetkaders (€ 500k – € 3M+) en vergunningstatus van de kavel.' },
+          { step: 'Stap 3: Architect Match', text: 'Plant een portfolio-presentatie en stuurt het projectdossier naar de directie.' }
+        ]
+      }
+    };
+
+    const tabBtns = document.querySelectorAll('.sim-tab-btn');
+    const simTitle = document.getElementById('sim-title');
+    const simBadge = document.getElementById('sim-badge');
+    const simDesc = document.getElementById('sim-desc');
+    const simSteps = document.getElementById('sim-steps');
+
+    tabBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        tabBtns.forEach(b => b.classList.remove('is-active'));
+        btn.classList.add('is-active');
+
+        const sector = btn.dataset.sector;
+        const data = simData[sector];
+        if (!data) return;
+
+        simTitle.textContent = data.title;
+        simBadge.textContent = data.badge;
+        simDesc.textContent = data.desc;
+
+        simSteps.innerHTML = data.steps.map(s => `
+          <div class="sim-step-item">
+            <small>${s.step}</small>
+            <p>${s.text}</p>
+          </div>
+        `).join('');
+      });
+    });
+  </script>
   <a class="whatsapp-float" href="https://wa.me/31624735939?text=Hallo%20Martijn%2C%20ik%20wil%20weten%20hoe%20AI%20chatbots%20en%20WhatsApp%20flows%20voor%20ons%20bedrijf%20kunnen%20werken." target="_blank" rel="noreferrer" aria-label="Start een gesprek via WhatsApp"><span class="wa-status-dot"></span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.1 3.9A10.1 10.1 0 0 0 3.2 15.8L2 22l6.3-1.7A10.1 10.1 0 1 0 20.1 3.9Zm-8 16.2a8.4 8.4 0 0 1-4.3-1.2l-.3-.2-3.7 1 1-3.6-.2-.4a8.4 8.4 0 1 1 7.5 4.4Zm4.6-6.3c-.3-.2-1.8-.9-2-.9-.3-.1-.5-.2-.7.2l-.7.9c-.2.3-.4.3-.7.1-1.8-.9-3-1.7-4.1-3.8-.3-.5.3-.5.8-1.6.1-.3 0-.5-.1-.7l-.6-1.5c-.2-.4-.4-.4-.7-.4h-.6c-.2 0-.6.1-.9.4-.3.3-1.1 1.1-1.1 2.7s1.1 3.1 1.3 3.3c.2.2 2.1 3.3 5.1 4.5 1.9.8 2.7.8 3.6.7.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.2-.3-.3-.6-.4Z"/></svg><span>WhatsApp</span></a>
 </body>
 </html>
