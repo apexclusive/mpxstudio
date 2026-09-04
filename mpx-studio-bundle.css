@@ -1829,11 +1829,7 @@ button, input, textarea { max-width: 100%; }
   overscroll-behavior: contain;
 }
 
-/* Keep below-the-fold sections out of the initial rendering path without changing layout. */
-main > section:not(.hero) {
-  content-visibility: auto;
-  contain-intrinsic-size: 800px;
-}
+
 
 .demo-nojs {
   position: absolute;
