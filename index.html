@@ -67,7 +67,7 @@
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero-grain" aria-hidden="true"></div>
       <div class="shooting-star" aria-hidden="true"></div>
-      <div class="hero-copy reveal">
+      <div class="hero-copy">
         <div class="hero-capacity-pill"><span class="capacity-dot"></span> 🟢 Live Capaciteit: 2 projectplekken vrij voor Q3/Q4 2026 · Max. 3 per maand</div>
         <p class="eyebrow"><span></span> Premium webdesign & digital agency</p>
         <h1 id="hero-title">Merken die <i>blijven</i> hangen.</h1>
@@ -1439,7 +1439,7 @@
       try {
         const hash = window.location.hash || '';
         const search = window.location.search || '';
-        const fullUrlStr = hash.includes('?') ? hash.split('?')[1] : search.replace(/^?/, '');
+        const fullUrlStr = hash.includes('?') ? hash.split('?')[1] : (search.startsWith('?') ? search.slice(1) : search);
         if (!fullUrlStr) return;
         const params = new URLSearchParams(fullUrlStr);
         const roiRaw = params.get('roi');
