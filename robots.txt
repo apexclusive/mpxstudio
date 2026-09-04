@@ -2,3 +2,6 @@ User-agent: *
 Allow: /
 
 Sitemap: https://www.mpxstudio.nl/sitemap.xml
+# LLM & AI Discoverability
+# https://www.mpxstudio.nl/llms.txt
+# https://www.mpxstudio.nl/llms-full.txt

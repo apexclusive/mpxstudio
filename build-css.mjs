@@ -47,7 +47,8 @@ const ORDER = [
   'mpx-studio-hero-clear.css',
   'mpx-studio-audit-polish.css',
   'mpx-studio-mobile-polish.css',
-  'mpx-studio-ux-hardening.css'
+  'mpx-studio-ux-hardening.css',
+  'mpx-studio-revenue-cro.css'
 ];
 
 const OUT = 'mpx-studio-bundle.css';

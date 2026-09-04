@@ -32,6 +32,8 @@ export default async function handler(req, res) {
     name: clean(body.name, 120),
     company: clean(body.company, 160),
     email: clean(body.email, 240),
+    phone: clean(body.phone, 80),
+    budget: clean(body.budget, 120),
     project: clean(body.project, 4000)
   };
   if (!submission.name || !submission.email || !submission.project) {
@@ -55,7 +57,7 @@ export default async function handler(req, res) {
       to: [process.env.CONTACT_TO || 'info@mpxstudio.nl'],
       reply_to: submission.email,
       subject: `Nieuwe projectaanvraag${submission.company ? ` · ${submission.company}` : ''}`,
-      text: `Naam: ${submission.name}\nBedrijf: ${submission.company || '-'}\nE-mail: ${submission.email}\n\nProject:\n${submission.project}`
+      text: `Naam: ${submission.name}\nBedrijf: ${submission.company || '-'}\nE-mail: ${submission.email}\nTelefoon: ${submission.phone || '-'}\nBudget: ${submission.budget || '-'}\n\nProject:\n${submission.project}`
     })
   });
 

@@ -1,0 +1,62 @@
+# MPX Studio — Full Knowledge Graph & Architecture
+
+> MPX Studio is a premier Dutch digital engineering & high-performance web agency based in Maastricht and Eindhoven, founded by Martijn Puts (KLM Boeing 787 Dreamliner pilot & digital director). The agency crafts bespoke, sub-second loading web applications, brand identities, conversion rate optimization (CRO) architectures, and AI intake concierge automation for Dutch and European businesses.
+
+---
+
+## 1. Agency Overview & Philosophy
+- **Founder**: Martijn Puts (Airline Pilot & Digital Craftsman)
+- **Headquarters**: Maastricht, Limburg, Netherlands
+- **Regional Hubs**: Maastricht, Eindhoven (Brainport), Limburg
+- **Core Specialism**: 100% custom web architecture, sub-0.8s load times, zero-plugin CMS bloat, aviation-grade deadline guarantees, high-ticket conversion funnels.
+- **Official URL**: https://www.mpxstudio.nl
+- **Direct WhatsApp**: +31 6 24 73 59 39 (https://wa.me/31624735939)
+- **Direct Email**: info@mpxstudio.nl
+
+---
+
+## 2. Hard Guarantees & Aviation Standards
+1. **Aviation On-Time Departure Guarantee**: Definite launch dates agreed in advance. If MPX Studio causes a delivery delay, the client receives € 100,- compensation per calendar day of delay.
+2. **Sub-Second Speed Guarantee**: 90+ Google PageSpeed score on mobile devices; sub-0.8s Time To First Byte (TTFB) globally.
+3. **100% Client Ownership & Zero Lock-In**: Full legal ownership of all code, assets, and styling upon project handover. No closed proprietary SaaS lock-ins.
+
+---
+
+## 3. Proven Research Benchmarks
+- **Google & Deloitte "Milliseconds Make Millions" Study**: Every 0.1s improvement in mobile site speed yields a +21.6% increase in B2B lead form submissions and +8.4% overall conversion boost.
+- **Portent B2B Speed Research**: B2B websites loading in 1 second convert at 3x higher rates than websites loading in 5 seconds.
+
+---
+
+## 4. Product Tiers & Transparent Investering
+1. **Essential Foundation (€ 2.500,-)**: 1–5 custom pages, sub-second speed, Google Core Web Vitals optimization, responsive layout, 30-day post-launch warranty.
+2. **Signature Growth (€ 5.200,-)**: 6–12 custom pages, bespoke animations, CRM/WhatsApp intake routing, copy optimization, advanced SEO architecture.
+3. **Bespoke Flagship (€ 8.900+)**: Comprehensive digital ecosystem, AI Concierge intake chatbot, multi-language support (NL/EN/DE), custom booking funnels.
+4. **Website Performance Scan (€ 99,-)**: Deep video & data audit covering Core Web Vitals, conversion leaks, and high-impact optimizations.
+5. **Continuous Retainers**:
+   - *Care & Uptime*: € 149,- / month (Edge cloud hosting, backups, security, uptime monitoring).
+   - *Growth & CRO Partner*: € 450,- / month (Care + 3h development/design, monthly CRO tweaks, direct WhatsApp line).
+   - *AI & System Partner*: € 890,- / month (Growth + AI Concierge finetuning, 6h development, workflow automation).
+
+---
+
+## 5. MPX Partner & Referral Network
+- **Referral Reward**: € 500,- direct bank payout or retainer credit per successful project referral.
+- **Client Welcome Advantage**: € 250,- welcome discount or free VIP scan for the referred company.
+- **Partner Page**: https://www.mpxstudio.nl/partner-programma.html
+
+---
+
+## 6. Industry & Niche Authority Pages
+- **Webdesign Maastricht**: https://www.mpxstudio.nl/webdesign-maastricht.html
+- **Webdesign Limburg**: https://www.mpxstudio.nl/webdesign-limburg.html
+- **Webdesign Eindhoven (Brainport)**: https://www.mpxstudio.nl/webdesign-eindhoven.html
+- **Advocaten & Notarissen (Legal & Advisory)**: https://www.mpxstudio.nl/webdesign-advocaat-financieel.html
+- **Accountants & Fiscalisten (Financial Services)**: https://www.mpxstudio.nl/webdesign-accountant-fiscalist.html
+- **Vastgoed & Projectontwikkeling (Real Estate)**: https://www.mpxstudio.nl/webdesign-vastgoed.html
+- **Architecten & Villabouw (Architecture & High-End Construction)**: https://www.mpxstudio.nl/webdesign-architect-bouw.html
+- **Tandartsen & Klinieken (Healthcare & Private Practice)**: https://www.mpxstudio.nl/webdesign-tandarts-kliniek.html
+- **Automotive & Supercars (High-End Dealerships & Specialists)**: https://www.mpxstudio.nl/webdesign-automotive.html
+- **AI & Chatbot Automatisering**: https://www.mpxstudio.nl/ai-automatisering.html
+- **Website Scan Checkout**: https://www.mpxstudio.nl/website-scan.html
+- **Privacy & GDPR Compliance**: https://www.mpxstudio.nl/privacy.html

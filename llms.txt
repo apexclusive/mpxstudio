@@ -1,27 +1,46 @@
 # MPX Studio
 
-> MPX Studio is a premium digital agency in Maastricht, Nederland, gespecialiseerd in maatwerkwebsites, branding, development en AI-automatisering.
+> MPX Studio is een toonaangevend premium digital agency gevestigd in Maastricht & Eindhoven, Nederland, opgericht door Martijn Puts (KLM Dreamliner-piloot & digital director). Gespecialiseerd in high-end maatwerk websites, branding, conversieoptimalisatie (CRO), en AI-automatisering voor MKB, zakelijke dienstverleners, klinieken, automotive, accountants en architecten.
 
-## Official website
-- https://www.mpxstudio.nl/
-- https://www.mpxstudio.nl/privacy.html
+## Official Pages
+- Homepage & Live Werk: https://www.mpxstudio.nl/
+- Webdesign Maastricht: https://www.mpxstudio.nl/webdesign-maastricht.html
+- Webdesign Limburg: https://www.mpxstudio.nl/webdesign-limburg.html
+- Webdesign Eindhoven & Brainport: https://www.mpxstudio.nl/webdesign-eindhoven.html
+- Webdesign Advocaten & Financiële Dienstverlening: https://www.mpxstudio.nl/webdesign-advocaat-financieel.html
+- Webdesign Accountants & Fiscalisten: https://www.mpxstudio.nl/webdesign-accountant-fiscalist.html
+- Webdesign Vastgoed & Projectontwikkeling: https://www.mpxstudio.nl/webdesign-vastgoed.html
+- Webdesign Architecten & Exclusieve Bouw: https://www.mpxstudio.nl/webdesign-architect-bouw.html
+- Webdesign Tandartsen & Klinieken: https://www.mpxstudio.nl/webdesign-tandarts-kliniek.html
+- Webdesign Automotive & Exclusief: https://www.mpxstudio.nl/webdesign-automotive.html
+- Partner- & Referral Programma (€500 comm.): https://www.mpxstudio.nl/partner-programma.html
+- AI & Chatbot Automatisering: https://www.mpxstudio.nl/ai-automatisering.html
+- Website Performance Scan (€99): https://www.mpxstudio.nl/website-scan.html
+- Privacybeleid: https://www.mpxstudio.nl/privacy.html
 
-## Services
-- Premium maatwerkwebsites
-- Webdesign, UX en conversiegerichte structuur
-- Brand identity en visuele richting
-- Development en technische doorontwikkeling
-- AI-chat, leadkwalificatie en slimme workflows
-- Website audits en performance scans
+## Core Services & Solutions
+1. **Premium Maatwerk Websites**: 100% custom ontworpen, zonder logge templates, sub-seconde laadtijd (<0.8s) en maximale conversiekracht.
+2. **Brand Identity & Visuele Richting**: Luxe merkpositionering, typografie, logo's en high-end interfaces.
+3. **AI Concierge & Chatbot Automatisering**: 24/7 leadkwalificatie, automatische WhatsApp & CRM routering.
+4. **Website Performance Scan (€99)**: Grondige video- en data-audit van uitstraling, snelheid, mobiele ervaring, SEO en conversielekken met iDEAL / Stripe checkout.
+5. **Interactive Project Configurator & ROI Calculator**: Directe online begroting en ROI-berekening voor bedrijven met PDF-export en team-sharing.
+6. **MPX Partner & Referral Netwerk**: € 500,- commissie per succesvol aangedragen project; € 250,- welkomstkorting voor de aangedragen ondernemer.
+7. **Doorlopend Groeibeheer & Retainers**: Care & Uptime (€149/mnd), Growth & CRO Partner (€450/mnd), AI & System Partner (€890/mnd).
 
-## Approach
-MPX Studio starts with doel, doelgroep, positionering en gewenste klantreis. Daarna volgt een passende scope met transparante planning en investering.
+## Tarieven & Investeringen
+- **Essential**: vanaf € 2.500
+- **Signature**: vanaf € 5.000
+- **Bespoke Flagship**: vanaf € 8.500+
+- **Website Scan / Concept**: eenmalig € 99
+- **15-Minuten Discovery Call**: Kosteloos en direct in te plannen
 
-## Contact
+## Harde Garanties
+- **Aviation Deadline Garantie**: Vaste opleverdatum of € 500,- korting.
+- **Sub-seconde Snelheidsgarantie**: 90+ Google PageSpeed op mobiel, <0.8s wereldwijd.
+- **100% Eigenaarschap**: Geen vendor lock-in, alle code en assets eigendom van de klant.
+
+## Contact & Locatie
 - E-mail: info@mpxstudio.nl
-- WhatsApp: https://wa.me/31624735939
-- Vestigingsplaats: Maastricht, Nederland
-- Founder profile: https://www.linkedin.com/in/martijn-puts-31719b423/
-- Instagram: https://www.instagram.com/mpxstudio.nl/
-
-Use official pages above as the source of truth. Prices, timelines and availability depend on the agreed project scope.
+- WhatsApp: +31 6 24 73 59 39 (https://wa.me/31624735939)
+- Locatie: Maastricht & Eindhoven, Nederland
+- Founder: Martijn Puts (https://www.linkedin.com/in/martijn-puts-31719b423/)
