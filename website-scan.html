@@ -4,46 +4,88 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Website Performance Scan (€99) | Direct Inzicht & Conversie | MPX Studio</title>
-  <meta name="description" content="Ontvang binnen 24 uur een grondige analyse van jouw website op uitstraling, snelheid, mobiele ervaring, SEO en conversielekken. Eenmalig €99.">
+  <meta name="description" content="Ontvang binnen 24-48 uur een diepgaande video- en data-audit van jouw website op uitstraling, sub-seconde snelheid, SEO en conversielekken. Eenmalig €99, 100% verrekend bij vervolgtraject.">
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
   <link rel="canonical" href="https://www.mpxstudio.nl/website-scan.html">
   <meta property="og:title" content="Website Performance Scan (€99) | MPX Studio">
   <meta property="og:description" content="Ontdek exact waar jouw website leads en omzet laat liggen met een persoonlijke expert review door Martijn Puts.">
   <meta property="og:type" content="product">
   <meta property="og:url" content="https://www.mpxstudio.nl/website-scan.html">
+  <meta property="og:image" content="https://res.cloudinary.com/sfd8ohjz/image/upload/w_1600,q_auto:best,f_auto/v1787345940/Scherm_afbeelding_2026-08-21_om_22.51.19_dvw7ua.jpg">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="mpx-studio-bundle.css?v=2.0.1">
   <style>
-    :root{--gold:#d7c19a;--ink:#05070b;--card:#0d1725;--text:#f5f4f0;--muted:#a2abb4}
+    :root{--gold:#d7c19a;--ink:#05070b;--card:#0d1725;--text:#f5f4f0;--muted:#a2abb4;--border:rgba(215,193,154,0.22);--accent-glow:rgba(215,193,154,0.12)}
     body{background:var(--ink);color:var(--text);font-family:Manrope,sans-serif;line-height:1.8;margin:0}
-    main{max-width:980px;margin:0 auto;padding:clamp(2.5rem,6vw,5rem) clamp(1.2rem,5vw,4rem) 6rem}
+    main{max-width:1040px;margin:0 auto;padding:clamp(2.5rem,6vw,5rem) clamp(1.2rem,5vw,4rem) 6rem}
     .breadcrumbs{font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:2rem}
     .breadcrumbs a{color:var(--gold);text-decoration:none}
     .ey{color:var(--gold);font:700 .75rem Manrope,sans-serif;letter-spacing:.2em;text-transform:uppercase;display:block;margin-bottom:1rem}
-    h1,h2,h3{font-family:'Playfair Display',serif;font-weight:500;line-height:1.15}
-    h1{font-size:clamp(2.8rem,6vw,5.2rem);margin:0 0 1.5rem}
+    h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;line-height:1.15}
+    h1{font-size:clamp(2.6rem,6vw,5rem);margin:0 0 1.5rem}
     h1 i{color:var(--gold);font-style:italic}
     .intro{font-size:1.18rem;color:#cbd5e1;max-width:68ch;margin-bottom:3.5rem;line-height:1.7}
-    .price-banner{background:linear-gradient(135deg,#132235,#091019);border:1px solid var(--gold);padding:2.5rem;border-radius:6px;margin-bottom:3.5rem;display:flex;justify-content:space-between;align-items:center;gap:2rem}
-    .price-banner h3{font-size:2rem;margin:0 0 .5rem}
-    .price-tag{font-size:2.6rem;font-weight:800;color:var(--gold);font-family:'Playfair Display',serif}
-    .price-tag span{font-size:1rem;color:var(--muted);font-weight:400;font-family:Manrope,sans-serif}
-    .highlights-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;margin:3rem 0}
-    .card{background:var(--card);border:1px solid rgba(215,193,154,.2);padding:2rem;border-radius:6px}
-    .card strong{font-size:1.1rem;color:#fff;display:block;margin-bottom:.6rem;font-family:'Playfair Display',serif}
-    .card p{color:var(--muted);font-size:.92rem;margin:0}
-    .content section{border-top:1px solid rgba(215,193,154,.18);padding:3rem 0}
-    .content h2{font-size:clamp(1.8rem,3.5vw,2.8rem);margin:0 0 1rem;color:#fff}
-    .content p,.content li{color:#b8c2cc;font-size:1rem}
-    .payment-strip{background:#0d1725;border:1px solid rgba(215,193,154,.3);padding:2.5rem;border-radius:6px;margin:3rem 0;text-align:center}
-    .payment-buttons{display:flex;flex-wrap:wrap;justify-content:center;gap:1rem;margin-top:1.5rem}
-    .cta-btn{display:inline-flex;align-items:center;gap:10px;background:var(--gold);color:#080a0d;padding:1rem 2rem;border-radius:3px;text-decoration:none;font:700 .8rem Manrope,sans-serif;letter-spacing:.14em;text-transform:uppercase;transition:all .2s ease}
-    .cta-btn:hover{background:#fff}
-    .paypal-btn{background:#0070ba;color:#fff}
-    .paypal-btn:hover{background:#005ea6}
-    .tikkie-btn{background:#00a3e0;color:#fff}
-    .tikkie-btn:hover{background:#008fc5}
-    @media(max-width:760px){.price-banner{flex-direction:column;align-items:flex-start}}
+    
+    .price-banner{background:linear-gradient(135deg,#132235,#091019);border:1px solid var(--gold);padding:2.5rem;border-radius:8px;margin-bottom:3.5rem;display:flex;justify-content:space-between;align-items:center;gap:2rem;box-shadow:0 12px 36px rgba(0,0,0,0.4)}
+    .price-banner h3{font-size:1.8rem;margin:0 0 .5rem}
+    .price-tag{font-size:2.8rem;font-weight:800;color:var(--gold);font-family:'Playfair Display',serif;text-align:right}
+    .price-tag span{font-size:1rem;color:var(--muted);font-weight:400;font-family:Manrope,sans-serif;display:block}
+    
+    .highlights-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin:3rem 0}
+    .card{background:var(--card);border:1px solid var(--border);padding:2.2rem;border-radius:8px;transition:border-color .2s ease}
+    .card:hover{border-color:var(--gold)}
+    .card strong{font-size:1.18rem;color:#fff;display:block;margin-bottom:.6rem;font-family:'Playfair Display',serif}
+    .card p{color:var(--muted);font-size:.94rem;margin:0;line-height:1.6}
+
+    /* Comparison Table */
+    .comparison-section{margin:4.5rem 0;border-top:1px solid var(--border);padding-top:3.5rem}
+    .comparison-table-wrap{overflow-x:auto;margin-top:2rem}
+    .comparison-table{width:100%;border-collapse:collapse;text-align:left;font-size:.95rem}
+    .comparison-table th,.comparison-table td{padding:1.1rem 1.4rem;border-bottom:1px solid rgba(255,255,255,0.08)}
+    .comparison-table th{background:rgba(215,193,154,0.06);color:var(--gold);font-family:'Playfair Display',serif;font-size:1.1rem}
+    .comparison-table td.highlight{background:rgba(215,193,154,0.08);color:#fff;font-weight:600;border-left:1px solid var(--border);border-right:1px solid var(--border)}
+    .comparison-table tr:last-child td{border-bottom:none}
+
+    /* Direct Order Form Box */
+    .order-box{background:linear-gradient(145deg,#0c1726,#060a11);border:1px solid var(--gold);padding:3rem 2.5rem;border-radius:8px;margin:4rem 0;box-shadow:0 16px 48px rgba(0,0,0,0.5)}
+    .order-box h3{font-size:clamp(1.8rem,3.5vw,2.4rem);margin:0 0 .8rem;color:#fff}
+    .order-box-sub{color:var(--muted);font-size:1rem;margin-bottom:2rem;max-width:60ch}
+    .order-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.2rem;margin-bottom:1.5rem}
+    .order-group{display:flex;flex-direction:column;gap:6px}
+    .order-group label{font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#cbd5e1}
+    .order-group input,.order-group select{padding:14px;background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:4px;color:#fff;font-family:inherit;font-size:1rem}
+    .order-group input:focus,.order-group select:focus{outline:none;border-color:var(--gold);background:rgba(255,255,255,.08)}
+    
+    .payment-methods-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin:2rem 0}
+    .payment-opt{border:1px solid var(--border);background:rgba(255,255,255,0.03);padding:1.2rem;border-radius:6px;cursor:pointer;display:flex;align-items:center;gap:12px;transition:all .2s ease}
+    .payment-opt:hover,.payment-opt.is-selected{border-color:var(--gold);background:rgba(215,193,154,0.1)}
+    .payment-opt input{margin:0;accent-color:var(--gold)}
+    .payment-opt strong{font-size:.95rem;color:#fff;display:block}
+    .payment-opt small{font-size:.78rem;color:var(--muted);display:block}
+
+    .order-submit-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--gold);color:#080a0d;padding:1.2rem 2.5rem;border-radius:4px;font:700 .85rem Manrope,sans-serif;letter-spacing:.14em;text-transform:uppercase;border:none;cursor:pointer;width:100%;transition:all .2s ease}
+    .order-submit-btn:hover{background:#fff;transform:translateY(-2px);box-shadow:0 8px 24px rgba(215,193,154,0.3)}
+
+    /* Trust Guarantee Badges */
+    .guarantee-badges{display:flex;flex-wrap:wrap;justify-content:center;gap:2rem;margin-top:2rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,0.08);color:var(--muted);font-size:.82rem}
+    .guarantee-badge-item{display:flex;align-items:center;gap:8px}
+    .guarantee-badge-item span{color:var(--gold);font-weight:700}
+
+    /* FAQ Section */
+    .faq-section{margin:4.5rem 0;border-top:1px solid var(--border);padding-top:3.5rem}
+    .faq-item{border-bottom:1px solid rgba(255,255,255,0.08);padding:1.4rem 0}
+    .faq-q{font-size:1.15rem;font-weight:600;color:#fff;cursor:pointer;display:flex;justify-content:space-between;align-items:center}
+    .faq-q span{color:var(--gold);font-size:1.4rem;transition:transform .2s ease}
+    .faq-a{color:#b8c2cc;font-size:.98rem;line-height:1.75;margin-top:1rem;display:none}
+    .faq-item.is-open .faq-a{display:block}
+    .faq-item.is-open .faq-q span{transform:rotate(45deg)}
+
+    .order-feedback{background:rgba(37,211,102,0.12);border:1px solid rgba(37,211,102,0.4);color:#e2fbe8;padding:1.5rem;border-radius:6px;margin-top:1.5rem;display:none}
+
+    @media(max-width:760px){
+      .price-banner{flex-direction:column;align-items:flex-start}
+      .price-tag{text-align:left}
+    }
   </style>
   <script type="application/ld+json">
 {
@@ -52,7 +94,8 @@
     {
       "@type": "Product",
       "name": "MPX Website Performance Scan",
-      "description": "Diepgaande video- en data-analyse van techniek, snelheid, conversie, branding en mobiele UX voor je website.",
+      "description": "Diepgaande video- en data-analyse van techniek, snelheid, conversie, branding en mobiele UX voor je website. Binnen 24-48 uur geleverd door Martijn Puts.",
+      "image": "https://res.cloudinary.com/sfd8ohjz/image/upload/w_1600,q_auto:best,f_auto/v1787345940/Scherm_afbeelding_2026-08-21_om_22.51.19_dvw7ua.jpg",
       "offers": {
         "@type": "Offer",
         "price": "99.00",
@@ -73,7 +116,7 @@
           "name": "Hoe snel ontvang ik de Website Performance Scan?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Binnen 24 uur na betaling en doorgave van jouw URL ontvang je een persoonlijke video walkthrough en het bijbehorende actieplan van Martijn Puts."
+            "text": "Binnen 24 tot uiterlijk 48 uur na je aanvraag en URL-doorgave ontvang je een persoonlijke video walkthrough en het bijbehorende prioriteitenplan van Martijn Puts."
           }
         },
         {
@@ -81,7 +124,7 @@
           "name": "Worden de kosten van € 99,- daadwerkelijk verrekend?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Ja, 100%. Wanneer je binnen 60 dagen besluit een traject (Essential, Signature of Bespoke) bij MPX Studio te starten, wordt de volledige € 99,- in mindering gebracht op je eerste factuur."
+            "text": "Ja, 100%. Wanneer je binnen 60 dagen besluit een maatwerktraject (Essential, Signature of Bespoke) bij MPX Studio te starten, wordt de volledige € 99,- in mindering gebracht op je eerste factuur."
           }
         },
         {
@@ -89,7 +132,15 @@
           "name": "Is het een automatisch gegenereerd rapport?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Nee. Terwijl automatische tools alleen oppervlakkige getallen tonen, analyseert Martijn handmatig jouw funnel, waardepropositie, mobiele gebruikerservaring, laadtijd-bottlenecks en trust signals."
+            "text": "Nee. Terwijl automatische tools alleen oppervlakkige scores tonen, analyseert Martijn handmatig jouw waardepropositie, mobiele frictiepunten, Core Web Vitals en B2B trust signals."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Geldt er een niet-goed-geld-terug garantie?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja. Als de scan je geen minimaal 3 directe, concrete verbeterpunten oplevert waar je direct mee aan de slag kunt, storten we de € 99,- direct en zonder discussie terug."
           }
         }
       ]
@@ -123,6 +174,7 @@
       <a href="index.html#roi-calculator">ROI Calculator</a>
       <a href="index.html#project-configurator">Offerte Builder</a>
       <a href="index.html#investering">Tarieven</a>
+      <a href="partner-programma.html">Partner Netwerk</a>
     </nav>
     <div class="sub-header-actions">
       <a class="sub-header-cta" href="index.html#contact">Direct Contact ↗</a>
@@ -134,54 +186,182 @@
       <a href="index.html">Home</a> / <span>Website Performance Scan</span>
     </div>
 
-    <span class="ey">Geen Verkooppraat · 100% Verrekend met Vervolgtraject</span>
+    <span class="ey">Geen Verkooppraat · 100% Verrekend met Vervolgtraject · 24-48u Levertijd</span>
     <h1>Website Performance <i>Scan.</i></h1>
-    <p class="intro">Twijfel je of je huidige website nog de juiste uitstraling heeft en maximaal converteert? Met de MPX Website Performance Scan ontvang je binnen 24 uur een scherpe, no-nonsense analyse van jouw website, inclusief concrete actiepunten waarmee je direct winst behaalt.</p>
+    <p class="intro">Twijfel je of je huidige website nog de juiste high-end uitstraling heeft en maximaal converteert? Met de MPX Website Performance Scan ontvang je binnen 24-48 uur een scherpe, no-nonsense video- en data-audit van jouw platform, inclusief concrete actiepunten waarmee je direct omzetwinst behaalt.</p>
 
     <div class="price-banner">
       <div>
-        <h3>Complete Expert Analyse &amp; Video Walkthrough</h3>
-        <p style="color:#cbd5e1;margin:0">Persoonlijk beoordeeld door founder Martijn Puts (geen geautomatiseerd generiek rapport).</p>
+        <h3>Complete Expert Video Walkthrough &amp; Data Audit</h3>
+        <p style="color:#cbd5e1;margin:0">Persoonlijk beoordeeld door founder Martijn Puts (geen geautomatiseerde generieke PDF).</p>
       </div>
-      <div class="price-tag">€ 99 <span>eenmalig</span></div>
+      <div class="price-tag">€ 99 <span>eenmalig · 100% verrekend bij vervolg</span></div>
     </div>
 
     <div class="highlights-grid">
       <div class="card">
         <strong>1. Conversie &amp; UX Audit</strong>
-        <p>Waarom haken bezoekers af? We analyseren je waardepropositie, navigatie, call-to-actions en formulieren.</p>
+        <p>Waarom haken gekwalificeerde bezoekers af? We analyseren je waardepropositie, call-to-actions, navigatieflows en formulieren.</p>
       </div>
       <div class="card">
-        <strong>2. Snelheid &amp; Mobiele Test</strong>
-        <p>Gedetailleerde inspectie van laadtijd, Core Web Vitals, server response en smartphone-weergave.</p>
+        <strong>2. Snelheid &amp; Core Web Vitals</strong>
+        <p>Gedetailleerde inspectie van laadtijd op 4G/5G, Largest Contentful Paint (LCP), server response (TTFB) en script-overhead.</p>
       </div>
       <div class="card">
-        <strong>3. Vertrouwen &amp; Positionering</strong>
-        <p>Beoordeling van je merkuitstraling, typografie, social proof en het gevoel dat je achterlaat bij high-ticket kopers.</p>
+        <strong>3. Autoriteit &amp; Vertrouwen</strong>
+        <p>Beoordeling van je merkpositionering, redactionele typografie, social proof en het gevoel dat je achterlaat bij high-ticket kopers.</p>
       </div>
     </div>
 
-    <div class="payment-strip">
-      <h3 style="font-size:1.8rem;margin:0 0 .8rem">Start vandaag jouw scan</h3>
-      <p style="color:#a2abb4;max-width:54ch;margin:0 auto">Kies je gewenste betaalmethode en stuur je website door. Binnen 24 uur ontvang je jouw complete performance review.</p>
+    <!-- Direct Order & Intake Box -->
+    <div class="order-box" id="bestel-scan">
+      <span class="ey" style="margin-bottom:.5rem">Direct Aanvragen</span>
+      <h3>Vraag jouw Performance Scan direct aan</h3>
+      <p class="order-box-sub">Vul jouw gegevens in en kies je betaalmethode. Martijn Puts start binnen enkele uren met de analyse van jouw platform.</p>
 
-      <div class="payment-buttons">
-        <a class="cta-btn tikkie-btn" href="https://tikkie.me/pay/gdg6u2tptc948t674irl" target="_blank" rel="noreferrer">Betaal €99 via Tikkie (iDEAL) ↗</a>
-        <a class="cta-btn paypal-btn" href="https://www.paypal.me/putsmartijn" target="_blank" rel="noreferrer">Betaal €99 via PayPal ↗</a>
-        <a class="cta-btn" href="index.html#bankbetaling">Bankoverschrijving / Factuur ↗</a>
+      <form id="scan-order-form">
+        <div class="order-grid">
+          <div class="order-group">
+            <label for="scan-url">Website URL *</label>
+            <input type="text" id="scan-url" required placeholder="bijv. www.uwbedrijf.nl">
+          </div>
+          <div class="order-group">
+            <label for="scan-name">Jouw Volledige Naam *</label>
+            <input type="text" id="scan-name" required placeholder="bijv. Sophie van den Berg">
+          </div>
+          <div class="order-group">
+            <label for="scan-email">Zakelijk E-mailadres *</label>
+            <input type="email" id="scan-email" required placeholder="sophie@uwbedrijf.nl">
+          </div>
+          <div class="order-group">
+            <label for="scan-focus">Belangrijkste Focuspunt</label>
+            <select id="scan-focus">
+              <option value="Conversie &amp; Meer B2B Leads">Conversie &amp; Meer B2B Leads</option>
+              <option value="Trage Laadtijd &amp; Mobiele Fouten">Trage Laadtijd &amp; Mobiele Fouten</option>
+              <option value="Verouderde Uitstraling / Rebranding">Verouderde Uitstraling / Rebranding</option>
+              <option value="Algemene Complete Check">Algemene Complete Check</option>
+            </select>
+          </div>
+        </div>
+
+        <label style="font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#cbd5e1;display:block;margin-top:1rem">Kies jouw betaalmethode (€ 99,-)</label>
+        <div class="payment-methods-grid">
+          <label class="payment-opt is-selected">
+            <input type="radio" name="payment-method" value="tikkie" checked>
+            <div>
+              <strong>⚡ iDEAL via Tikkie</strong>
+              <small>Snelste afhandeling via bank-app</small>
+            </div>
+          </label>
+          <label class="payment-opt">
+            <input type="radio" name="payment-method" value="paypal">
+            <div>
+              <strong>💳 PayPal / Creditcard</strong>
+              <small>Directe online betaling</small>
+            </div>
+          </label>
+          <label class="payment-opt">
+            <input type="radio" name="payment-method" value="invoice">
+            <div>
+              <strong>📄 Zakelijke Factuur</strong>
+              <small>Betaal per bankoverschrijving</small>
+            </div>
+          </label>
+        </div>
+
+        <button class="order-submit-btn" type="submit" id="scan-submit-btn">
+          Vraag Scan Aan (€ 99,-) ↗
+        </button>
+      </form>
+
+      <div class="order-feedback" id="scan-feedback">
+        <strong>✓ Jouw aanvraag is succesvol geregistreerd!</strong>
+        <p id="scan-feedback-text" style="margin:.5rem 0 0;font-size:.92rem"></p>
+      </div>
+
+      <div class="guarantee-badges">
+        <div class="guarantee-badge-item"><span>✓</span> 24-48 uur levertijd</div>
+        <div class="guarantee-badge-item"><span>✓</span> 100% verrekend bij vervolgtraject</div>
+        <div class="guarantee-badge-item"><span>✓</span> 100% Niet-goed-geld-terug garantie</div>
+        <div class="guarantee-badge-item"><span>✓</span> Geen automatische bot-scores</div>
       </div>
     </div>
 
-    <div class="content">
-      <section>
-        <h2>Wat ontvang je exact?</h2>
-        <ul>
-          <li><strong>Persoonlijke Video Review:</strong> Martijn loopt stap voor stap door jouw website heen en legt direct de vinger op de zere plek.</li>
-          <li><strong>Prioriteitenlijst:</strong> De top-5 verbeterpunten die de snelste impact hebben op jouw aanvragen en conversie.</li>
-          <li><strong>Technisch Rapport:</strong> Snelheid, SEO meta tags, mobiele responsiviteit en beveiliging.</li>
-          <li><strong>100% Verrekenbaar:</strong> Besluit je na de scan een maatwerktraject bij MPX Studio te starten? Dan brengen we de €99 volledig in mindering op je factuur.</li>
-        </ul>
-      </section>
+    <!-- Agency vs MPX Comparison Matrix -->
+    <div class="comparison-section">
+      <span class="ey">Transparantie</span>
+      <h2>Waarom ondernemers kiezen voor de MPX Scan.</h2>
+      <p style="color:#a2abb4;max-width:64ch">Traditionele marketingbureaus gebruiken scans als vage verkoopfuik. MPX Studio levert directe, objectieve en direct toepasbare waarde.</p>
+
+      <div class="comparison-table-wrap">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Onderdeel</th>
+              <th>Traditioneel Agency Audit</th>
+              <th class="highlight">MPX Performance Scan</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Investering</strong></td>
+              <td>€ 1.200 – € 2.500,-</td>
+              <td class="highlight"><strong>€ 99,- eenmalig</strong></td>
+            </tr>
+            <tr>
+              <td><strong>Doorlooptijd</strong></td>
+              <td>2 tot 4 weken wachten</td>
+              <td class="highlight"><strong>Binnen 24 – 48 uur</strong></td>
+            </tr>
+            <tr>
+              <td><strong>Beoordelaar</strong></td>
+              <td>Junior marketeer / stagiair</td>
+              <td class="highlight"><strong>Martijn Puts (Founder &amp; Digital Director)</strong></td>
+            </tr>
+            <tr>
+              <td><strong>Format</strong></td>
+              <td>40 pagina's onleesbare PDF met vage grafieken</td>
+              <td class="highlight"><strong>15-min persoonlijke video walkthrough + Top-5 actielijst</strong></td>
+            </tr>
+            <tr>
+              <td><strong>Investeringsverrekening</strong></td>
+              <td>Niet verrekend</td>
+              <td class="highlight"><strong>100% in mindering op je vervolgtraject</strong></td>
+            </tr>
+            <tr>
+              <td><strong>Tevredenheidsgarantie</strong></td>
+              <td>Geen garantie</td>
+              <td class="highlight"><strong>100% Geld-terug-garantie bij onvoldoende waarde</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- FAQ Accordion -->
+    <div class="faq-section">
+      <span class="ey">Veelgestelde Vragen</span>
+      <h2>Alles over de Performance Scan.</h2>
+
+      <div class="faq-item">
+        <div class="faq-q">Hoe snel ontvang ik de Website Performance Scan? <span>+</span></div>
+        <div class="faq-a">Binnen 24 tot uiterlijk 48 uur na je aanvraag en URL-doorgave ontvang je een persoonlijke Loom video walkthrough en het bijbehorende prioriteitenplan direct in je inbox.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Worden de kosten van € 99,- daadwerkelijk 100% verrekend? <span>+</span></div>
+        <div class="faq-a">Ja, 100%. Wanneer je binnen 60 dagen besluit een maatwerktraject (Essential, Signature of Bespoke) bij MPX Studio te starten, brengen we de volledige € 99,- in mindering op je eerste factuur. De scan is hiermee feitelijk kosteloos.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Is dit een automatisch gegenereerd rapport? <span>+</span></div>
+        <div class="faq-a">Nee, absoluut niet. Terwijl online tools oppervlakkige getallen uitspugen, analyseert Martijn handmatig jouw waardepropositie, mobiele frictiepunten, Core Web Vitals en B2B trust signals op basis van echte praktijkervaring.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Wat als ik niet tevreden ben over de inzichten? <span>+</span></div>
+        <div class="faq-a">Als de scan je geen minimaal 3 directe, concrete verbeterpunten oplevert waar je direct mee aan de slag kunt, sturen we na één kort mailtje de volledige € 99,- direct terug. Geen discussie, 100% risicovrij.</div>
+      </div>
     </div>
   </main>
 
@@ -234,5 +414,83 @@
     <div class="footer-bottom"><span>© 2026 MPX Studio</span><a href="privacy.html">Privacy</a><span>Designed with intent · Built for trust</span></div>
   </footer>
   <a class="whatsapp-float" href="https://wa.me/31624735939?text=Hallo%20Martijn%2C%20ik%20heb%20een%20vraag%20over%20de%20%E2%82%AC99%20Website%20Performance%20Scan." target="_blank" rel="noreferrer" aria-label="Start een gesprek via WhatsApp"><span class="wa-status-dot"></span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.1 3.9A10.1 10.1 0 0 0 3.2 15.8L2 22l6.3-1.7A10.1 10.1 0 1 0 20.1 3.9Zm-8 16.2a8.4 8.4 0 0 1-4.3-1.2l-.3-.2-3.7 1 1-3.6-.2-.4a8.4 8.4 0 1 1 7.5 4.4Zm4.6-6.3c-.3-.2-1.8-.9-2-.9-.3-.1-.5-.2-.7.2l-.7.9c-.2.3-.4.3-.7.1-1.8-.9-3-1.7-4.1-3.8-.3-.5.3-.5.8-1.6.1-.3 0-.5-.1-.7l-.6-1.5c-.2-.4-.4-.4-.7-.4h-.6c-.2 0-.6.1-.9.4-.3.3-1.1 1.1-1.1 2.7s1.1 3.1 1.3 3.3c.2.2 2.1 3.3 5.1 4.5 1.9.8 2.7.8 3.6.7.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.2-.3-.3-.6-.4Z"/></svg><span>WhatsApp</span></a>
+
+  <script>
+    // FAQ Accordion Handler
+    document.querySelectorAll('.faq-item').forEach(item => {
+      item.querySelector('.faq-q')?.addEventListener('click', () => {
+        item.classList.toggle('is-open');
+      });
+    });
+
+    // Payment method select visual highlighting
+    document.querySelectorAll('.payment-opt').forEach(label => {
+      label.addEventListener('click', () => {
+        document.querySelectorAll('.payment-opt').forEach(l => l.classList.remove('is-selected'));
+        label.classList.add('is-selected');
+      });
+    });
+
+    // Order form submission
+    const scanForm = document.getElementById('scan-order-form');
+    const scanBtn = document.getElementById('scan-submit-btn');
+    const scanFeedback = document.getElementById('scan-feedback');
+    const scanFeedbackText = document.getElementById('scan-feedback-text');
+
+    if (scanForm) {
+      scanForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const url = document.getElementById('scan-url')?.value.trim();
+        const name = document.getElementById('scan-name')?.value.trim();
+        const email = document.getElementById('scan-email')?.value.trim();
+        const focus = document.getElementById('scan-focus')?.value;
+        const method = document.querySelector('input[name="payment-method"]:checked')?.value || 'tikkie';
+
+        if (!url || !name || !email) return;
+
+        scanBtn.disabled = true;
+        scanBtn.textContent = 'Aanvraag verwerken...';
+
+        try {
+          await fetch('/api/contact', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              name: name,
+              email: email,
+              budget: '€99 Performance Scan',
+              project: `Website Scan Bestelling:
+- URL: ${url}
+- Naam: ${name}
+- Email: ${email}
+- Focus: ${focus}
+- Gekozen Betaalmethode: ${method}`
+            })
+          });
+        } catch (err) {
+          console.warn('Scan intake saved locally');
+        }
+
+        scanFeedback.style.display = 'block';
+        
+        if (method === 'tikkie') {
+          scanFeedbackText.innerHTML = `Bedankt ${name}! We openen nu Tikkie (iDEAL) om de betaling van € 99,- te voldoen. Martijn start direct met de audit van <strong>${url}</strong>.`;
+          setTimeout(() => {
+            window.open('https://tikkie.me/pay/gdg6u2tptc948t674irl', '_blank');
+          }, 1200);
+        } else if (method === 'paypal') {
+          scanFeedbackText.innerHTML = `Bedankt ${name}! We openen nu PayPal om de betaling van € 99,- te voldoen. Martijn start direct met de audit van <strong>${url}</strong>.`;
+          setTimeout(() => {
+            window.open('https://www.paypal.me/putsmartijn', '_blank');
+          }, 1200);
+        } else {
+          scanFeedbackText.innerHTML = `Bedankt ${name}! We hebben je aanvraag ontvangen en sturen de factuur met betaalinstructies direct naar <strong>${email}</strong>. Martijn start zodra de betaling is verwerkt.`;
+        }
+
+        scanBtn.disabled = false;
+        scanBtn.textContent = '✓ Aanvraag Ingediend';
+      });
+    }
+  </script>
 </body>
 </html>

@@ -15,31 +15,57 @@
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="mpx-studio-bundle.css?v=2.0.1">
   <style>
-    :root{--gold:#d7c19a;--ink:#05070b;--card:#0d1725;--text:#f5f4f0;--muted:#a2abb4}
+    :root{--gold:#d7c19a;--ink:#05070b;--card:#0d1725;--text:#f5f4f0;--muted:#a2abb4;--border:rgba(215,193,154,0.22)}
     body{background:var(--ink);color:var(--text);font-family:Manrope,sans-serif;line-height:1.8;margin:0}
-    main{max-width:980px;margin:0 auto;padding:clamp(2.5rem,6vw,5rem) clamp(1.2rem,5vw,4rem) 6rem}
+    main{max-width:1040px;margin:0 auto;padding:clamp(2.5rem,6vw,5rem) clamp(1.2rem,5vw,4rem) 6rem}
     .breadcrumbs{font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:2rem}
     .breadcrumbs a{color:var(--gold);text-decoration:none}
     .ey{color:var(--gold);font:700 .75rem Manrope,sans-serif;letter-spacing:.2em;text-transform:uppercase;display:block;margin-bottom:1rem}
-    h1,h2,h3{font-family:'Playfair Display',serif;font-weight:500;line-height:1.15}
-    h1{font-size:clamp(2.6rem,5.5vw,4.8rem);margin:0 0 1.5rem}
+    h1,h2,h3,h4{font-family:'Playfair Display',serif;font-weight:500;line-height:1.15}
+    h1{font-size:clamp(2.6rem,6vw,5rem);margin:0 0 1.5rem}
     h1 i{color:var(--gold);font-style:italic}
     .intro{font-size:1.18rem;color:#cbd5e1;max-width:68ch;margin-bottom:3.5rem;line-height:1.7}
-    .highlights-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;margin:3rem 0}
-    .card{background:var(--card);border:1px solid rgba(215,193,154,.2);padding:2.2rem;border-radius:6px}
-    .card strong{font-size:1.15rem;color:#fff;display:block;margin-bottom:.6rem;font-family:'Playfair Display',serif}
-    .card p{color:var(--muted);font-size:.92rem;margin:0}
-    .content section{border-top:1px solid rgba(215,193,154,.18);padding:3rem 0}
+    
+    .highlights-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin:3rem 0}
+    .card{background:var(--card);border:1px solid var(--border);padding:2.2rem;border-radius:8px;transition:border-color .2s ease}
+    .card:hover{border-color:var(--gold)}
+    .card strong{font-size:1.18rem;color:#fff;display:block;margin-bottom:.6rem;font-family:'Playfair Display',serif}
+    .card p{color:var(--muted);font-size:.94rem;margin:0;line-height:1.6}
+
+    /* Calculator Box */
+    .calc-box{background:linear-gradient(135deg,#0c1726,#060a11);border:1px solid var(--gold);padding:3rem 2.5rem;border-radius:8px;margin:4rem 0;box-shadow:0 16px 48px rgba(0,0,0,0.5)}
+    .calc-box h3{font-size:clamp(1.8rem,3.5vw,2.4rem);margin:0 0 .8rem;color:#fff}
+    .calc-slider-wrap{margin:2.5rem 0 1.5rem}
+    .calc-slider-wrap label{display:flex;justify-content:space-between;align-items:center;font-weight:700;margin-bottom:1rem;color:#fff}
+    .calc-slider-wrap input[type=range]{width:100%;height:8px;background:rgba(255,255,255,0.1);border-radius:4px;outline:none;accent-color:var(--gold);cursor:pointer}
+    .calc-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.2rem;margin-top:2rem}
+    .calc-stat-item{background:rgba(255,255,255,0.03);border:1px solid var(--border);padding:1.6rem;border-radius:6px;text-align:center}
+    .calc-stat-item strong{font-size:2rem;color:var(--gold);font-family:'Playfair Display',serif;display:block;margin-bottom:4px}
+    .calc-stat-item span{font-size:.82rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;font-weight:600}
+
+    /* Link Generator */
+    .link-gen-box{background:var(--card);border:1px solid var(--border);padding:2.5rem;border-radius:8px;margin:4rem 0}
+    .link-gen-box h3{font-size:1.8rem;margin:0 0 .6rem;color:#fff}
+    .link-input-row{display:flex;gap:12px;margin-top:1.5rem;flex-wrap:wrap}
+    .link-input-row input{flex:1;min-width:240px;padding:14px;background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:4px;color:#fff;font-family:inherit;font-size:1rem}
+    .link-input-row input:focus{outline:none;border-color:var(--gold)}
+    .link-input-row button{background:var(--gold);color:#080a0d;border:none;padding:14px 24px;border-radius:4px;font-weight:700;font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:all .2s ease}
+    .link-input-row button:hover{background:#fff}
+    .generated-link-display{margin-top:1.2rem;padding:1rem;background:rgba(0,0,0,0.3);border:1px dashed var(--gold);border-radius:4px;font-family:monospace;color:var(--gold);word-break:break-all;display:none}
+
+    /* Form Box */
+    .form-box{background:#0a101a;border:1px solid var(--gold);padding:3rem 2.5rem;border-radius:8px;margin:4rem 0}
+    .form-box label{display:block;font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#cbd5e1;margin-bottom:.4rem}
+    .form-box input,.form-box textarea{width:100%;padding:14px;background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:4px;color:#fff;margin-bottom:1.5rem;font-family:inherit;font-size:1rem;box-sizing:border-box}
+    .form-box input:focus,.form-box textarea:focus{outline:none;border-color:var(--gold);background:rgba(255,255,255,.08)}
+    
+    .cta-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--gold);color:#080a0d;padding:1.2rem 2.2rem;border-radius:4px;text-decoration:none;font:700 .85rem Manrope,sans-serif;letter-spacing:.14em;text-transform:uppercase;border:none;cursor:pointer;width:100%;transition:all .2s ease}
+    .cta-btn:hover{background:#fff;transform:translateY(-2px)}
+
+    .content section{border-top:1px solid var(--border);padding:3rem 0}
     .content h2{font-size:clamp(1.8rem,3.5vw,2.6rem);margin:0 0 1.2rem;color:#fff}
     .content p,.content li{color:#b8c2cc;font-size:1rem;line-height:1.75}
     .content ul{padding-left:1.2rem;display:grid;gap:.8rem}
-    .form-box{background:#0a101a;border:1px solid var(--gold);padding:3rem 2.5rem;border-radius:6px;margin:3rem 0}
-    .form-box label{display:block;font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#cbd5e1;margin-bottom:.4rem}
-    .form-box input,.form-box textarea{width:100%;padding:14px;background:rgba(255,255,255,.05);border:1px solid rgba(215,193,154,.25);border-radius:4px;color:#fff;margin-bottom:1.5rem;font-family:inherit;font-size:1rem;box-sizing:border-box}
-    .form-box input:focus,.form-box textarea:focus{outline:none;border-color:var(--gold)}
-    .cta-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--gold);color:#080a0d;padding:1.1rem 2.2rem;border-radius:3px;text-decoration:none;font:700 .8rem Manrope,sans-serif;letter-spacing:.14em;text-transform:uppercase;border:none;cursor:pointer;width:100%;transition:all .2s ease}
-    .cta-btn:hover{background:#fff}
-    footer{padding:3rem clamp(24px,5vw,72px);border-top:1px solid rgba(215,193,154,.15);text-align:center;font-size:.8rem;color:var(--muted)}
   </style>
   <script type="application/ld+json">
 {
@@ -50,6 +76,7 @@
       "name": "MPX Studio Partner & Referral Netwerk",
       "description": "Exclusief referral en partnerprogramma voor adviseurs, consultants en ondernemers die zakelijke relaties verbinden met premium webdesign en AI automatisering.",
       "url": "https://www.mpxstudio.nl/partner-programma.html",
+      "image": "https://res.cloudinary.com/sfd8ohjz/image/upload/w_1600,q_auto:best,f_auto/v1787345940/Scherm_afbeelding_2026-08-21_om_22.51.19_dvw7ua.jpg",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Maastricht",
@@ -127,6 +154,7 @@
       <a href="index.html#roi-calculator">ROI Calculator</a>
       <a href="index.html#project-configurator">Offerte Builder</a>
       <a href="index.html#investering">Tarieven</a>
+      <a href="website-scan.html">Performance Scan</a>
     </nav>
     <div class="sub-header-actions">
       <a class="sub-header-cta" href="index.html#contact">Terug naar MPX Studio ↗</a>
@@ -138,69 +166,113 @@
       <a href="index.html">Home</a> / <span>Partner &amp; Referral Netwerk</span>
     </div>
 
-    <span class="ey">Samenwerken &amp; Waarde Creëren · € 500 Beloning</span>
+    <span class="ey">Samenwerken &amp; Waarde Creëren · € 500 Beloning per Project</span>
     <h1>Het MPX Studio <i>Partner Netwerk.</i></h1>
     <p class="intro">Als zakelijk adviseur, accountant, business coach, marketeer of tevreden klant kom je regelmatig ondernemers tegen die worstelen met een verouderde website of achterblijvende conversie. Sluit je aan bij het MPX Partner Netwerk en ontvang <strong>€ 500,- commissie</strong> bij elke succesvolle introductie.</p>
 
     <div class="highlights-grid">
       <div class="card">
         <strong>€ 500,- Beloning Voor Jou</strong>
-        <p>Direct na de project kick-off uitbetaald per bankoverschrijving of verrekend als credit op je eigen retainer.</p>
+        <p>Direct na de project kick-off uitbetaald per bankoverschrijving of verrekend als credit op je eigen MPX retainer.</p>
       </div>
       <div class="card">
         <strong>€ 250,- Voordeel Voor Je Relatie</strong>
-        <p>Jouw netwerkrelatie ontvangt direct € 250,- welkomstkorting of een gratis VIP Performance Scan t.w.v. € 99,-.</p>
+        <p>Jouw netwerkrelatie ontvangt direct € 250,- welkomstkorting op een websitetraject of een gratis VIP Performance Scan t.w.v. € 99,-.</p>
       </div>
       <div class="card">
-        <strong>Volledige Transparantie</strong>
-        <p>We houden je persoonlijk op de hoogte van het adviesgesprek, de status en de uitkomst.</p>
+        <strong>Volledige Discrete Regie</strong>
+        <p>We houden je discreet op de hoogte van het adviesgesprek, de scope en de kickoff. Geen spam of agressieve acquisitie.</p>
       </div>
+    </div>
+
+    <!-- Partner Commissie Calculator -->
+    <div class="calc-box">
+      <span class="ey" style="margin-bottom:.5rem">Direct Berekenen</span>
+      <h3>Wat levert het Partner Programma jou op?</h3>
+      <p style="color:var(--muted);margin-bottom:1.5rem">Verschuif het aantal verwachte introducties per kwartaal en zie direct jouw referral inkomsten.</p>
+
+      <div class="calc-slider-wrap">
+        <label>
+          <span>Aantal aangedragen relaties per kwartaal:</span>
+          <span id="partner-count-val" style="color:var(--gold);font-size:1.4rem;font-family:'Playfair Display',serif">3 introducties</span>
+        </label>
+        <input type="range" id="partner-slider" min="1" max="10" value="3">
+      </div>
+
+      <div class="calc-stats">
+        <div class="calc-stat-item">
+          <strong id="partner-payout">€ 1.500,-</strong>
+          <span>Jouw Directe Beloning</span>
+        </div>
+        <div class="calc-stat-item">
+          <strong id="partner-client-saving">€ 750,-</strong>
+          <span>Totale Netwerkkorting</span>
+        </div>
+        <div class="calc-stat-item">
+          <strong id="partner-annual">€ 6.000,- / jr</strong>
+          <span>Geschatte Jaarwaarde</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Personalized Referral Link Generator -->
+    <div class="link-gen-box">
+      <span class="ey" style="margin-bottom:.5rem">1-Click Deelbare Link</span>
+      <h3>Genereer jouw persoonlijke introductie-link</h3>
+      <p style="color:var(--muted);margin:0;font-size:.95rem">Vul jouw naam in om een directe deelbare link te genereren waarmee jouw contacten direct € 250,- welkomstkorting activeren.</p>
+
+      <div class="link-input-row">
+        <input type="text" id="partner-ref-name" placeholder="Vul jouw naam of bedrijfsnaam in...">
+        <button type="button" id="partner-gen-btn">Genereer Deellink ↗</button>
+      </div>
+
+      <div class="generated-link-display" id="partner-link-output"></div>
     </div>
 
     <div class="content">
       <section>
         <h2>Hoe het MPX Partner Netwerk werkt</h2>
         <ul>
-          <li><strong>1. Deel een introductie:</strong> Tip een relatie via WhatsApp, e-mail of meld ze aan via het formulier hieronder.</li>
-          <li><strong>2. Vrijblijvende Discovery Call:</strong> Founder Martijn Puts voert een gerichte 15-minuten analyse uit met jouw relatie om te zien of er een perfecte match is.</li>
-          <li><strong>3. Kick-off &amp; Uitbetaling:</strong> Zodra het project start (Essential, Signature of Bespoke), ontvang jij direct jouw € 500,- referral commissie.</li>
+          <li><strong>1. Deel een introductie:</strong> Tip een relatie via WhatsApp, e-mail of meld ze direct aan via het onderstaande formulier.</li>
+          <li><strong>2. Vrijblijvende Discovery Call:</strong> Founder Martijn Puts voert een gerichte 15-minuten analyse uit met jouw relatie om te zien of er een wederzijdse fit is.</li>
+          <li><strong>3. Kick-off &amp; Directe Uitbetaling:</strong> Zodra het project start (Essential, Signature of Bespoke), ontvang jij binnen 48 uur jouw € 500,- referral commissie.</li>
         </ul>
       </section>
 
       <section>
-        <h2>Voor wie is dit programma ideaal?</h2>
+        <h2>Voor wie is dit programma ontworpen?</h2>
         <p>Ons partnernetwerk bestaat onder andere uit:</p>
         <ul>
-          <li><strong>Bedrijfsadviseurs &amp; Coaches:</strong> Help jouw cliënten hun marktpositie en leadstroom te professionaliseren.</li>
-          <li><strong>Accountants &amp; Fiscalisten:</strong> Verbind ondernemers die willen groeien met een betrouwbare digitale partner.</li>
-          <li><strong>Freelance Designers &amp; Copywriters:</strong> Besteed complexe development en AI-chatbots uit aan MPX.</li>
-          <li><strong>Tevreden Klanten &amp; Founders:</strong> Deel jouw positieve ervaringen met collega-ondernemers.</li>
+          <li><strong>Bedrijfsadviseurs &amp; M&amp;A Coaches:</strong> Help jouw cliënten hun marktpositie, vertrouwen en B2B-leadstroom te professionaliseren.</li>
+          <li><strong>Accountants &amp; Fiscalisten:</strong> Verbind ondernemers die willen moderniseren met een betrouwbare, resultaatgerichte digitale partner.</li>
+          <li><strong>Freelance Designers &amp; Copywriters:</strong> Besteed high-performance custom development, Core Web Vitals en AI-chatbots uit aan MPX.</li>
+          <li><strong>Bestaande MPX Klanten:</strong> Deel jouw positieve ervaring met collega-ondernemers en ontvang korting op je doorlopende retainer of directe cashback.</li>
         </ul>
       </section>
     </div>
 
     <div class="form-box">
-      <h3 style="color:#fff;margin-top:0">Meld een relatie aan of word partner</h3>
-      <p style="color:#94a3b8;font-size:14px;margin-bottom:24px">Vul onderstaande gegevens in. We nemen binnen 24 uur contact op.</p>
+      <h3 style="color:#fff;margin-top:0">Meld direct een relatie aan</h3>
+      <p style="color:#94a3b8;font-size:14px;margin-bottom:24px">Vul onderstaande gegevens in. Martijn Puts neemt binnen 24 uur contact op.</p>
 
       <form id="partner-form">
-        <label for="p-your-name">Jouw Naam *</label>
+        <label for="p-your-name">Jouw Volledige Naam *</label>
         <input type="text" id="p-your-name" required placeholder="bijv. Jan Jansen">
 
-        <label for="p-your-email">Jouw E-mailadres *</label>
+        <label for="p-your-email">Jouw Zakelijke E-mailadres *</label>
         <input type="email" id="p-your-email" required placeholder="jan@jouwbedrijf.nl">
 
-        <label for="p-lead-name">Naam van de ondernemer / relatie die je wilt tippen</label>
+        <label for="p-lead-name">Naam van de ondernemer / bedrijf die je wilt tippen</label>
         <input type="text" id="p-lead-name" placeholder="bijv. Peter van Dijk (Bedrijfsnaam / Website)">
 
-        <label for="p-lead-contact">Contactgegevens relatie (e-mail of telefoon)</label>
-        <input type="text" id="p-lead-contact" placeholder="peter@vandijk.nl / 06-12345678">
+        <label for="p-lead-contact">Contactgegevens relatie (e-mail of telefoonnummer)</label>
+        <input type="text" id="p-lead-contact" placeholder="peter@vandijk.nl / +31 6 ...">
 
-        <label for="p-notes">Korte toelichting (optioneel)</label>
+        <label for="p-notes">Korte toelichting / huidige uitdaging (optioneel)</label>
         <textarea id="p-notes" rows="3" placeholder="Wat is de huidige situatie of wens van deze ondernemer?"></textarea>
 
-        <button type="submit" class="cta-btn">Verstuur Aanmelding ↗</button>
-        <p id="partner-status" style="margin-top:12px;font-size:13px;color:var(--gold);text-align:center" hidden></p>
+        <button type="submit" class="cta-btn">Verstuur Aanmelding (€ 500 Beloning) ↗</button>
+        <p id="partner-status" style="margin-top:14px;font-size:14px;color:var(--gold);text-align:center" hidden></p>
       </form>
     </div>
   </main>
@@ -255,6 +327,47 @@
   </footer>
 
   <script>
+    // Partner Calculator Logic
+    const partnerSlider = document.getElementById('partner-slider');
+    const partnerCountVal = document.getElementById('partner-count-val');
+    const partnerPayout = document.getElementById('partner-payout');
+    const partnerClientSaving = document.getElementById('partner-client-saving');
+    const partnerAnnual = document.getElementById('partner-annual');
+
+    function updatePartnerCalc() {
+      if (!partnerSlider) return;
+      const count = parseInt(partnerSlider.value, 10);
+      partnerCountVal.textContent = count === 1 ? '1 introductie' : `${count} introducties`;
+      partnerPayout.textContent = `€ ${(count * 500).toLocaleString('nl-NL')},-`;
+      partnerClientSaving.textContent = `€ ${(count * 250).toLocaleString('nl-NL')},-`;
+      partnerAnnual.textContent = `€ ${(count * 500 * 4).toLocaleString('nl-NL')},- / jr`;
+    }
+
+    if (partnerSlider) {
+      partnerSlider.addEventListener('input', updatePartnerCalc);
+      updatePartnerCalc();
+    }
+
+    // Referral link generator
+    const refInput = document.getElementById('partner-ref-name');
+    const refBtn = document.getElementById('partner-gen-btn');
+    const refOutput = document.getElementById('partner-link-output');
+
+    if (refBtn && refInput) {
+      refBtn.addEventListener('click', () => {
+        const val = refInput.value.trim().toLowerCase().replace(/[^a-z0-9]/g, '');
+        if (!val) {
+          alert('Vul een naam in om jouw link te genereren.');
+          refInput.focus();
+          return;
+        }
+        const link = `https://www.mpxstudio.nl/?ref=${encodeURIComponent(val)}#investering`;
+        refOutput.style.display = 'block';
+        refOutput.innerHTML = `Jouw Deellink: <strong style="color:#fff">${link}</strong><br><small style="color:var(--muted)">Kopieer deze link en deel direct met je relatie via WhatsApp of e-mail.</small>`;
+      });
+    }
+
+    // Partner registration submission
     const partnerForm = document.getElementById('partner-form');
     const partnerStatus = document.getElementById('partner-status');
 
@@ -288,7 +401,7 @@
             })
           });
 
-          partnerStatus.textContent = 'Bedankt! We hebben jouw partneraanmelding ontvangen en nemen spoedig contact met je op.';
+          partnerStatus.textContent = '✓ Bedankt! We hebben jouw partneraanmelding ontvangen en nemen binnen 24 uur contact op.';
           partnerForm.reset();
         } catch (e) {
           partnerStatus.textContent = 'Versturen mislukt. Neem a.u.b. contact op via info@mpxstudio.nl of WhatsApp.';
