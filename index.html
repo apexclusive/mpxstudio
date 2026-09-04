@@ -1280,6 +1280,14 @@
         fitResult.hidden = false;
         fitResult.classList.add('is-visible');
         fitAnnouncement.textContent = 'De Project Fit Scan is klaar. Je persoonlijke route staat hieronder.';
+        const fitResultLink = fitResult.querySelector('.fit-result-link');
+        if (fitResultLink) {
+          let topicVal = 'Nieuwe Maatwerk Website';
+          if (fitAnswers[0] === 'conversie') topicVal = 'Conversie & Meer Leads';
+          else if (fitAnswers[0] === 'positionering') topicVal = 'Nieuwe Maatwerk Website';
+          fitResultLink.href = `#strategie-gesprek?topic=${encodeURIComponent(topicVal)}`;
+          fitResultLink.innerHTML = `Plan 15-min Sparringsessie (${topicVal}) <span>↗</span>`;
+        }
         fitResult.focus();
       }
     }));
