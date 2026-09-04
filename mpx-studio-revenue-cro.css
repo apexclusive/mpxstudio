@@ -3261,3 +3261,14 @@ header.sub-header .brand em {
     flex-direction: column;
   }
 }
+
+/* ── Reset document flow: guarantee standard block flow without flex-order artifacts ── */
+main, #main-content {
+  display: block !important;
+  width: 100% !important;
+}
+
+main > *, #main-content > * {
+  order: 0 !important;
+  float: none !important;
+}

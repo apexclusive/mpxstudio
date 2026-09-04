@@ -576,8 +576,8 @@ const server = http.createServer(async (req, res) => {
 
   const extension = path.extname(safeFilePath).toLowerCase();
   const contentType = MIME_TYPES[extension] || 'application/octet-stream';
-  const cacheControl = extension === '.html' ? 'no-cache' : 'public, max-age=3600, stale-while-revalidate=86400';
-  res.writeHead(200, { 'Content-Type': contentType, 'Cache-Control': cacheControl });
+  const cacheControl = 'no-cache, no-store, must-revalidate';
+  res.writeHead(200, { 'Content-Type': contentType, 'Cache-Control': cacheControl, 'Pragma': 'no-cache', 'Expires': '0' });
   res.end(fileBuffer);
 });
 
