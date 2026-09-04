@@ -153,27 +153,36 @@
     <!-- Sector ROI Card -->
     <div class="sector-roi-card">
       <div class="sector-roi-header">
-        <strong>Brainport Tech &amp; Scale-up Benchmark</strong>
-        <span>Geschatte ROI Impact</span>
+        <strong>Sector ROI &amp; Conversie Benchmark</strong>
+        <span>Live Interactive Calculator</span>
       </div>
-      <p style="color:#cbd5e1;font-size:14px;margin:0 0 16px">Verwachte jaarlijkse omzetgroei bij high-ticket contracten en B2B OEM sales in Brainport:</p>
+      <p style="color:#cbd5e1;font-size:14px;margin:0 0 16px">Verschuif het aantal maandelijkse bezoekers en zie direct de verwachte jaarlijkse omzetimpact:</p>
+      
+      <div style="margin: 16px 0 20px;">
+        <div style="display:flex;justify-content:space-between;align-items:center;font-size:13px;color:#cbd5e1;margin-bottom:8px">
+          <span>Maandelijkse websitebezoekers:</span>
+          <strong id="sector-slider-val" style="color:var(--gold);font-size:17px;font-family:'Playfair Display',serif">4.500 bezoekers</strong>
+        </div>
+        <input type="range" id="sector-traffic-slider" min="500" max="15000" step="250" value="4500" style="width:100%;height:8px;accent-color:var(--gold);cursor:pointer">
+      </div>
+
       <div class="sector-roi-grid">
         <div class="sector-roi-metric">
           <small>Bezoekers / maand</small>
-          <strong>4.500</strong>
+          <strong id="sector-metric-traffic">4.500</strong>
         </div>
         <div class="sector-roi-metric">
-          <small>Gem. Contractwaarde</small>
+          <small>Gem. Zaakwaarde / Marge</small>
           <strong>€ 12.000</strong>
         </div>
         <div class="sector-roi-metric highlight">
           <small>Verwachte Extra Omzet</small>
-          <strong>+ € 7.776.000 / jr</strong>
+          <strong id="sector-metric-output">+ € 7.776.000 / jr</strong>
         </div>
       </div>
       <div class="sector-roi-footer">
-        <span style="font-size:12px;color:#94a3b8">Berekend op basis van een conversielift van 0.8% naar 2.0%</span>
-        <a class="sub-header-cta" href="index.html#roi-calculator?roi=visitors:4500,deal:12000,cvr:0.8">Open Volledige Calculator ↗</a>
+        <span style="font-size:12px;color:#94a3b8">Berekend op basis van een bewezen conversielift van 0.8% naar 2.0%</span>
+        <a class="sub-header-cta" id="sector-roi-btn" href="index.html#roi-calculator?roi=visitors:4500,deal:12000,cvr:0.8">Open Volledige Calculator ↗</a>
       </div>
     </div>
 
@@ -267,5 +276,26 @@
     <div class="footer-bottom"><span>© 2026 MPX Studio</span><a href="privacy.html">Privacy</a><span>Designed with intent · Built for trust</span></div>
   </footer>
   <a class="whatsapp-float" href="https://wa.me/31624735939?text=Hallo%20Martijn%2C%20ik%20wil%20sparren%20over%20een%20high-tech%20B2B%20website%20in%20Brainport%20Eindhoven." target="_blank" rel="noreferrer" aria-label="Start een gesprek via WhatsApp"><span class="wa-status-dot"></span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.1 3.9A10.1 10.1 0 0 0 3.2 15.8L2 22l6.3-1.7A10.1 10.1 0 1 0 20.1 3.9Zm-8 16.2a8.4 8.4 0 0 1-4.3-1.2l-.3-.2-3.7 1 1-3.6-.2-.4a8.4 8.4 0 1 1 7.5 4.4Zm4.6-6.3c-.3-.2-1.8-.9-2-.9-.3-.1-.5-.2-.7.2l-.7.9c-.2.3-.4.3-.7.1-1.8-.9-3-1.7-4.1-3.8-.3-.5.3-.5.8-1.6.1-.3 0-.5-.1-.7l-.6-1.5c-.2-.4-.4-.4-.7-.4h-.6c-.2 0-.6.1-.9.4-.3.3-1.1 1.1-1.1 2.7s1.1 3.1 1.3 3.3c.2.2 2.1 3.3 5.1 4.5 1.9.8 2.7.8 3.6.7.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.2-.3-.3-.6-.4Z"/></svg><span>WhatsApp</span></a>
+<script>
+    const sectorSlider = document.getElementById("sector-traffic-slider");
+    const sectorSliderVal = document.getElementById("sector-slider-val");
+    const sectorMetricTraffic = document.getElementById("sector-metric-traffic");
+    const sectorMetricOutput = document.getElementById("sector-metric-output");
+    const sectorRoiBtn = document.getElementById("sector-roi-btn");
+    const sectorDeal = 12000;
+
+    if (sectorSlider) {
+      sectorSlider.addEventListener("input", () => {
+        const traffic = parseInt(sectorSlider.value, 10);
+        sectorSliderVal.textContent = traffic.toLocaleString("nl-NL") + " bezoekers";
+        sectorMetricTraffic.textContent = traffic.toLocaleString("nl-NL");
+        const extraAnnual = Math.round(traffic * 0.012 * sectorDeal * 12);
+        sectorMetricOutput.textContent = "+ € " + extraAnnual.toLocaleString("nl-NL") + " / jr";
+        if (sectorRoiBtn) {
+          sectorRoiBtn.href = "index.html#roi-calculator?roi=visitors:" + traffic + ",deal:" + sectorDeal + ",cvr:0.8";
+        }
+      });
+    }
+  </script>
 </body>
 </html>
